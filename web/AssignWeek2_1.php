@@ -23,10 +23,11 @@
          <img src="me.jpg" alt="Picture of Me" />
       </div>
       <div id="video">
-         <iframe src="https://youtu.be/h7DCiAv88ow" align="center" width="320" height="240" >No Video found</iframe>
+         <iframe width="420" height="345" src="https://youtu.be/h7DCiAv88ow" align="center">
+         </iframe>
       </div>
    </div>
-   <button id="but" onclick="buttonClick()">Push</button><br />
+   <button id="but" onclick="click()">Push</button><br />
    The time is:
    <?php
       print date('H:i:s', $_SERVER['REQUEST_TIME']);
