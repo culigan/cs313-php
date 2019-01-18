@@ -23,7 +23,7 @@
          <img src="me.jpg" alt="Picture of Me" />
       </div>
       <div id="video">
-         <iframe src="https://youtu.be/h7DCiAv88ow" align="center" width="200" height="200" >No Video found</iframe>
+         <iframe src="https://youtu.be/h7DCiAv88ow" align="center" width="320" height="240" >No Video found</iframe>
       </div>
    </div>
    <button id="but" onclick="buttonClick()">Push</button><br />
