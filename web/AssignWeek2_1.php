@@ -27,7 +27,7 @@
          </iframe>
       </div>
    </div>
-   <button id="but" onclick="click()">Push</button><br />
+   <button id="but" onclick="buttonClick()">Push</button><br />
    The time is:
    <?php
       print date('H:i:s', $_SERVER['REQUEST_TIME']);
