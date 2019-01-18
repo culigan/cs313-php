@@ -23,7 +23,7 @@
          <img src="me.jpg" alt="Picture of Me" />
       </div>
       <div id="video">
-         <iframe width="420" height="345" src="https://youtu.be/h7DCiAv88ow" align="center">
+         <iframe width="420" height="345" src="https://www.youtube.com/embed/h7DCiAv88ow" align="center">
          </iframe>
       </div>
    </div>
