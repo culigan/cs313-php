@@ -1,3 +1,3 @@
-function click() {
+function buttonClick() {
    alert("Clicked");
 }
