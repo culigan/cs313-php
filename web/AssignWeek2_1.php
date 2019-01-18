@@ -15,18 +15,23 @@
       <div id="SecondDiv">
          <p>
             I work at <a href="www.powerteq.com">Powerteq</a> as a Test Engineer.  It has been a great place
-            to work for the past 16 years.
+            to work for the past 16 years. I really enjoy what I do. I support the production line with any needs 
+            they have.  I create test equipment(hardware) and I create custom user interfaces to run the tests.
          </p>
       </div>
       <div id="ThirdDiv">
-         <img src="me.jpg" alt="Pictur of Me" />
+         <img src="me.jpg" alt="Picture of Me" />
+      </div>
+      <div id="video">
+      <video width="320" height="240" controls src="https://youtu.be/h7DCiAv88ow">Video not supported!
+      </video>
       </div>
    </div>
-   <button id="but" onclick="clickAlert()">Push</button><br />
+   <button id="but" onclick="click()">Push</button><br />
    The time is:
    <?php
     $time = $_SERVER['REQUEST_TIME'];
-    print 'test';
+    print $time;
    ?>
 </body>
 </html>
