@@ -30,8 +30,7 @@
    <button id="but" onclick="click()">Push</button><br />
    The time is:
    <?php
-    $time = $_SERVER['REQUEST_TIME'];
-    print date('H:i:s', $time);
+    print date('H:i:s', $_SERVER['REQUEST_TIME']);
    ?>
 </body>
 </html>
