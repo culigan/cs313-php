@@ -14,9 +14,9 @@
 <body>
    <header>Team AssignWeek3</header>
    
-   <p>name: <? echo $name?></p>
-   <p>email: <? echo $email?></p>
-   <p>major: <? echo $radio ?></p>
+   <p>name: <? =$name?></p>
+   <p>email: <? =$email?></p>
+   <p>major: <? =$radio ?></p>
    <?
    foreach ($check as $check)
    {
