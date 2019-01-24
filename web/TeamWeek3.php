@@ -13,18 +13,18 @@
 </head>
 <body>
    <header>Team AssignWeek3</header>
-   
-   <p>name: <? echo "$name"?></p>
-   //<p>email: <? =$email?></p>
-   //<p>major: <? =$radio ?></p>
    <?
+   echo "<p>name: $name</p>";
+   echo "<p>email: <a href='mailto:$email'>$email</a></p>";
+   echo "<p>major: $radio</p>";
+   
    foreach ($checks as $check)
    {
       $check_CL = htmlspecialchars($check);
       echo "<p>$check_CL</p><br/>";
    }
-   ?>
-   //<p>comment:  <? =$comment?></p>
    
+   echo "<p>comment:  $comment</p>";
+   ?>
 </body>
 </html>
