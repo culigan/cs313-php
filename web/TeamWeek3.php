@@ -1,9 +1,9 @@
 <?php
-   $name = $_POST['name']);
-   $email = $_POST['email'];
-   $radio = $_POST['radio'];
-   $check = $_POST['chckbx'];
-   $comment = $_POST['comment'];
+   $name = $_POST["name"]);
+   $email = $_POST["email"];
+   $radio = $_POST["radio"];
+   $check = $_POST["chckbx"];
+   $comment = $_POST["comment"];
 
    ?>
 <!DOCTYPE html>
