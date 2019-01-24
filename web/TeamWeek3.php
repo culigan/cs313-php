@@ -1,9 +1,9 @@
 <?php
-   $name = $_POST["name"];
-   $email = $_POST["email"];
-   $radio = $_POST["radio"];
-   $checks = $_POST["chckbx"];
-   $comment = $_POST["comment"];
+   $name = htmlspecialchars($_POST["name"]);
+   $email =  htmlspecialchars($_POST["email"]);
+   $radio =  htmlspecialchars($_POST["radio"]);
+   $checks =  $_POST["chckbx"];
+   $comment =  htmlspecialchars($_POST["comment"]);
 
    ?>
 <!DOCTYPE html>
@@ -14,7 +14,9 @@
 <body>
    <header>Team AssignWeek3</header>
    
-   
+   <p>name: <? =$name?></p>
+   <p>email: <? =$email?></p>
+   <p>major: <? =$radio ?></p>
    <?
    foreach ($checks as $check)
    {
@@ -22,7 +24,7 @@
       echo "<p>$check_CL</p><br/>";
    }
    ?>
-   
+   <p>comment:  <? =$comment?></p>
    
 </body>
 </html>
