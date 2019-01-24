@@ -24,9 +24,11 @@
    foreach ($check as $check)
    {
       &check_CL = htmlspecialchars($check);
-      echo "<p>$check_CL</p><br/>";
+      echo "<p>$check_CL</p><br/>"
    }
-   echo $check 
+   
+   echo $check; ?>
    <p>comment: <? echo $comment?></p>
+   
 </body>
 </html>
