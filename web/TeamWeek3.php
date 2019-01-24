@@ -1,3 +1,11 @@
+<?php
+   $name = $_POST['name']);
+   $email = $_POST['email'];
+   $radio = $_POST['radio'];
+   $check = $_POST['chckbx'];
+   $comment = $_POST['comment'];
+
+   ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,14 +17,16 @@
 <body>
    <header>CS313 Collin Steel</header>
    
-   <?php
-      console.log("test1");
-      var_dump($_POST['name']);
-      echo $_POST['name'];
-      echo "mailto: <a href=$_POST['email']">$_POST['email']</a><br />;
-      echo $_POST['radio'];
-      echo $_POST['comment'];
-
-   ?>
+   <p>name: <? echo $name?></p>
+   <p>email: <? echo $email?></p>
+   <p>major: <? echo $radio ?></p>
+   <?
+   foreach ($check as $check)
+   {
+      &check_CL = htmlspecialchars($check);
+      echo "<p>$check_CL</p><br/>";
+   }
+   echo $check 
+   <p>comment: <? echo $comment?></p>
 </body>
 </html>
