@@ -10,6 +10,7 @@
    <header>CS313 Collin Steel</header>
    
    <?php
+      console.log("test1");
       echo $_POST['name'];
       echo "mailto: <a href=$_POST['email']>$_POST['email']</a><br />";
       echo $_POST['radio'];
