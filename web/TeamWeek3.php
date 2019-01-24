@@ -20,12 +20,11 @@
    <?
    foreach ($check as $check)
    {
-      &check_CL = htmlspecialchars($check);
+      $check_CL = htmlspecialchars($check);
       echo "<p>$check_CL</p><br/>";
    }
-   
-   echo $check; ?>
-   <p>comment: <? echo $comment?></p>
+   ?>
+   <p>comment:  <? =$comment?></p>
    
 </body>
 </html>
