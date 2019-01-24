@@ -10,10 +10,9 @@
 <html>
 <head>
    <title>CS313</title>
-   <meta name="viewport" content="width=device-width, initial-scale1" />
 </head>
 <body>
-   <header>CS313 Collin Steel</header>
+   <header>Team AssignWeek3</header>
    
    <p>name: <? echo $name?></p>
    <p>email: <? echo $email?></p>
