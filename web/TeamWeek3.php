@@ -14,9 +14,14 @@
 <body>
    <header>Team AssignWeek3</header>
    
-   <p>name: <?php =$name ?></p>
-   <p>email: <?php =$email ?></p>
-   <p>major: <?php =$radio ?></p>
+   
+   <?
+   foreach ($checks as $check)
+   {
+      $check_CL = htmlspecialchars($check);
+      echo "<p>$check_CL</p><br/>";
+   }
+   ?>
    
    
 </body>
