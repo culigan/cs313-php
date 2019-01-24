@@ -14,8 +14,8 @@
 <body>
    <header>Team AssignWeek3</header>
    
-   <p>name: <? =$name?></p>
-   <p>email: <? =$email?></p>
+   <p>name: <? =$name ?></p>
+   <p>email: <? =$email ?></p>
    <p>major: <? =$radio ?></p>
    
    
