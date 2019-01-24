@@ -11,6 +11,7 @@
    
    <?php
       console.log("test1");
+      var_dump($_POST['name']);
       echo $_POST['name'];
       echo "mailto: <a href=$_POST['email']>$_POST['email']</a><br />";
       echo $_POST['radio'];
