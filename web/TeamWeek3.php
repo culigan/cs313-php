@@ -2,7 +2,7 @@
    $name = $_POST["name"];
    $email = $_POST["email"];
    $radio = $_POST["radio"];
-   $check = $_POST["chckbx"];
+   $checks = $_POST["chckbx"];
    $comment = $_POST["comment"];
 
    ?>
@@ -18,7 +18,7 @@
    <p>email: <? =$email?></p>
    <p>major: <? =$radio ?></p>
    <?
-   foreach ($check as $check)
+   foreach ($checks as $check)
    {
       $check_CL = htmlspecialchars($check);
       echo "<p>$check_CL</p><br/>";
