@@ -28,6 +28,7 @@
             }
          else{
             //$_SESSION['pants'] = $_SESSION['pants'] + 1;
+            $_SESSION['different'] = "In Cart2";
             echo (string)$_SESSION['different'];
             }
       ?>
