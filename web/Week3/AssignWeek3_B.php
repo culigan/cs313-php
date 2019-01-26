@@ -30,7 +30,7 @@
          
             echo (string)$_SESSION['different'];
                   ?>
-         <form id="form1" method="post">
+         <form id="form1" method="post" action="http://calm-shelf-84172.herokuapp.com/Week3/AssignWeek3_B.php">
          <input id="hidden" name="hiddenname" type="text" value"testdata">
          <input id="sendP" name='pants' value='testvalue' type="submit" onclick="buttonClick()"/>
          </form>
