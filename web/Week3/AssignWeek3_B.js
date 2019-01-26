@@ -10,10 +10,14 @@ function buttonClick() {
          $.ajax({
             url: 'http://calm-shelf-84172.herokuapp.com/Week3/AssignWeek3_B.php',
             type: "post",
-            data: "cart",
+            data: '{"pants":"test"}',
             success: function () {
                alert("Item has been added");
-            }
+            },
+            error: function(){
+               alert("ERROR!");
+
+         }
          });
       });
    });
