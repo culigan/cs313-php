@@ -4,7 +4,7 @@
 <head>
    <meta charset="utf-8" />
    <title>Shopping Page</title>
-   <script src="PurchaseJS.js"></script>
+   <script src="AssignWeek3_B.js"></script>
 </head>
 <body>
    <header>Shopping Cart</header>

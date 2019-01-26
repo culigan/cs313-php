@@ -3,11 +3,11 @@
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 <head>
    <meta charset="utf-8" />
-   <title>Browsing Page</title>
-   <script src="PurchaseJS.js"></script>
+   <title>Shopping Page</title>
+   <script src="AssignWeek3_B.js"></script>
 </head>
 <body>
-   <header>Clothing Sale</header>
+   <header>Shopping Cart</header>
    <div id="itemdiv">
       <?php
          foreach($_SESSION as $name => $value)
@@ -17,5 +17,7 @@
          }
       ?>
    </div>
+   <p><a href="http://calm-shelf-84172.herokuapp.com/Week3/AssignWeek3_B.php"</a>Continue Shopping</p>
+   <input type="button" value="Proceed to Checkout">
 </body>
 </html>

@@ -15,8 +15,8 @@
    <meta charset="utf-8" />
    <title>Browsing Page</title>
   <link href="AssignWeek3.css" rel="stylesheet">
-   <script type = "text/javascript" src = "https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js">
-   <script type = "text/javascript" src = "AssignWeek3_B.js">
+   <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+   <script type="text/javascript" src="AssignWeek3_B.js"></script>
 </head>
 <body>
    <header>Clothing Sale</header>
