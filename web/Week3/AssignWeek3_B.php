@@ -9,6 +9,7 @@
    <meta charset="utf-8" />
    <title>Browsing Page</title>
   <link href="AssignWeek3.css" rel="stylesheet">
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
    <script src="AssignWeek3_B.js"></script>
 </head>
 <body>
