@@ -5,27 +5,16 @@ function viewCart() {
 }
 
 function buttonClick() {
-   /*$.ajax({
+   $.ajax({
       url: 'http://calm-shelf-84172.herokuapp.com/Week3/AssignWeek3_B.php',
       type: "POST",
-      data: { different: "test" },
+      data: { pants: "test" },
       success: function (data) {
-         alert(data.different);
+         alert(data.pants);
       },
       error: function () {
          alert("ERROR!");
 
-      }
-   */
-   document.getElementById('hidden').innerHTML = "ordered";
-      
-   $.ajax({type:"post",
-      data: $("#hidden").val(),
-      success: function (data) {
-         alert(data);
-      },
-      error: function (data) {
-         alert(data);
       }
    });
 }
