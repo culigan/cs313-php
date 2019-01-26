@@ -15,14 +15,14 @@
    <meta charset="utf-8" />
    <title>Browsing Page</title>
   <link href="AssignWeek3.css" rel="stylesheet">
-   <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+   <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
    <script type="text/javascript" src="AssignWeek3_B.js"></script>
 </head>
 <body>
    <header>Clothing Sale</header>
    <div id="itemdiv">
       <h1>Pants</h1>
-      <input id="pants" type="button" name="pantsbutton" value="Add to Cart" />
+      <input id="pants" type="button" name="pantsbutton" value="Add to Cart" onclick="buttonClick()"/>
    </div>
    <div id="itemdiv">
       <h1>Long sleeve t-shirts</h1>
