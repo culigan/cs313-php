@@ -8,7 +8,7 @@
             $_SESSION['different'] = "Not Cart";
             echo $_SESSION['different'];
             }
-   echo $_POST['different'];
+   echo $_POST;
    
 ?>
 
@@ -30,9 +30,9 @@
          
             echo (string)$_SESSION['different'];
                   ?>
-         <form id="form1">
+         <form id="form1" method="post" >
          <input id="hidden" name="hiddenname" type="text" value"testdata">
-         <input id="sendP" name='pants' value='testvalue' type="button" onclick="buttonClick()"/>
+         <input id="sendP" name='pants' value='testvalue' type="button" onclick="buttonClick('pants')"/>
          </form>
    </div>
    <div id="itemdiv">
