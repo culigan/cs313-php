@@ -19,7 +19,7 @@
       <?php
          $_SESSION["cart"] = "pants";
       ?>
-      <input id="pants" type="button" name="pantsbutton" value="Add to Cart" onclick="addToCart(this)"/>
+      <input id="pants" type="button" name="pantsbutton" value="Add to Cart" />
    </div>
    <div id="itemdiv">
       <h1>Long sleeve t-shirts</h1>
