@@ -16,7 +16,7 @@
       <h1>Pants</h1>
       <p id="amountpants"></p>
       <?php
-         $_SESSION["pants"] = 0;
+         $_SESSION["pants"] = "0";
       ?>
       <input id="pants" type="button" name="pantsbutton" value="Add to Cart" onclick="addToCart(this)"/>
    </div>
