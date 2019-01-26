@@ -24,6 +24,9 @@ function buttonClick() {
       data: $("#hidden").val(),
       success: function (data) {
          alert(data);
+      },
+      error: function (data) {
+         alert(data);
       }
    });
 }
