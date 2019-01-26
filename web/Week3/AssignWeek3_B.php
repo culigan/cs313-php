@@ -26,7 +26,7 @@
          else
             $_SESSION['pants'] = $_SESSION['pants'] + 1;
       ?>
-      <form id="theform1" name="formname" action="<?php echo $_SESSION['pants']; ?>" method="post">
+      <form id="theform1" name="formname" action="AssignWeek3_B.php" method="post">
          <input id="pants" type="submit"/>
       </form>
    </div>
