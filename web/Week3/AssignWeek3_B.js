@@ -1,11 +1,14 @@
 // JavaScript source code
-function addToCart(itemid){
+function addToCart(){
    
-   /*var numberVal = parseInt(sessionStorage.getItem(itemid.id));
-   numberVal++;
-   sessionStorage.setItem(itemid.id, numberVal.toString());*/
-   var phpString = "<?php echo $_SESSION['pants'] ?><br/>";
-   document.getElementById("amountpants").innerHTML = phpString;
+   $.ajax({
+      url: 'http://calm-shelf-84172.herokuapp.com/Week3/AssignWeek3_B.php',
+      method: "post",
+      data: cart,
+      success: function () {
+         alert("Item has been added");
+      }
+   });
 }
 
 function viewCart() {

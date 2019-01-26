@@ -16,43 +16,42 @@
    <div id="itemdiv">
       <h1>Pants</h1>
       <?php
-         $_SESSION["pants"] = 0;
-         echo $_SESSION["pants"];
+         $_SESSION["cart"] = "pants";
       ?>
       <input id="pants" type="button" name="pantsbutton" value="Add to Cart" onclick="addToCart(this)"/>
    </div>
    <div id="itemdiv">
       <h1>Long sleeve t-shirts</h1>
       <?php
-         $_SESSION["lsshirt"] = 0;
+         $_SESSION["cart"] = "long";
       ?>
       <input id="lsshirt" type="button" name="lssbutton" value="Add to Cart"  onclick="addToCart(this)"/>
    </div>
    <div id="itemdiv">
       <h1>Short sleeve t-shirts</h1>
       <?php
-         $_SESSION["ssshirt"] = 0;
+         $_SESSION["cart"] = "short";
       ?>
       <input id="ssshirt" type="button" name="sssbutton" value="Add to Cart"  onclick="addToCart(this)"/>
    </div>
    <div id="itemdiv">
       <h1>Socks</h1>
       <?php
-         $_SESSION["socks"] = 0;
+         $_SESSION["cart"] = "sock";
       ?>
       <input id="socks" type="button" name="sockbutton" value="Add to Cart"  onclick="addToCart(this)"/>
    </div>
    <div id="itemdiv">
       <h1>Sweater</h1>
       <?php
-         $_SESSION["sweater"] = 0;
+         $_SESSION["cart"] = "sweater";
       ?>
       <input id="sweater" type="button" name="sweatbutton" value="Add to Cart"  onclick="addToCart(this)"/>
    </div>
    <div id="itemdiv">
       <h1>Sweatshirt</h1>
       <?php
-         $_SESSION["swshirt"] = 0;
+         $_SESSION["cart"] = "sweatshirt";
       ?>
       <input id="swshirt" type="button" name="sweatsbutton" value="Add to Cart"  onclick="addToCart(this)"/>
    </div>
