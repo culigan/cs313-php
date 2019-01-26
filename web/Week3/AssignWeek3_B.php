@@ -2,7 +2,7 @@
    session_start();
    $temp = "before";
    //$temp = $_POST['pants'];
-   $_SESSION['pants'] = $_POST['pants'];
+   $_SESSION['different'] = $_POST['different'];
    
 ?>
 
@@ -18,21 +18,20 @@
 </head>
 <body>
    <header>Clothing Sale</header>
+      <form id="theform1" name="formname" action="AssignWeek3_B.php" method="post">
    <div id="itemdiv">
       <h1>Pants</h1>
       <?php
-         if(!isset($_SESSION['pants'])){
-            $_SESSION['pants'] = 0;
-            echo $_SESSION['pants'];
+         if(!isset($_SESSION['different'])){
+            $_SESSION['different'] = "In Cart";
+            echo $_SESSION['different'];
             }
          else{
             //$_SESSION['pants'] = $_SESSION['pants'] + 1;
-            echo (string)$_SESSION['pants'];
+            echo (string)$_SESSION['different'];
             }
       ?>
-      <form id="theform1" name="formname" action="AssignWeek3_B.php" method="post">
          <input name='pants' value='testvalue' type="submit"/>
-      </form>
    </div>
    <div id="itemdiv">
       <h1>Long sleeve t-shirts</h1>
@@ -54,5 +53,6 @@
       <h1>Sweatshirt</h1>
       <input id="swshirt" type="button" name="sweatsbutton" value="Add to Cart" />
    </div>
+   </form>
 </body>
 </html>
