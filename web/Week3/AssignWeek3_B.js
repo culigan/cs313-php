@@ -10,7 +10,7 @@ function buttonClick() {
          $.ajax({
             url: 'http://calm-shelf-84172.herokuapp.com/Week3/AssignWeek3_B.php',
             type: "post",
-            data: '{"pants":"test"}',
+            data: {pants:'test'},
             success: function (data) {
                console.log(data);
             },
