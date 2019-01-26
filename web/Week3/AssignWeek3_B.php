@@ -8,6 +8,7 @@
 <head>
    <meta charset="utf-8" />
    <title>Browsing Page</title>
+  <link href="AssignWeek3_B.css" rel="stylesheet">
    <script src="AssignWeek3_B.js"></script>
 </head>
 <body>
@@ -18,12 +19,10 @@
          $_SESSION["pants"] = "0";
          echo $_SESSION["pants"];
       ?>
-      <p id="amountpants"></p>
       <input id="pants" type="button" name="pantsbutton" value="Add to Cart" onclick="addToCart(this)"/>
    </div>
    <div id="itemdiv">
       <h1>Long sleeve t-shirts</h1>
-      <p id="amountls"></p>
       <?php
          $_SESSION["lsshirt"] = 0;
       ?>
