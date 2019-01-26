@@ -1,5 +1,7 @@
 ﻿<?php
-   session_start();
+   if (session_status() == PHP_SESSION_NONE) {
+    session_start();
+}
    $temp = "before";
    //$temp = $_POST['pants'];
    if(!isset($_SESSION['different'])){
