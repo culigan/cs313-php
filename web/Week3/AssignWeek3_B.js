@@ -5,7 +5,7 @@ function viewCart() {
 }
 
 $(document).ready(function () {
-   $("button").click(function () {
+   $("#pantsbutton").click(function () {
       $.ajax({
          url: 'http://calm-shelf-84172.herokuapp.com/Week3/AssignWeek3_B.php',
          method: "post",
