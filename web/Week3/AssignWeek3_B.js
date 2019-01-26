@@ -5,7 +5,7 @@ function addToCart(itemid){
    numberVal++;
    sessionStorage.setItem(itemid.id, numberVal.toString());*/
    var phpString = "<?php echo $_SESSION['pants'] ?><br/>";
-   document.getElementById("amountpants").value = phpString;
+   document.getElementById("amountpants").innerHTML = phpString;
 }
 
 function viewCart() {
