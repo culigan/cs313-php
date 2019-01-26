@@ -23,8 +23,10 @@
       <?php
          if(!isset($_SESSION['pants']))
             $_SESSION['pants'] = 0;
-         else
+         else{
             $_SESSION['pants'] = $_SESSION['pants'] + 1;
+            echo $_SESSION['pants'];
+            }
       ?>
       <form id="theform1" name="formname" action="AssignWeek3_B.php" method="post">
          <input id="pants" type="submit"/>
