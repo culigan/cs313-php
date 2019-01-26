@@ -21,10 +21,13 @@
    <div id="itemdiv">
       <h1>Pants</h1>
       <?php
-         echo $_SESSION['pants'];
+         if(!isset($_SESSION['pants']))
+            $_SESSION['pants'] = 0;
+         else
+            $_SESSION['pants'] = $_SESSION['pants'] + 1;
       ?>
-      <form id="theform1" name="formname" action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
-         <input id="pants" type="submit" name="pantsbutton" value="Add to Cart" onclick="buttonClick()"/>
+      <form id="theform1" name="formname" action="<?php echo $_SESSION['pants']; ?>" method="post">
+         <input id="pants" type="submit"/>
       </form>
    </div>
    <div id="itemdiv">
