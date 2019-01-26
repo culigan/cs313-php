@@ -1,5 +1,7 @@
 ﻿<?php
    session_start();
+   $temp = "before";
+   $temp = $_POST['pants'];
    $_SESSION['pants'] = $_POST['pants'];
    $_SESSION['lsshirt'] = $_POST['lsshirt'];
    $_SESSION['ssshirt'] = $_POST['ssshirt'];
@@ -23,7 +25,7 @@
    <div id="itemdiv">
       <h1>Pants</h1>
       <?php
-         echo $_SESSION['pants'];
+         echo $temp;
       ?>
       <input id="pants" type="button" name="pantsbutton" value="Add to Cart" onclick="buttonClick()"/>
    </div>
