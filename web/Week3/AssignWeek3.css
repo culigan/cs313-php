@@ -5,6 +5,13 @@
    background-color:dodgerblue;
 }
 
+header{
+   color:white;
+   background-color:black;
+   font-size:40px;
+   padding:10px;
+}
+
 #itemdiv {
    background-color: white;
    border-bottom: 5px solid black;
