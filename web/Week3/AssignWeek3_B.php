@@ -21,9 +21,11 @@
    <div id="itemdiv">
       <h1>Pants</h1>
       <?php
-         echo $temp;
+         echo $_SESSION['pants'];
       ?>
-      <input id="pants" type="button" name="pantsbutton" value="Add to Cart" onclick="buttonClick()"/>
+      <form id="theform1" name="formname" action="AssignWeek3_B.php" method="post">
+         <input id="pants" type="button" name="pantsbutton" value="Add to Cart" onclick="buttonClick()"/>
+      </form>
    </div>
    <div id="itemdiv">
       <h1>Long sleeve t-shirts</h1>
