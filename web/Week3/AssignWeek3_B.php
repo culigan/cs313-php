@@ -21,8 +21,10 @@
    <div id="itemdiv">
       <h1>Pants</h1>
       <?php
-         if(!isset($_SESSION['pants']))
+         if(!isset($_SESSION['pants'])){
             $_SESSION['pants'] = 0;
+            echo $_SESSION['pants'];
+            }
          else{
             $_SESSION['pants'] = $_SESSION['pants'] + 1;
             echo (string)$_SESSION['pants'];
