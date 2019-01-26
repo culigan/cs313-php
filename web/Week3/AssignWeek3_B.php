@@ -1,7 +1,7 @@
 ﻿<?php
    session_start();
    $temp = "before";
-   $temp = $_POST['pants'];
+   //$temp = $_POST['pants'];
    $_SESSION['pants'] = $_POST['pants'];
    $_SESSION['lsshirt'] = $_POST['lsshirt'];
    $_SESSION['ssshirt'] = $_POST['ssshirt'];
