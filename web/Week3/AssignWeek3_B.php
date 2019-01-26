@@ -8,7 +8,7 @@
 <head>
    <meta charset="utf-8" />
    <title>Browsing Page</title>
-  <link href="AssignWeek3_B.css" rel="stylesheet">
+  <link href="AssignWeek3.css" rel="stylesheet">
    <script src="AssignWeek3_B.js"></script>
 </head>
 <body>
