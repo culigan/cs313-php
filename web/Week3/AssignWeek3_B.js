@@ -5,20 +5,17 @@ function viewCart() {
 }
 
 function buttonClick() {
-   $(document).ready(function () {
-      $("#pants").click(function () {
-         $.ajax({
-            url: 'http://calm-shelf-84172.herokuapp.com/Week3/AssignWeek3_B.php',
-            type: "POST",
-            data: {'pants':'test'},
-            success: function (data) {
-               alert(data);
-            },
-            error: function(){
-               alert("ERROR!");
+   $.ajax({
+      url: 'http://calm-shelf-84172.herokuapp.com/Week3/AssignWeek3_B.php',
+      type: "POST",
+      data: { pants: 'test' },
+      success: function (data) {
+         alert(data.pants);
+      },
+      error: function () {
+         alert("ERROR!");
 
-         }
-         });
-      });
+      }
    });
+      
 }
