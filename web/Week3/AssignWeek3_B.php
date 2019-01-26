@@ -3,11 +3,7 @@
    $temp = "before";
    //$temp = $_POST['pants'];
    $_SESSION['pants'] = $_POST['pants'];
-   $_SESSION['lsshirt'] = $_POST['lsshirt'];
-   $_SESSION['ssshirt'] = $_POST['ssshirt'];
-   $_SESSION['socks'] = $_POST['socks'];
-   $_SESSION['sweater'] = $_POST['sweater'];
-   $_SESSION['swshirt'] = $_POST['swshirt'];
+   
 ?>
 
 <!DOCTYPE html>
