@@ -31,7 +31,7 @@
             }
       ?>
       <form id="theform1" name="formname" action="AssignWeek3_B.php" method="post">
-         <input id="pants" type="submit"/>
+         <input name='pants' value='testvalue' type="submit"/>
       </form>
    </div>
    <div id="itemdiv">
