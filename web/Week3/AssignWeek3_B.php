@@ -25,7 +25,7 @@
             $_SESSION['pants'] = 0;
          else{
             $_SESSION['pants'] = $_SESSION['pants'] + 1;
-            echo $_SESSION['pants'];
+            echo (string)$_SESSION['pants'];
             }
       ?>
       <form id="theform1" name="formname" action="AssignWeek3_B.php" method="post">
