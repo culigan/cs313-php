@@ -23,8 +23,8 @@
       <?php
          echo $_SESSION['pants'];
       ?>
-      <form id="theform1" name="formname" action="AssignWeek3_B.php" method="post">
-         <input id="pants" type="button" name="pantsbutton" value="Add to Cart" onclick="buttonClick()"/>
+      <form id="theform1" name="formname" action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
+         <input id="pants" type="submit" name="pantsbutton" value="Add to Cart" onclick="buttonClick()"/>
       </form>
    </div>
    <div id="itemdiv">
