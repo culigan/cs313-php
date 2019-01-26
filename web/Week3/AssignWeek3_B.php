@@ -11,19 +11,15 @@
   <link href="AssignWeek3.css" rel="stylesheet">
    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
    <script>
-   $(document).ready(function () {
-   $("#pantsbutton").click(function () {
-      $.ajax({
-         url: 'AssignWeek3_B.php',
-         type: "POST",
-         data: cart,
-         success: function () {
-            alert("Item has been added");
-         }
+      $(document).ready(function(){
+        $("button").click(function(){
+          $.get("AssignWeek3_B.php", function(data, status){
+            alert("Data: " + data + "\nStatus: " + status);
+          });
+        });
       });
-   });
-});
-</script>
+   </script>
+
 </head>
 <body>
    <header>Clothing Sale</header>
