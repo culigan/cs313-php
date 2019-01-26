@@ -31,7 +31,7 @@
             echo (string)$_SESSION['different'];
                   ?>
          <form method="post" action="<?php $_SERVER['PHP_SELF'] ?>">
-         <input id="hidden" type="text">
+         <input id="hidden" name="hiddenname" type="text" value"testdata">
          <input id="sendP" name='pants' value='testvalue' type="submit" />
          </form>
    </div>
