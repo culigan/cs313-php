@@ -8,9 +8,9 @@ function buttonClick() {
    $.ajax({
       url: 'http://calm-shelf-84172.herokuapp.com/Week3/AssignWeek3_B.php',
       type: "POST",
-      data: { pants: "test" },
+      data: { different: "test" },
       success: function (data) {
-         alert(data.pants);
+         alert(data.different);
       },
       error: function () {
          alert("ERROR!");

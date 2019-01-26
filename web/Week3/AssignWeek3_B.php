@@ -6,8 +6,7 @@
             $_SESSION['different'] = "Not Cart";
             echo $_SESSION['different'];
             }
-   else
-      $_SESSION['different'] = $_POST['different'];
+   
    
 ?>
 
@@ -27,17 +26,10 @@
    <div id="itemdiv">
       <h1>Pants</h1>
       <?php
-         if(!isset($_SESSION['different'])){
-            $_SESSION['different'] = "In Cart";
-            echo $_SESSION['different'];
-            }
-         else{
-            //$_SESSION['pants'] = $_SESSION['pants'] + 1;
-            $_SESSION['different'] = "In Cart2";
+         
             echo (string)$_SESSION['different'];
-            }
-      ?>
-         <input name='pants' value='testvalue' type="submit"/>
+                  ?>
+         <input name='pants' value='testvalue' type="submit" onclick="buttonClick()/>
    </div>
    <div id="itemdiv">
       <h1>Long sleeve t-shirts</h1>
