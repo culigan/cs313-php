@@ -32,7 +32,7 @@
                   ?>
          <form method="post" action="<?php $_SERVER['PHP_SELF'] ?>">
          <input id="hidden" name="hiddenname" type="text" value"testdata">
-         <input id="sendP" name='pants' value='testvalue' type="submit" />
+         <input id="sendP" name='pants' value='testvalue' type="submit" onclick="buttonClick()/>
          </form>
    </div>
    <div id="itemdiv">

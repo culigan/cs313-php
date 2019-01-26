@@ -20,6 +20,6 @@ function buttonClick() {
       
    $.post('http://calm-shelf-84172.herokuapp.com/Week3/AssignWeek3_B.php',
        function (data) {
-          alert(data)
+          alert(data.hiddenname)
        });
 }
