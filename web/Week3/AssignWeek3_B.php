@@ -6,7 +6,7 @@
             $_SESSION['different'] = "Not Cart";
             echo $_SESSION['different'];
             }
-   
+   echo $_POST['different'];
    
 ?>
 
@@ -29,7 +29,7 @@
          
             echo (string)$_SESSION['different'];
                   ?>
-         <input name='pants' value='testvalue' type="submit" onclick="buttonClick()/>
+         <input name='pants' value='testvalue' type="submit" onclick="buttonClick()"/>
    </div>
    <div id="itemdiv">
       <h1>Long sleeve t-shirts</h1>
