@@ -26,7 +26,7 @@
             echo $_SESSION['pants'];
             }
          else{
-            $_SESSION['pants'] = $_SESSION['pants'] + 1;
+            //$_SESSION['pants'] = $_SESSION['pants'] + 1;
             echo (string)$_SESSION['pants'];
             }
       ?>
