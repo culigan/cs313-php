@@ -21,8 +21,8 @@ function buttonClick() {
       
    $.ajax({url:'http://calm-shelf-84172.herokuapp.com/Week3/AssignWeek3_B.php',
       type:"post",
-      data: $('hiddenname').val(),
-      function (data) {
+      data: $("#hidden").val(),
+      success: function (data) {
          alert(data);
       }
    });
