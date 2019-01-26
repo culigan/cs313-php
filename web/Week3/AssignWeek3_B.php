@@ -22,7 +22,6 @@
 </head>
 <body>
    <header>Clothing Sale</header>
-      <form id="theform1" name="formname" action="AssignWeek3_B.php" method="post">
    <div id="itemdiv">
       <h1>Pants</h1>
       <?php
@@ -51,6 +50,5 @@
       <h1>Sweatshirt</h1>
       <input id="swshirt" type="button" name="sweatsbutton" value="Add to Cart" />
    </div>
-   </form>
 </body>
 </html>
