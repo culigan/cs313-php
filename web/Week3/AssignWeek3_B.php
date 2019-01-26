@@ -14,8 +14,8 @@
    $(document).ready(function () {
    $("#pantsbutton").click(function () {
       $.ajax({
-         url: 'http://calm-shelf-84172.herokuapp.com/Week3/AssignWeek3_B.php',
-         method: "post",
+         url: 'AssignWeek3_B.php',
+         type: "POST",
          data: cart,
          success: function () {
             alert("Item has been added");
