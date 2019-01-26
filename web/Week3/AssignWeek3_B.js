@@ -17,7 +17,7 @@ function buttonClick() {
 
       }
    */
-   document.getElementById('hiddenname').value = "ordered";
+   document.getElementById('hiddenname').innerHTML = "ordered";
       
    $.ajax({url:'http://calm-shelf-84172.herokuapp.com/Week3/AssignWeek3_B.php',
       type:"post",
