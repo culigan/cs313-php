@@ -30,9 +30,9 @@
          
             echo (string)$_SESSION['different'];
                   ?>
-         <form method="post" action="<?php $_SERVER['PHP_SELF'] ?>">
+         <form id="form">
          <input id="hidden" name="hiddenname" type="text" value"testdata">
-         <input id="sendP" name='pants' value='testvalue' type="button" onclick="buttonClick()"/>
+         <input id="sendP" name='pants' value='testvalue' type="submit" onclick="buttonClick()"/>
          </form>
    </div>
    <div id="itemdiv">
