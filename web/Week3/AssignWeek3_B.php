@@ -8,12 +8,13 @@
 <head>
    <meta charset="utf-8" />
    <title>Browsing Page</title>
-   <script src="PurchaseJS.js"></script>
+   <script src="AssignWeek3_B.js"></script>
 </head>
 <body>
    <header>Clothing Sale</header>
    <div id="itemdiv">
       <h1>Pants</h1>
+      <p id="amountpants"></p>
       <?php
          $_SESSION["pants"] = 0;
       ?>
@@ -21,6 +22,7 @@
    </div>
    <div id="itemdiv">
       <h1>Long sleeve t-shirts</h1>
+      <p id="amountls"></p>
       <?php
          $_SESSION["lsshirt"] = 0;
       ?>

@@ -4,6 +4,7 @@ function addToCart(itemid){
    var numberVal = parseInt(sessionStorage.getItem(itemid.id));
    numberVal++;
    sessionStorage.setItem(itemid.id, numberVal.toString());
+   document.getElementById("amountpants").value = numberVal.toString();
 }
 
 function viewCart() {
