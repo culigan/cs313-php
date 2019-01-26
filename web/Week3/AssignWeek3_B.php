@@ -30,7 +30,7 @@
          
             echo (string)$_SESSION['different'];
                   ?>
-         <form id="form">
+         <form id="form1">
          <input id="hidden" name="hiddenname" type="text" value"testdata">
          <input id="sendP" name='pants' value='testvalue' type="submit" onclick="buttonClick()"/>
          </form>
