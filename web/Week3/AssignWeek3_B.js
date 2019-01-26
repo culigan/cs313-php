@@ -23,7 +23,7 @@ function buttonClick() {
       type:"post",
       data: $('hiddenname').val(),
       function (data) {
-         alert(data)
+         alert(data);
       }
    });
 }
