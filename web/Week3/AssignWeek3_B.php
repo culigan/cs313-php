@@ -2,7 +2,12 @@
    session_start();
    $temp = "before";
    //$temp = $_POST['pants'];
-   $_SESSION['different'] = $_POST['different'];
+   if(!isset($_SESSION['different'])){
+            $_SESSION['different'] = "Not Cart";
+            echo $_SESSION['different'];
+            }
+   else
+      $_SESSION['different'] = $_POST['different'];
    
 ?>
 
@@ -18,7 +23,7 @@
 </head>
 <body>
    <header>Clothing Sale</header>
-      <form id="theform1" name="formname" action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
+      <form id="theform1" name="formname" action="AssignWeek3_B.php" method="post">
    <div id="itemdiv">
       <h1>Pants</h1>
       <?php
