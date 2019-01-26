@@ -18,7 +18,7 @@
 </head>
 <body>
    <header>Clothing Sale</header>
-      <form id="theform1" name="formname" action="AssignWeek3_B.php" method="post">
+      <form id="theform1" name="formname" action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
    <div id="itemdiv">
       <h1>Pants</h1>
       <?php
