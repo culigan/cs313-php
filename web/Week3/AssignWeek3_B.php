@@ -23,7 +23,7 @@
    <div id="itemdiv">
       <h1>Pants</h1>
       <?php
-      echo $_SESSION['pants'];
+         echo $_SESSION['pants'];
       ?>
       <input id="pants" type="button" name="pantsbutton" value="Add to Cart" onclick="buttonClick()"/>
    </div>
