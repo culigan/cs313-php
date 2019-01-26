@@ -26,35 +26,35 @@
       <?php
          $_SESSION["cart"] = "long";
       ?>
-      <input id="lsshirt" type="button" name="lssbutton" value="Add to Cart"  onclick="addToCart(this)"/>
+      <input id="lsshirt" type="button" name="lssbutton" value="Add to Cart"/>
    </div>
    <div id="itemdiv">
       <h1>Short sleeve t-shirts</h1>
       <?php
          $_SESSION["cart"] = "short";
       ?>
-      <input id="ssshirt" type="button" name="sssbutton" value="Add to Cart"  onclick="addToCart(this)"/>
+      <input id="ssshirt" type="button" name="sssbutton" value="Add to Cart" />
    </div>
    <div id="itemdiv">
       <h1>Socks</h1>
       <?php
          $_SESSION["cart"] = "sock";
       ?>
-      <input id="socks" type="button" name="sockbutton" value="Add to Cart"  onclick="addToCart(this)"/>
+      <input id="socks" type="button" name="sockbutton" value="Add to Cart"/>
    </div>
    <div id="itemdiv">
       <h1>Sweater</h1>
       <?php
          $_SESSION["cart"] = "sweater";
       ?>
-      <input id="sweater" type="button" name="sweatbutton" value="Add to Cart"  onclick="addToCart(this)"/>
+      <input id="sweater" type="button" name="sweatbutton" value="Add to Cart" />
    </div>
    <div id="itemdiv">
       <h1>Sweatshirt</h1>
       <?php
          $_SESSION["cart"] = "sweatshirt";
       ?>
-      <input id="swshirt" type="button" name="sweatsbutton" value="Add to Cart"  onclick="addToCart(this)"/>
+      <input id="swshirt" type="button" name="sweatsbutton" value="Add to Cart" />
    </div>
 </body>
 </html>
