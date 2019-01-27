@@ -22,10 +22,11 @@ header{
 }
 
 #cartitem {
-   display:block;
    background-color: white;
    border-bottom: 2px solid black;
    border-top: 2px solid black;
    padding: 5px;
    width: 50%;
+   margin-right:auto;
+   margin-left:auto;
 }

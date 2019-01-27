@@ -3,17 +3,17 @@
 
    if(isset($_POST['item'])){
       if($_POST['item'] == "pants")
-         $_SESSION['pants'] = $_POST['item'];      
+         $_SESSION['pants'] = "Pants";      
       else if($_POST['item'] == "lssbutton")
-         $_SESSION['pants'] = $_POST['item'];
+         $_SESSION['lsshirt'] = "Long Sleeve T_Shirt";
       else if($_POST['item'] == "sssbutton")
-         $_SESSION['sssbutton'] = $_POST['item'];
+         $_SESSION['sssbutton'] ="Short Sleeve T-Shirt";
       else if($_POST['item'] == "sockbutton")
-         $_SESSION['sockbutton'] = $_POST['item'];
+         $_SESSION['sockbutton'] = "Socks";
       else if($_POST['item'] == "sweatbutton")
-         $_SESSION['sweatbutton'] = $_POST['item'];
+         $_SESSION['sweatbutton'] = "Sweater;
       else if($_POST['item'] == "sweatsbutton")
-         $_SESSION['sweatsbutton'] = $_POST['item'];
+         $_SESSION['sweatsbutton'] = "Sweatshirt";
    }
    
 ?>
