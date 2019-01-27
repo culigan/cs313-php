@@ -21,7 +21,7 @@
    <div id="itemdiv">
       <?php
          echo "$street <br/>";
-         echo "$city "  . "$state " . "$zip <br/>";
+         echo "$city, "  . "$state " . "$zip <br/>";
       ?>
    </div
    <div id="itemdiv">

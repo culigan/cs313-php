@@ -17,7 +17,7 @@
          <input name="state" type="text" required>State</br></br>
          <input name="zip" type="text" required>Zip</br></br>
          <p><a href="AssignWeek3_Cart.php">Return to Cart</a></p>
-         <input type="submit" value="submit">
+         <input type="submit" value="Submit">
       </form>
    </div>
 </body>
