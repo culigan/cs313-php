@@ -24,7 +24,7 @@
 <head>
    <meta charset="utf-8" />
    <title>Browsing Page</title>
-  <link href="AssignWeek3.css" rel="stylesheet">
+   <link href="AssignWeek3.css" rel="stylesheet">
    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
    <script type="text/javascript" src="AssignWeek3_B.js"></script>
 </head>

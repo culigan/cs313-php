@@ -10,7 +10,8 @@
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 <head>
    <meta charset="utf-8" />
-   <title>Shopping Page</title>
+   <title>Shopping Cart</title>
+   <link href="AssignWeek3.css" rel="stylesheet">
    <script src="AssignWeek3_B.js"></script>
 </head>
 <body>
