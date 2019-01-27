@@ -1,9 +1,9 @@
-﻿body{
-   margin-left:10%;
-   margin-right:10%;
-   border:5px solid black;
-   background-color:lightblue;
-   align-items:center;
+﻿body {
+   margin-left: 10%;
+   margin-right: 10%;
+   width: 25%;
+   border: 5px solid black;
+   background-color: lightblue;
 }
 
 header{
@@ -18,7 +18,6 @@ header{
    border-bottom: 2px solid black;
    border-top: 2px solid black;
    padding: 5px;
-   width: 50%;
    margin-right: auto;
    margin-left: auto;
 }
@@ -28,7 +27,6 @@ header{
    border-bottom: 2px solid black;
    border-top: 2px solid black;
    padding: 5px;
-   width: 25%;
    margin-right:auto;
    margin-left:auto;
 }

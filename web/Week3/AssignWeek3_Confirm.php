@@ -17,13 +17,14 @@
    <script src="AssignWeek3_B.js"></script>
 </head>
 <body>
-   <header>Shopping Cart</header>
-   <?php
-      echo "$street <br/>";
-      echo "$city <br/>";
-      echo "$state <br/>";
-      echo "$zip <br/>";
+   <header>Confirmation</header>
+   <div id="itemdiv">
+      <?php
+         echo "$street <br/>";
+         echo "$city <br/>";
+         echo $state . " $zip <br/>";
       ?>
+   </div
    <div id="itemdiv">
       <?php
          foreach($_SESSION as $name => $value)
