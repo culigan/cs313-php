@@ -17,6 +17,7 @@
    <header>Shopping Cart</header>
    <div id="itemdiv">
       <?php
+      echo $_SESSION['pants'];
          foreach($_SESSION as $name => $value)
          {
             if((int)$value > 0)
