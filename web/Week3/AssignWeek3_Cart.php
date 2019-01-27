@@ -23,7 +23,7 @@
       }
    ?>
    <div id='cartitem'>
-      <p><a href="http://calm-shelf-84172.herokuapp.com/Week3/AssignWeek3_B.php"</a>Continue Shopping</p>
+      <p><a href="http://calm-shelf-84172.herokuapp.com/Week3/AssignWeek3_Check.php"</a>Continue Shopping</p>
       <input type="button" value="Proceed to Checkout">
    </div>
 </body>
