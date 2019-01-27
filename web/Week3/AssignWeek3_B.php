@@ -25,6 +25,7 @@
       //$_SESSION['pants'] = $_POST['pants'];
       echo $_SESSION['pants'];
             }
+            ?>
    <header>Clothing Sale</header>
    <div id="itemdiv">
       <h1>Pants</h1>
