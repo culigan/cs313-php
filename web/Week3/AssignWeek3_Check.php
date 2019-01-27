@@ -8,8 +8,9 @@
    <script src="AssignWeek3_B.js"></script>
 </head>
 <body>
-   <header>Shopping Cart</header>
+   <header>Checkout</header>
    <form action="AssignWeek3_Confirm.php" method="post">
+      <p></p></br>
       <input name="street" type="text" required>Street Address</br></br>
       <input name="city" type="text" required>City</br></br>
       <input name="state" type="text" required>State</br></br>

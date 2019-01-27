@@ -1,10 +1,10 @@
 ﻿<?php
-
-$street = $_POST['street'];
-$ctiy = $_POST['city'];
-$state = $_POST['state'];
-$zip = $_POST['zip'];
-
+   session_start();
+ 
+   $street = htmlspecialchars($_POST['street']);
+   $ctiy = htmlspecialchars($_POST['city']);
+   $state = htmlspecialchars($_POST['state']);
+   $zip = htmlspecialchars($_POST['zip']);
 ?>
 
 <!DOCTYPE html>
@@ -12,7 +12,7 @@ $zip = $_POST['zip'];
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 <head>
    <meta charset="utf-8" />
-   <title>Shopping Page</title>
+   <title>Confirmation</title>
    <script src="AssignWeek3_B.js"></script>
 </head>
 <body>
@@ -27,8 +27,7 @@ $zip = $_POST['zip'];
       <?php
          foreach($_SESSION as $name => $value)
          {
-            if((int)$value > 0)
-               echo $name . "=" . $value . "<br>";
+            echo "<div id='cartitem' ><p>$value</p></div>";
          }
       ?>
    </div>
