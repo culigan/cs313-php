@@ -20,7 +20,7 @@
       echo $_SESSION['pants'];
          foreach($_SESSION as $name => $value)
          {
-            echo $name . "=" . $value . "<br>";
+            echo <div id="cartitem" ><p>$value . "</p></div>";
          }
       ?>
    </div>
