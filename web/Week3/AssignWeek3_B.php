@@ -3,8 +3,7 @@
 
    if(isset($_POST['item'])){
       if($_POST['item'] == "pants")
-         $_SESSION['pants'] = $_POST['item'];
-      }
+         $_SESSION['pants'] = $_POST['item'];      
       else if($_POST['item'] == "lssbutton")
          $_SESSION['pants'] = $_POST['item'];
       else if($_POST['item'] == "sssbutton")
@@ -15,8 +14,8 @@
          $_SESSION['sweatbutton'] = $_POST['item'];
       else if($_POST['item'] == "sweatsbutton")
          $_SESSION['sweatsbutton'] = $_POST['item'];
-
    }
+   
 ?>
 
 <!DOCTYPE html>
