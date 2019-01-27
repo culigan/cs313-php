@@ -2,7 +2,7 @@
    session_start();
  
    $street = htmlspecialchars($_POST['street']);
-   $ctiy = htmlspecialchars($_POST['city']);
+   $city = htmlspecialchars($_POST['city']);
    $state = htmlspecialchars($_POST['state']);
    $zip = htmlspecialchars($_POST['zip']);
 ?>
