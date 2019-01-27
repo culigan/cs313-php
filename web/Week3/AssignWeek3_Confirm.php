@@ -13,6 +13,7 @@
 <head>
    <meta charset="utf-8" />
    <title>Confirmation</title>
+   <link href="AssignWeek3.css" rel="stylesheet">
    <script src="AssignWeek3_B.js"></script>
 </head>
 <body>
@@ -31,8 +32,6 @@
          }
       ?>
    </div>
-   <form action="AssignWeek3_Check.php" method="post">
-      <input type="submit" value="Proceed to Checkout">
-   </form>
+   
 </body>
 </html>
