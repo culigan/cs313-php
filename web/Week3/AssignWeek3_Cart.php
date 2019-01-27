@@ -20,8 +20,7 @@
       echo $_SESSION['pants'];
          foreach($_SESSION as $name => $value)
          {
-            if((int)$value > 0)
-               echo $name . "=" . $value . "<br>";
+            echo $name . "=" . $value . "<br>";
          }
       ?>
    </div>
