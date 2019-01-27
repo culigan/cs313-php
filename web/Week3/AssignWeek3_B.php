@@ -2,13 +2,9 @@
    if (session_status() == PHP_SESSION_NONE) {
     session_start();
 }
-   $temp = "before";
-   //$temp = $_POST['pants'];
-   if(!isset($_SESSION['different'])){
-            $_SESSION['different'] = "Not Cart";
-            echo $_SESSION['different'];
-            }
-   echo $_POST['pants'];
+   if(!isset($_SESSION['pants']))
+      $_SESSION['pants'] = $_POST['pants'];
+            
    
 ?>
 
@@ -26,11 +22,7 @@
    <header>Clothing Sale</header>
    <div id="itemdiv">
       <h1>Pants</h1>
-      <?php
-         
-            echo (string)$_SESSION['different'];
-                  ?>
-         <form id="form1" method="post" >
+               <form id="form1" method="post" >
          <input id="hidden" name="hiddenname" type="text" value"testdata">
          <input id="sendP" name='pants' value='testvalue' type="button" onclick="buttonClick('pants')"/>
          </form>
@@ -54,6 +46,9 @@
    <div id="itemdiv">
       <h1>Sweatshirt</h1>
       <input id="swshirt" type="button" name="sweatsbutton" value="Add to Cart" />
+   </div>
+   <div id="itemdiv">
+      <a href="AssignWeek3_Cart.php"><input id="gocart" type="button" name="gocart" value="View Cart" /></a>
    </div>
 </body>
 </html>
