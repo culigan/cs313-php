@@ -1,7 +1,7 @@
 ﻿<?php
-   if (session_status() == PHP_SESSION_NONE) {
+   //if (session_status() == PHP_SESSION_NONE) {
     session_start();
-}
+//}
    if(isset($_POST['pants'])){
       //$_SESSION['pants'] = $_POST['pants'];
       $_SESSION['pants'] = "something";
