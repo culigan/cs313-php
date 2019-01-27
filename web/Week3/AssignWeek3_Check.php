@@ -10,10 +10,10 @@
 <body>
    <header>Shopping Cart</header>
    <form action="AssignWeek3_Confirm.php" method="post">
-      Street Address: <input name="street" type="text" required></br></br>
-      City: <input name="city" type="text" required></br></br>
-      State: <input name="state" type="text" required></br></br>
-      Zip: <input name="zip" type="text" required></br></br>
+      <input name="street" type="text" required>Street Address</br></br>
+      <input name="city" type="text" required>City</br></br>
+      <input name="state" type="text" required>State</br></br>
+      <input name="zip" type="text" required>Zip</br></br>
       <p><a href="AssignWeek3_Cart.php">Return to Cart</a></p>
       <input type="submit" value="submit">
    </form>
