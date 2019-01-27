@@ -1,16 +1,13 @@
 // JavaScript source code
 
-function viewCart() {
-   window.open("https://calm-shelf-84172.herokuapp.com/AssignWeek3_Cart.php", '_top');
-}
 
 function buttonClick(clothing) {
    $.ajax({
       url: 'http://calm-shelf-84172.herokuapp.com/Week3/AssignWeek3_B.php',
       type: "POST",
-      data: { pants: "test" },
+      data: { item: clothing },
       success: function (data) {
-         alert(data.pants);
+         alert("Item has been added to the cart!");
       },
       error: function () {
          alert("ERROR!");

@@ -1,12 +1,22 @@
 ﻿<?php
-   //if (session_status() == PHP_SESSION_NONE) {
-    session_start();
-//}
-   if(isset($_POST['pants'])){
-      //$_SESSION['pants'] = $_POST['pants'];
-      $_SESSION['pants'] = $_POST['pants'];
-            }
-   
+   session_start();
+
+   if(isset($_POST['item'])){
+      if($_POST['item'] == "pants")
+         $_SESSION['pants'] = $_POST['item'];
+      }
+      else if($_POST['item'] == "lssbutton")
+         $_SESSION['pants'] = $_POST['item'];
+      else if($_POST['item'] == "sssbutton")
+         $_SESSION['sssbutton'] = $_POST['item'];
+      else if($_POST['item'] == "sockbutton")
+         $_SESSION['sockbutton'] = $_POST['item'];
+      else if($_POST['item'] == "sweatbutton")
+         $_SESSION['sweatbutton'] = $_POST['item'];
+      else if($_POST['item'] == "sweatsbutton")
+         $_SESSION['sweatsbutton'] = $_POST['item'];
+
+   }
 ?>
 
 <!DOCTYPE html>
@@ -20,43 +30,32 @@
    <script type="text/javascript" src="AssignWeek3_B.js"></script>
 </head>
 <body>
-<?php
-   if(isset($_SESSION['pants'])){
-      //$_SESSION['pants'] = $_POST['pants'];
-      echo $_SESSION['pants'];
-            }
-            ?>
    <header>Clothing Sale</header>
    <div id="itemdiv">
       <h1>Pants</h1>
-         <form id="form1" method="post" action="AssignWeek3_B.php">
-         <input id="hidden" name="hiddenname" type="text" value"testdata">
-         <input id="sendP" name='pants' value='testvalue' type="button" onclick="buttonClick('pants')"/>
-         <input id="sendP" name='pants' value='submitbutton' type="submit" />
-         </form>
+         <input id="sendP" name='pants' value='Add to Cart' type="button" onclick="buttonClick('pants')"/>         
    </div>
    <div id="itemdiv">
       <h1>Long sleeve t-shirts</h1>
-      <input id="lsshirt" type="button" name="lssbutton" value="Add to Cart"/>
+         <input id="lsshirt" type="button" name="lssbutton" value="Add to Cart" onclick="buttonClick('pants')"/>
    </div>
    <div id="itemdiv">
       <h1>Short sleeve t-shirts</h1>
-      <input id="ssshirt" type="button" name="sssbutton" value="Add to Cart" />
+      <input id="ssshirt" type="button" name="sssbutton" value="Add to Cart"  onclick="buttonClick('pants')"/>
    </div>
    <div id="itemdiv">
       <h1>Socks</h1>
-      <input id="socks" type="button" name="sockbutton" value="Add to Cart"/>
+      <input id="socks" type="button" name="sockbutton" value="Add to Cart" onclick="buttonClick('pants')"/>
    </div>
    <div id="itemdiv">
       <h1>Sweater</h1>
-      <input id="sweater" type="button" name="sweatbutton" value="Add to Cart" />
+      <input id="sweater" type="button" name="sweatbutton" value="Add to Cart"  onclick="buttonClick('pants')"/>
    </div>
    <div id="itemdiv">
       <h1>Sweatshirt</h1>
-      <input id="swshirt" type="button" name="sweatsbutton" value="Add to Cart" />
+      <input id="swshirt" type="button" name="sweatsbutton" value="Add to Cart"  onclick="buttonClick('pants')"/>
    </div>
-   <div id="itemdiv">
-      
+   <div id="itemdiv">      
       <a href="AssignWeek3_Cart.php"><input id="gocart" type="button" name="gocart" value="View Cart" /></a>
    </div>
 </body>
