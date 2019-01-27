@@ -16,16 +16,15 @@
 </head>
 <body>
    <header>Shopping Cart</header>
-   <div id="itemdiv">
-      <?php
-      echo $_SESSION['pants'];
-         foreach($_SESSION as $name => $value)
-         {
-            echo "<div id='cartitem' ><p>$value</p></div>";
-         }
-      ?>
+   <?php
+      foreach($_SESSION as $name => $value)
+      {
+         echo "<div id='cartitem' ><p>$value</p></div>";
+      }
+   ?>
+   <div id='cartitem'>
+      <p><a href="http://calm-shelf-84172.herokuapp.com/Week3/AssignWeek3_B.php"</a><input type="button" value="Proceed to Checkout"></p>
+      <input type="button" value="Proceed to Checkout">
    </div>
-   <p><a href="http://calm-shelf-84172.herokuapp.com/Week3/AssignWeek3_B.php"</a>Continue Shopping</p>
-   <input type="button" value="Proceed to Checkout">
 </body>
 </html>
