@@ -11,7 +11,7 @@
       else if($_POST['item'] == "sockbutton")
          $_SESSION['sockbutton'] = "Socks";
       else if($_POST['item'] == "sweatbutton")
-         $_SESSION['sweatbutton'] = "Sweater;
+         $_SESSION['sweatbutton'] = "Sweater";
       else if($_POST['item'] == "sweatsbutton")
          $_SESSION['sweatsbutton'] = "Sweatshirt";
    }
