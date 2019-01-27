@@ -4,7 +4,7 @@
 //}
    if(isset($_POST['pants'])){
       //$_SESSION['pants'] = $_POST['pants'];
-      $_SESSION['pants'] = "something";
+      $_SESSION['pants'] = $_POST['pants'];
             }
    
 ?>
