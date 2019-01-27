@@ -8,7 +8,7 @@
             $_SESSION['different'] = "Not Cart";
             echo $_SESSION['different'];
             }
-   echo $_POST;
+   echo $_POST['pants'];
    
 ?>
 
