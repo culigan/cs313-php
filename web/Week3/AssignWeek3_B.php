@@ -2,9 +2,10 @@
    if (session_status() == PHP_SESSION_NONE) {
     session_start();
 }
-   if(!isset($_SESSION['pants']))
-      $_SESSION['pants'] = $_POST['pants'];
-            
+   if(!isset($_SESSION['pants'])){
+      //$_SESSION['pants'] = $_POST['pants'];
+      $_SESSION['pants'] = "something";
+            }
    
 ?>
 
@@ -19,12 +20,18 @@
    <script type="text/javascript" src="AssignWeek3_B.js"></script>
 </head>
 <body>
+<?php
+   if(isset($_SESSION['pants'])){
+      //$_SESSION['pants'] = $_POST['pants'];
+      echo $_SESSION['pants'];
+            }
    <header>Clothing Sale</header>
    <div id="itemdiv">
       <h1>Pants</h1>
-               <form id="form1" method="post" >
+         <form id="form1" method="post" action="AssignWeek3_B.php">
          <input id="hidden" name="hiddenname" type="text" value"testdata">
          <input id="sendP" name='pants' value='testvalue' type="button" onclick="buttonClick('pants')"/>
+         <input id="sendP" name='pants' value='submitbutton' type="submit" />
          </form>
    </div>
    <div id="itemdiv">
@@ -48,6 +55,7 @@
       <input id="swshirt" type="button" name="sweatsbutton" value="Add to Cart" />
    </div>
    <div id="itemdiv">
+      
       <a href="AssignWeek3_Cart.php"><input id="gocart" type="button" name="gocart" value="View Cart" /></a>
    </div>
 </body>
