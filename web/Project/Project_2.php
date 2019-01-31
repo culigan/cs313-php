@@ -4,7 +4,7 @@
 <head>
    <meta charset="utf-8" />
    <title>Shopping Page</title>
-   <link href="project.css" rel="stylesheet">
+   <link href="Project.css" rel="stylesheet">
    <script src="AssignWeek3_B.js"></script>
 </head>
 <body>
