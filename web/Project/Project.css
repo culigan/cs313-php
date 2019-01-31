@@ -1,0 +1,47 @@
+﻿body
+{
+   margin-left:15%;
+   margin-right:15%;
+   background-color:lightsteelblue;
+}
+
+#container{
+   background-color:white;
+}
+
+header{
+   font-size:50px;
+   font-family:'Segoe Script';
+   padding-top:5px;
+   padding-bottom:5px;
+   color:black;
+}
+
+#menu{
+   display:flex;
+   flex-direction:row;
+   background-color:maroon;
+   font-size:30px;
+}
+
+.menudiv > div > a{
+   padding-left:10px;
+   padding-right:10px;
+   text-decoration: none;
+   color:white;
+}
+
+.menudiv > div > a:hover{
+   background-color:tomato;
+}
+
+#textdiv{
+   background-color:white;
+}
+
+#foot{
+   padding:0;
+   margin-top:-1rem;
+   background-color:black;
+   color:white;
+}
