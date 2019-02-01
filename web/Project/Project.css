@@ -45,3 +45,12 @@ header{
    background-color:black;
    color:white;
 }
+
+label {
+   margin-right: 10px;
+}
+
+select{
+   width: 100px;
+}
+ 
