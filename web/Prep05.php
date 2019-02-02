@@ -33,9 +33,7 @@
             echo 'password: ' . $row['password'];
             echo '<br/>';
          }
-         $stmt = $db->prepare('SELECT * FROM note_user WHERE username = :username and password = :password');
-         $stmt->bindValue(':password', $password, PDO::PARAM_STR);
-         $stmt->bindValue(':username', $username, PDO::PARAM_STR);
+         $stmt = $db->prepare('SELECT * FROM note_user');
          $stmt->execute();
          $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
