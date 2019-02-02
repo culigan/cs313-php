@@ -39,12 +39,7 @@
          $stmt->execute();
          $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-         foreach($rows as $row)
-         {
-            echo 'user: ' . $row[':username'];
-            echo 'password: ' . $row[':password'];
-            echo '<br/>';
-         }
+         print_r($rows);
       ?>
    
 </body>
