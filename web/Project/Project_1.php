@@ -28,6 +28,11 @@
       echo 'ERROR!: ' . $ex->getMessage();
       die();
       }
+      catch(Exception $ex)
+      {
+      echo 'ERROR!: ' . $ex->getMessage();
+      die();
+      }
 
       foreach($db->query('SELECT username, password FROM note_user') as $row)
       {
