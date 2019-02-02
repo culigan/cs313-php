@@ -9,7 +9,7 @@
 <body>
    <p>
       <?php
-         $db
+         $db;
          try
          {
             $dbUrl = getenv('DATABASE_URL');
