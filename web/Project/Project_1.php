@@ -13,10 +13,10 @@
       {
       $dbUrl = getenv('DATABASE_URL');
       $dbOpts = parse_url($dbUrl);
-      echo $dbOpt;
 
-      /*$dbHost = $dbOpt["host"];
-      $dbPort = $dbOpt["port"];
+      $dbHost = $dbOpt["host"];
+      echo $dbHost;
+      /*$dbPort = $dbOpt["port"];
       $user = $dbOpt["user"];
       $password = $dbOpt["pass"];
       $dbName = ltrim($dbOpts["path"],'/']);
