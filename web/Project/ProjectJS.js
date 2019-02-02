@@ -34,3 +34,7 @@ function addItem() {
    //ingredDiv.appendChild(breakLine);
    //ingredDiv.appendChild(breakLine);
 }
+
+function connectToDatabase(){
+   
+}
