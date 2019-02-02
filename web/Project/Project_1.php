@@ -12,7 +12,8 @@
       try
       {
       $dbUrl = getenv('DATABASE_URL');
-      $dbOpts = parse_url($dbUrl);
+      echo $dbUrl;
+      /*$dbOpts = parse_url($dbUrl);
 
       $dbHost = $dbOpt["host"];
       $dbPort = $dbOpt["port"];
@@ -21,7 +22,7 @@
       $dbName = ltrim($dbOpts["path"],'/']);
       $db = new PDO("pgsql:host=$dbHost;port=$dbPort;dbname=$dbName", $dbUser, $dbPassword);
 
-      $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION)
+      $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION)*/
       }
       catch(PDOException $ex)
       {
