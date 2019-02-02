@@ -33,7 +33,7 @@
             echo 'password: ' . $row['password'];
             echo '<br/>';
          }
-         $stmt = $db->prepare('SELECT * FROM note_user WHERE password=:password and username=:username');
+         $stmt = $db->prepare('SELECT * FROM note_user ');
          $stmt->bindValue(':password', $password, PDO::PARAM_INT);
          $stmt->bindValue(':username', $username, PDO::PARAM_STR);
          $stmt->execute();
