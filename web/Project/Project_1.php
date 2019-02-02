@@ -9,38 +9,38 @@
 <body>
    <p>
       <?php
-      try
-      {
-      $dbUrl = getenv('DATABASE_URL');
-      $dbOpts = parse_url($dbUrl);
+         $db
+         try
+         {
+            $dbUrl = getenv('DATABASE_URL');
+            $dbOpts = parse_url($dbUrl);
 
-      $dbHost = $dbOpt["host"];
-      $dbPort = $dbOpt["port"];
-      $user = $dbOpt["user"];
-      $password = $dbOpt["pass"];
-      echo $password;
-      /*$dbName = ltrim($dbOpts["path"],'/']);
-      $db = new PDO("pgsql:host=$dbHost;port=$dbPort;dbname=$dbName", $dbUser, $dbPassword);
+            $dbHost = $dbOpt["host"];
+            $dbPort = $dbOpt["port"];
+            $user = $dbOpt["user"];
+            $password = $dbOpt["pass"];
+            $dbName = ltrim($dbOpts["path"],'/']);
+            $db = new PDO("pgsql:host=$dbHost;port=$dbPort;dbname=$dbName", $dbUser, $dbPassword);
 
-      $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION)*/
-      }
-      catch(PDOException $ex)
-      {
-      echo 'ERROR!: ' . $ex->getMessage();
-      die();
-      }
-      catch(Exception $ex)
-      {
-      echo 'ERROR!: ' . $ex->getMessage();
-      die();
-      }
+            $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION)*/
+         }
+         catch(PDOException $ex)
+         {
+            echo 'ERROR!: ' . $ex->getMessage();
+            die();
+         }
+         catch(Exception $ex)
+         {
+            echo 'ERROR!: ' . $ex->getMessage();
+            die();
+         }
 
-      foreach($db->query('SELECT username, password FROM note_user') as $row)
-      {
-         echo 'user: ' . $row['username'];
-         echo 'password: ' . $row['password'];
-         echo '<br/>';
-      }
+         foreach($db->query('SELECT username, password FROM note_user') as $row)
+         {
+            echo 'user: ' . $row['username'];
+            echo 'password: ' . $row['password'];
+            echo '<br/>';
+         }  
       ?>
    </p>
    <header>Add a Recipe</header>
