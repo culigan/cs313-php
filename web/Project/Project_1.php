@@ -7,7 +7,7 @@
    <script src="ProjectJS.js"></script>
 </head>
 <body>
-   <p>
+   
       <?php
          $db;
          try
@@ -37,7 +37,6 @@
             echo '<br/>';
          }  
       ?>
-   </p>
    <header>Add a Recipe</header>
    <div id='itemdiv'>
       <form id="formid" action="AssignWeek3_Confirm.php" method="post">
