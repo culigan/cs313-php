@@ -33,16 +33,16 @@
             echo 'password: ' . $row['password'];
             echo '<br/>';
          }
-         $stmt = $db->prepare('SELECT * FROM note_user WHERE id=:id and username=:username');
-         $stmt->bindValue(':id', $id, PDO::PARAM_INT);
+         $stmt = $db->prepare('SELECT * FROM note_user WHERE password=:password and username=:username');
+         $stmt->bindValue(':password', $password, PDO::PARAM_INT);
          $stmt->bindValue(':username', $username, PDO::PARAM_STR);
          $stmt->execute();
          $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
          foreach($rows as $row)
          {
-            echo 'user: ' . $row['id'];
-            echo 'password: ' . $row['username'];
+            echo 'user: ' . $row[':username'];
+            echo 'password: ' . $row[':password'];
             echo '<br/>';
          }
       ?>
