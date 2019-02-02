@@ -12,10 +12,10 @@
       try
       {
       $dbUrl = getenv('DATABASE_URL');
-      echo $dbUrl;
-      /*$dbOpts = parse_url($dbUrl);
+      $dbOpts = parse_url($dbUrl);
+      echo $dbOpt;
 
-      $dbHost = $dbOpt["host"];
+      /*$dbHost = $dbOpt["host"];
       $dbPort = $dbOpt["port"];
       $user = $dbOpt["user"];
       $password = $dbOpt["pass"];
