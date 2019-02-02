@@ -15,10 +15,10 @@
             $dbUrl = getenv('DATABASE_URL');
             $dbOpts = parse_url($dbUrl);
 
-            $dbHost = $dbOpt["host"];
-            $dbPort = $dbOpt["port"];
-            $dbUser = $dbOpt["user"];
-            $dbPassword = $dbOpt["pass"];
+            $dbHost = $dbOpts["host"];
+            $dbPort = $dbOpts["port"];
+            $dbUser = $dbOpts["user"];
+            $dbPassword = $dbOpts["pass"];
             $dbName = ltrim($dbOpts["path"],'/');
             $db = new PDO("pgsql:host=$dbHost;port=$dbPort;dbname=$dbName", $dbUser, $dbPassword);
 
