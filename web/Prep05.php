@@ -41,8 +41,8 @@
 
          foreach($rows as $row)
          {
-            echo 'user: ' . $row['username'];
-            echo 'password: ' . $row['password'];
+            echo 'user: ' . $row[0]->username;
+            echo 'password: ' . $row[0]->password;
             echo '<br/>';
          }
       ?>
