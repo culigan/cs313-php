@@ -10,7 +10,7 @@ function addItem() {
    var amountLab = document.createElement("label");
    var measureLab = document.createElement("label");
    var ingredLab = document.createElement("label");
-   var lineBreak = document.createElement("p");
+   var lineBreak = document.createElement("div");
 
 
    addOpt.value = addOpt.textContent = "1/2";
