@@ -24,9 +24,8 @@ function addItem() {
 
    ingredient.setAttribute("type", "text");
    ingredient.setAttribute("name", "ingredient" + count);
-   lineBreak.setAttribute("id", "return" + count);
    var tempString = "return" + count;
-   document.getElementById(tempString).innerHTML = "<br/><br/>";
+   lineBreak.setAttribute("id", tempString);
 
    ingredDiv.appendChild(amountSelect);
    ingredDiv.appendChild(amountLab);
@@ -35,7 +34,8 @@ function addItem() {
    ingredDiv.appendChild(ingredient);
    ingredDiv.appendChild(ingredLab);
    ingredDiv.appendChild(lineBreak);
-  
+   document.getElementById(tempString).innerHTML = "<br/><br/>";
+
 }
 
 function connectToDatabase(){
