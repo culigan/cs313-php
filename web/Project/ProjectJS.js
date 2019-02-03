@@ -25,6 +25,7 @@ function addItem() {
    ingredient.setAttribute("type", "text");
    ingredient.setAttribute("name", "ingredient" + count);
    lineBreak.setAttribute("id", "return" + count);
+   var tempString = "return" + count;
    document.getElementById("return" + count).innerHTML = "<br/><br/>";
 
    ingredDiv.appendChild(amountSelect);
