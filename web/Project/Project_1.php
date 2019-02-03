@@ -40,7 +40,7 @@ catch (PDOException $ex)
       <form id="formid" action="Project_1.php" method="post">
          <p>
          <php?
-         if($_POST['amount0'])
+         if(isset($_POST['amount0']))
          {
             echo 'Recipe successfully saved!';
          }
