@@ -34,7 +34,7 @@ function addItem() {
    ingredDiv.appendChild(ingredient);
    ingredDiv.appendChild(ingredLab);
    ingredDiv.appendChild(lineBreak);
-   document.getElementById(tempString).innerHTML = "<br/><br/>";
+   document.getElementById(tempString).innerHTML = "<br/>";
 
 }
 
