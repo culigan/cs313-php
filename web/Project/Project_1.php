@@ -37,7 +37,7 @@ catch (PDOException $ex)
 <body>   
    <header>Add a Recipe</header>
    <div id='itemdiv'>
-      <form id="formid" action="AssignWeek3_Confirm.php" method="post">
+      <form id="formid" action="Project_1.php" method="post">
          <p>
          <php?
          if($.POST['amount0'])
