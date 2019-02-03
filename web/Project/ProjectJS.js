@@ -10,6 +10,7 @@ function addItem() {
    var amountLab = document.createElement("label");
    var measureLab = document.createElement("label");
    var ingredLab = document.createElement("label");
+   var lineBreak = document.createElement("p");
 
 
    addOpt.value = addOpt.textContent = "1/2";
@@ -23,6 +24,8 @@ function addItem() {
 
    ingredient.setAttribute("type", "text");
    ingredient.setAttribute("name", "ingredient" + count);
+   lineBreak.setAttribute("id", "return" + count);
+   document.getElementById("return" + count).innerHTML = "<br/><br/>";
 
    ingredDiv.appendChild(amountSelect);
    ingredDiv.appendChild(amountLab);
@@ -30,7 +33,7 @@ function addItem() {
    ingredDiv.appendChild(measureLab);
    ingredDiv.appendChild(ingredient);
    ingredDiv.appendChild(ingredLab);
-   
+   ingredDiv.appendChild(lineBreak);
   
 }
 
