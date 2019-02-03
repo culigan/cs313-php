@@ -5,19 +5,20 @@ function addItem() {
    var ingredient = document.createElement("input");
    var breakLine = document.createElement("br");
    var addOpt = document.createElement("option")
-   addOpt.value = addOpt.textContent = "1/2";
    var addOptM = document.createElement("option")
-   addOptM.value = addOptM.textContent = "Cup";
    var count = document.getElementById("formid").length - 3;
    var amountLab = document.createElement("label");
-   amountLab.innerHTML = "Amount";
    var measureLab = document.createElement("label");
-   measureLab.innerHTML = "Measurement Type";
    var ingredLab = document.createElement("label");
+
+
+   addOpt.value = addOpt.textContent = "1/2";
+   addOptM.value = addOptM.textContent = "Cup";
+   amountLab.innerHTML = "Amount";
+   measureLab.innerHTML = "Measurement Type";
    ingredLab.innerHTML = "Ingredients";
 
    amountSelect.appendChild(addOpt);
-
    measType.appendChild(addOptM);
 
    ingredient.setAttribute("type", "text");
@@ -31,8 +32,7 @@ function addItem() {
    ingredDiv.appendChild(ingredLab);
    document.getElementById("ingred").innerHTML += "<br>";
    document.getElementById("ingred").innerHTML += "<br>";
-   //ingredDiv.appendChild(breakLine);
-   //ingredDiv.appendChild(breakLine);
+  
 }
 
 function connectToDatabase(){

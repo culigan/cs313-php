@@ -1,4 +1,32 @@
-﻿<!DOCTYPE html>
+﻿
+<?php
+
+$db;
+
+try
+{
+    $dbUrl = getenv('DATABASE_URL');
+    $dbOpts = parse_url($dbUrl);
+
+    $dbHost = $dbOpts["host"];
+    $dbPort = $dbOpts["port"];
+    $dbUser = $dbOpts["user"];
+    $dbPassword = $dbOpts["pass"];
+    $dbName = ltrim($dbOpts["path"],'/');
+
+    $db = new PDO("pgsql:host=$dbHost;port=$dbPort;dbname=$dbName", $dbUser, $dbPassword);
+
+    $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+}
+catch (PDOException $ex)
+{
+  echo 'Error!: ' . $ex->getMessage();
+  die();
+}
+
+?>
+
+<!DOCTYPE html>
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 <head>
    <meta charset="utf-8" />
@@ -10,15 +38,22 @@
    <header>Add a Recipe</header>
    <div id='itemdiv'>
       <form id="formid" action="AssignWeek3_Confirm.php" method="post">
-         <p></p></br>
+         <p>
+         <php?
+         if($.POST['amount0'])
+         {
+            echo 'Recipe successfully saved!';
+         }
+         ?>
+         </p></br>
          <div id="ingred">
-            <select name="amount"  required>
+            <select name="amount0"  required>
                <option value="1/2">1/2</option>
             </select>Amount
-            <select name="meastype" required>
+            <select name="meastype0" required>
                <option value="Cup">Cup</option>
             </select>Measurement Type
-            <input name="ingredient" type="text" required>Ingredient</br></br>
+            <input name="ingredient0" type="text" required>Ingredient</br></br>
          </div>
          <input name="add" type="button" value="Add another Ingredient" onclick="addItem()"></br></br>
          <textarea name="direct" rows="4" cols="50" required>Enter directions here....</textarea></br></br>
