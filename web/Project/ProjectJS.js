@@ -6,7 +6,7 @@ function addItem() {
    var breakLine = document.createElement("br");
    var addOpt = document.createElement("option")
    var addOptM = document.createElement("option")
-   var count = document.getElementById("formid").length - 3;
+   var count = (int)((document.getElementById("formid").length - 3) / 3);
    var amountLab = document.createElement("label");
    var measureLab = document.createElement("label");
    var ingredLab = document.createElement("label");
@@ -30,8 +30,7 @@ function addItem() {
    ingredDiv.appendChild(measureLab);
    ingredDiv.appendChild(ingredient);
    ingredDiv.appendChild(ingredLab);
-   document.getElementById("ingred").innerHTML += "<br>";
-   document.getElementById("ingred").innerHTML += "<br>";
+   
   
 }
 

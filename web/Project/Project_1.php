@@ -53,8 +53,9 @@ catch (PDOException $ex)
             <select name="meastype0" required>
                <option value="Cup">Cup</option>
             </select>Measurement Type
-            <input name="ingredient0" type="text" required>Ingredient</br></br>
+            <input name="ingredient0" type="text" required>Ingredient
          </div>
+            </br></br>
          <input name="add" type="button" value="Add another Ingredient" onclick="addItem()"></br></br>
          <textarea name="direct" rows="4" cols="50" required>Enter directions here....</textarea></br></br>
          <input type="submit" value="Submit">
