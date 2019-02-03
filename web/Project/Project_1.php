@@ -39,7 +39,7 @@ catch (PDOException $ex)
    <div id='itemdiv'>
       <form id="formid" action="Project_1.php" method="post">
          <p>
-         <php?
+         <?php
          if(isset($_POST['amount0']))
          {
             echo 'Recipe successfully saved!';
