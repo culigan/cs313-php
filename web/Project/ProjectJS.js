@@ -8,7 +8,7 @@ function addItem() {
    var lastingred = document.getElementById('formid')[count];
    lastingred = lastingred.id;
    var t = lastingred.indexOf("t");
-   var z = parseInt(lastingred.slice(t + 1, lastingred.length));
+   count = parseInt(lastingred.slice(t + 1, lastingred.length)) + 1;
    var measureLab = document.createElement("label");
    var ingredLab = document.createElement("label");
    var lineBreak = document.createElement("div");
