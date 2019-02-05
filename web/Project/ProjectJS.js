@@ -5,7 +5,7 @@ function addItem() {
    var ingredient = document.createElement("input");
    var breakLine = document.createElement("br");
    var count = parseInt(document.getElementById('formid').length) - 3;
-   var lastingred = document.getElementById('formid')[3];
+   var lastingred = document.getElementById('formid')[count];
    var measureLab = document.createElement("label");
    var ingredLab = document.createElement("label");
    var lineBreak = document.createElement("div");
