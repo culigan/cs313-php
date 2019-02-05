@@ -23,9 +23,9 @@ function addItem() {
 
       amountSelect.appendChild(addOpt);
    }
-   var b = document.getElementsByName('amount0');
+   var b = document.getElementsById('meastype0');
    for (var i = 0; i < a.length; i++) {
-      document.getElementsByName('amount0').innerHTML += "<option> " + b[i].textContent + "</option>";
+      document.getElementsById('meastype0').innerHTML += "<option> " + b[i].textContent + "</option>";
 
       /*var addOptM = new Option();
       addOptM = document.createElement("option")

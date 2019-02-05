@@ -53,14 +53,14 @@ catch (PDOException $ex)
             <input name="recipename" type="text" required>Recipe Name</br></br>
 
          <div id="ingred">
-            <select name="amount0"  required>
+            <select id="amount0" name="amount0"  required>
                <? 
                foreach($sizes as $size){
                echo "<option> $size[measurementsize]</option>";
                }
                ?>
             </select>Amount
-            <select name="meastype0" required>
+            <select id="meastype0" name="meastype0" required>
                <? 
                   foreach($types as $type){
                   echo "<option> $type[measurementname]</option>";
