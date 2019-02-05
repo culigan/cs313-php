@@ -13,18 +13,23 @@ function addItem() {
    var lineBreak = document.createElement("div");
 
 
-   addOpt.value = addOpt.textContent = "1/2";
-   addOptM.value = addOptM.textContent = "Cup";
    amountLab.innerHTML = "Amount";
    measureLab.innerHTML = "Measurement Type";
    ingredLab.innerHTML = "Ingredients";
 
-   amountSelect.appendChild(addOpt);
-   measType.appendChild(addOptM);
-
+   var a = document.getElementsByName("amount0");
+   for (var i = 0; i < a.length; i++){}
+      addOpt.textContent = a[i].textContent;
+      amountSelect.appendChild(addOpt);
+   }
+   a = document.getElementsByName("meastype0");
+   for (var i = 0; i < a.length; i++){
+      addOptM.textContent = a[i].textContent;
+      measType.appendChild(addOptM);
+   }
    ingredient.setAttribute("type", "text");
    ingredient.setAttribute("name", "ingredient" + count);
-   ingredient.setAttribute("required", "");
+   ingredient.setAttribute("required","");
    var tempString = "return" + count;
    lineBreak.setAttribute("id", tempString);
 
