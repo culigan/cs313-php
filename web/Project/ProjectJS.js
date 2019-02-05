@@ -4,8 +4,9 @@ function addItem() {
    var measType = document.createElement("select");
    var ingredient = document.createElement("input");
    var breakLine = document.createElement("br");
-   var count = parseInt(document.getElementById('formid').length) - 3;
+   var count = parseInt(document.getElementById('formid').length) - 4;
    var lastingred = document.getElementById('formid')[count];
+   count = lastingred.id.slice(lastingred.indexof('t'), lastingred.length);
    var measureLab = document.createElement("label");
    var ingredLab = document.createElement("label");
    var lineBreak = document.createElement("div");
@@ -40,7 +41,7 @@ function addItem() {
    }
    
    ingredient.setAttribute("type", "text");
-   ingredient.setAttribute("name", "ingredient" + count);
+   ingredient.setAttribute("id", "ingredient" + count);
    ingredient.setAttribute("required","");
    var tempString = "return" + count;
    lineBreak.setAttribute("id", tempString);
