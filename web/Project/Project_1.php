@@ -17,6 +17,9 @@ try
     $db = new PDO("pgsql:host=$dbHost;port=$dbPort;dbname=$dbName", $dbUser, $dbPassword);
 
     $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+    $rows = $db->query("SELECT * FROM MeasureType;");
+            
 }
 catch (PDOException $ex)
 {
@@ -34,7 +37,7 @@ catch (PDOException $ex)
    <link href="Project.css" rel="stylesheet">
    <script src="ProjectJS.js"></script>
 </head>
-<body onload="populateSelect()">   
+<body >   
    <header>Add a Recipe</header>
    <div id='itemdiv'>
       <form id="formid" action="Project_1.php" method="post">
@@ -48,6 +51,9 @@ catch (PDOException $ex)
          </p></br>
          <div id="ingred">
             <select name="amount0"  required>
+               <? 
+               foreach($rows as $row)
+               echo "<option> $row['MeasureType']</option>"?>
             </select>Amount
             <select name="meastype0" required>
             </select>Measurement Type
