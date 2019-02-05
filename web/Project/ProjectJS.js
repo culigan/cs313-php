@@ -5,6 +5,7 @@ function addItem() {
    var ingredient = document.createElement("input");
    var breakLine = document.createElement("br");
    var addOpt = document.createElement("option")
+   var addOpt1 = document.createElement("option")
    var addOptM = document.createElement("option")
    var count = (document.getElementById("formid").length - 3) / 3;
    var amountLab = document.createElement("label");
@@ -14,12 +15,14 @@ function addItem() {
 
 
    addOpt.value = addOpt.textContent = "1/2";
+   addOpt1.value = addOpt1.textContent = "1/3";
    addOptM.value = addOptM.textContent = "Cup";
    amountLab.innerHTML = "Amount";
    measureLab.innerHTML = "Measurement Type";
    ingredLab.innerHTML = "Ingredients";
 
    amountSelect.appendChild(addOpt);
+   amountSelect.appendChild(addOpt1);
    measType.appendChild(addOptM);
 
    amountSelect.setAttribute("name", "amount" + count)
