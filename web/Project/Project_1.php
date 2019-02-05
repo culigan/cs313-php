@@ -53,7 +53,7 @@ catch (PDOException $ex)
             <select name="amount0"  required>
                <? 
                foreach($sizes as $size){
-               echo "<option> $type[measurementname]</option>";
+               echo "<option> $size[measurementsize]</option>";
                }
                ?>
             </select>Amount
