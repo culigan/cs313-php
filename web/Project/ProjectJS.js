@@ -15,7 +15,7 @@ function addItem() {
    measureLab.innerHTML = "Measurement Type";
    ingredLab.innerHTML = "Ingredients";
 
-   var a = document.getElementsByName('amount0');
+   var a = document.getElementById('amount0');
    for (var i = 0; i < a.length; i++) {
       var addOpt = new Option();
       addOpt = document.createElement("option")
@@ -24,7 +24,7 @@ function addItem() {
       amountSelect.appendChild(addOpt);
    }
    var b = document.getElementsById('meastype0');
-   for (var i = 0; i < a.length; i++) {
+   for (var i = 0; i < b.length; i++) {
       document.getElementsById('meastype0').innerHTML += "<option> " + b[i].textContent + "</option>";
 
       /*var addOptM = new Option();
