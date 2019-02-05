@@ -23,6 +23,9 @@ function addItem() {
    var tempString = "return" + count;
    lineBreak.setAttribute("id", tempString);
 
+   count++;
+   amountSelect.setAttribute("id", "amount" + count)
+   measType.setAttribute("id", "meastype" + count)
    ingredDiv.appendChild(amountSelect);
    ingredDiv.appendChild(amountLab);
    ingredDiv.appendChild(measType);
@@ -30,10 +33,7 @@ function addItem() {
    ingredDiv.appendChild(ingredient);
    ingredDiv.appendChild(ingredLab);
    ingredDiv.appendChild(lineBreak);
-   count++;
-   amountSelect.setAttribute("id", "amount" + count)
-   measType.setAttribute("id", "meastype" + count)
-
+   
    var a = document.getElementById("amount" + (count - 1));
    var len = a.length;
    for (var i = 0; i < a.len; i++) {
