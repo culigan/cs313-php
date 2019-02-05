@@ -18,7 +18,7 @@ try
 
     $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-    $rows = $db->query("SELECT * FROM MeasureType;");
+    $rows = $db->query("SELECT * FROM MeasurementType;");
             
 }
 catch (PDOException $ex)
@@ -53,7 +53,7 @@ catch (PDOException $ex)
             <select name="amount0"  required>
                <? 
                foreach($rows as $row){
-               echo "<option> $row[MeasureType]</option>";
+               echo "<option> $row[MeasurementName]</option>";
                }
                ?>
             </select>Amount
