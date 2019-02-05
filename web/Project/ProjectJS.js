@@ -17,20 +17,20 @@ function addItem() {
    amountSelect.setAttribute("id", "amount" + count)
    measType.setAttribute("id", "meastype" + count)
 
-   var a = document.getElementById('amount' + count);
+   var a = document.getElementById("amount" + count);
    var len = a.length;
    for (var i = 0; i < a.len; i++) {
-      document.getElementById('amount' + count).innerHTML += "<option> " + a[i].textContent + "</option>";
+      document.getElementById("amount" + count).innerHTML += "<option> " + a[i].textContent + "</option>";
       /*var addOpt = new Option();
       addOpt = document.createElement("option")
       addOpt.value = addOpt.textContent = a[i].textContent;
 
       amountSelect.appendChild(addOpt);*/
    }
-   var b = document.getElementById('meastype' + count);
+   var b = document.getElementById("meastype" + count);
    var len = b.length;
    for (var i = 0; i < len; i++) {
-      document.getElementById('meastype' + count).innerHTML += "<option> " + b[i].textContent + "</option>";
+      document.getElementById("meastype" + count).innerHTML += "<option> " + b[i].textContent + "</option>";
 
       /*var addOptM = new Option();
       addOptM = document.createElement("option")
