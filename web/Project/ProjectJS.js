@@ -4,8 +4,6 @@ function addItem() {
    var measType = document.createElement("select");
    var ingredient = document.createElement("input");
    var breakLine = document.createElement("br");
-   var addOpt = document.createElement("option")
-   var addOptM = document.createElement("option")
    var count = (document.getElementById("formid").length - 3) / 3;
    var amountLab = document.createElement("label");
    var measureLab = document.createElement("label");
@@ -19,11 +17,13 @@ function addItem() {
 
    var a = document.getElementsByName("amount0");
    for (var i = 0; i < a.length; i++){
+      var addOpt = document.createElement("option");
       addOpt.textContent = a[i].textContent;
       amountSelect.appendChild(addOpt);
    }
    a = document.getElementsByName("meastype0");
    for (var i = 0; i < a.length; i++){
+      var addOptM = document.createElement("option");
       addOptM.textContent = a[i].textContent;
       measType.appendChild(addOptM);
    }
