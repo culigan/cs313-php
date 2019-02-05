@@ -49,6 +49,8 @@ catch (PDOException $ex)
          }
          ?>
          </p></br>
+            <input name="recipename" type="text" required>Recipe Name</br></br>
+
          <div id="ingred">
             <select name="amount0"  required>
                <? 
