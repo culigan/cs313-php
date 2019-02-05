@@ -39,7 +39,7 @@ User_ID INT NOT NULL REFERENCES User_Table(ID));
 
 CREATE TABLE RecipeItems (
 ID serial PRIMARY KEY,
-Ingredient_ID INT NOT NULL REFERENCES Ingredients(ID),
+Ingredient VARCHAR(255) NOT NULL ,
 MeasurementSize_ID INT NOT NULL REFERENCES MeasurementSize(ID),
 MeasurementType_ID INT NOT NULL REFERENCES MeasurementType(ID),
 Recipe_ID INT NOT NULL REFERENCES Recipe(ID));
