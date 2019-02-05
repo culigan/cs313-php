@@ -16,13 +16,13 @@ function addItem() {
    ingredLab.innerHTML = "Ingredients";
 
    var a = document.getElementsByName("amount0");
-   for (var i = 0; i < a.option.length; i++){
+   for (var i = 0; i < a.options.length; i++){
       //var addOpt = document.createElement("option");
       //addOpt.value = addOpt.textContent = a[i].textContent;
       amountSelect.options[i] = new Option(a[i].textContent, a[i].value);
    }
    a = document.getElementsByName("meastype0");
-   for (var i = 0; i < a.option.length; i++){
+   for (var i = 0; i < a.options.length; i++){
       //var addOptM = document.createElement("option");
       //addOptM.value = addOptM.textContent = a[i].textContent;
       measType.options[i] = new Option(a[i].textContent, a[i].value);
