@@ -18,14 +18,14 @@ function addItem() {
    var a = document.getElementsByName("amount0");
    for (var i = 0; i < a.length; i++){
       var addOpt = document.createElement("option");
-      addOpt.value = addOpt.textContent = a[i].textContent;
-      amountSelect.add(addOpt,i);
+      addOpt.textContent = a[i].textContent;
+      amountSelect.add(addOpt);
    }
    a = document.getElementsByName("meastype0");
    for (var i = 0; i < a.length; i++){
       var addOptM = document.createElement("option");
-      addOptM.value = addOptM.textContent = a[i].textContent;
-      measType.add(addOptM,i);
+      addOptM.textContent = a[i].textContent;
+      measType.add(addOptM);
    }
    ingredient.setAttribute("type", "text");
    ingredient.setAttribute("name", "ingredient" + count);
