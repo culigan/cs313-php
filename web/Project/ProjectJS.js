@@ -18,7 +18,7 @@ function addItem() {
    ingredLab.innerHTML = "Ingredients";
 
    var a = document.getElementsByName("amount0");
-   for (var i = 0; i < a.length; i++){}
+   for (var i = 0; i < a.length; i++){
       addOpt.textContent = a[i].textContent;
       amountSelect.appendChild(addOpt);
    }
