@@ -14,19 +14,23 @@ function addItem() {
    amountLab.innerHTML = "Amount";
    measureLab.innerHTML = "Measurement Type";
    ingredLab.innerHTML = "Ingredients";
+   amountSelect.setAttribute("id", "amount" + count)
+   measType.setAttribute("id", "meastype" + count)
 
-   var a = document.getElementById('amount0');
-   for (var i = 0; i < a.length; i++) {
-      var addOpt = new Option();
+   var a = document.getElementById('amount');
+   var len = a.length;
+   for (var i = 0; i < a.len; i++) {
+      document.getElementById('amount' + count).innerHTML += "<option> " + a[i].textContent + "</option>";
+      /*var addOpt = new Option();
       addOpt = document.createElement("option")
       addOpt.value = addOpt.textContent = a[i].textContent;
 
-      amountSelect.appendChild(addOpt);
+      amountSelect.appendChild(addOpt);*/
    }
-   var b = document.getElementById('meastype0');
+   var b = document.getElementById('meastype' + count);
    var len = b.length;
    for (var i = 0; i < len; i++) {
-      document.getElementById('meastype0').innerHTML += "<option> " + b[i].textContent + "</option>";
+      document.getElementById('meastype' + count).innerHTML += "<option> " + b[i].textContent + "</option>";
 
       /*var addOptM = new Option();
       addOptM = document.createElement("option")
@@ -34,9 +38,7 @@ function addItem() {
 
       measType.appendChild(addOptM);*/
    }
-   amountSelect.setAttribute("name", "amount" + count)
-   measType.setAttribute("name", "meastype" + count)
-
+   
    ingredient.setAttribute("type", "text");
    ingredient.setAttribute("name", "ingredient" + count);
    ingredient.setAttribute("required","");
