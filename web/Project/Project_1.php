@@ -34,7 +34,7 @@ catch (PDOException $ex)
    <link href="Project.css" rel="stylesheet">
    <script src="ProjectJS.js"></script>
 </head>
-<body>   
+<body onload="populateSelect()">   
    <header>Add a Recipe</header>
    <div id='itemdiv'>
       <form id="formid" action="Project_1.php" method="post">
@@ -48,10 +48,8 @@ catch (PDOException $ex)
          </p></br>
          <div id="ingred">
             <select name="amount0"  required>
-               <option value="1/2">1/2</option>
             </select>Amount
             <select name="meastype0" required>
-               <option value="Cup">Cup</option>
             </select>Measurement Type
             <input name="ingredient0" type="text" required>Ingredient</br></br>
          </div>

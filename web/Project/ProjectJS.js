@@ -38,6 +38,36 @@ function addItem() {
 
 }
 
-function connectToDatabase(){
-   
+function populateSelect() {
+   const {Client} = require('pg');
+
+   const client = new Client({
+      connectionString: process.env.DATABASE_URL,
+      ssl: true;
+   });
+
+   client.connect();
+
+   client.query('SELECT * From MeasurementType;', (err, res) => {
+      if(err) throw err;
+      for(let row of res.rows){
+         console.log(JSON.stringify(row))
+      }
+      client.end();
+   })
+}
+
+function buttonClick(clothing) {
+   $.ajax({
+      url: 'http://calm-shelf-84172.herokuapp.com/Week3/Project_2.php',
+      type: "POST",
+      data: { item: clothing },
+      success: function (data) {
+         alert("Item has been added to the cart!");
+      },
+      error: function () {
+         alert("ERROR!");
+
+      }
+   });
 }
