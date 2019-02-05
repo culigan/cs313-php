@@ -25,11 +25,13 @@ function addItem() {
    }
    var b = document.getElementsByName('amount0');
    for (var i = 0; i < a.length; i++) {
-      var addOptM = new Option();
+      document.getElementsByName('amount0').innerHTML += "<option> " + b[i].textContent + "</option>";
+
+      /*var addOptM = new Option();
       addOptM = document.createElement("option")
       addOptM.value = addOptM.textContent = b[i].textContent;
 
-      measType.appendChild(addOptM);
+      measType.appendChild(addOptM);*/
    }
    amountSelect.setAttribute("name", "amount" + count)
    measType.setAttribute("name", "meastype" + count)
