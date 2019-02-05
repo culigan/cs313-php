@@ -6,7 +6,7 @@ function addItem() {
    var breakLine = document.createElement("br");
    var count = parseInt(document.getElementById('formid').length) - 4;
    var lastingred = document.getElementById('formid')[count];
-   count = lastingred.id.slice(lastingred.indexof('t'), lastingred.length);
+   lastingred = lastingred.id;
    var measureLab = document.createElement("label");
    var ingredLab = document.createElement("label");
    var lineBreak = document.createElement("div");
