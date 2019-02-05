@@ -35,6 +35,7 @@ catch (PDOException $ex)
    <meta charset="utf-8" />
    <title>Add a Recipe</title>
    <link href="Project.css" rel="stylesheet">
+   <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
    <script src="ProjectJS.js"></script>
 </head>
 <body >   
