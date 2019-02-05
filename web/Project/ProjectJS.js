@@ -4,9 +4,6 @@ function addItem() {
    var measType = document.createElement("select");
    var ingredient = document.createElement("input");
    var breakLine = document.createElement("br");
-   var addOpt = document.createElement("option")
-   var addOpt1 = document.createElement("option")
-   var addOptM = document.createElement("option")
    var count = (document.getElementById("formid").length - 3) / 3;
    var amountLab = document.createElement("label");
    var measureLab = document.createElement("label");
@@ -14,17 +11,26 @@ function addItem() {
    var lineBreak = document.createElement("div");
 
 
-   addOpt.value = addOpt.textContent = "1/2";
-   addOpt1.value = addOpt1.textContent = "1/3";
-   addOptM.value = addOptM.textContent = "Cup";
    amountLab.innerHTML = "Amount";
    measureLab.innerHTML = "Measurement Type";
    ingredLab.innerHTML = "Ingredients";
 
-   amountSelect.appendChild(addOpt);
-   amountSelect.appendChild(addOpt1);
-   measType.appendChild(addOptM);
+   var a = document.getElementsByName('amount0');
+   for (var i = 0; i < a.length; i++) {
+      var addOpt = new Option();
+      addOpt = document.createElement("option")
+      addOpt.value = addOpt.textContent = a[i].textContent;
 
+      amountSelect.appendChild(addOpt);
+   }
+   var b = document.getElementsByName('amount0');
+   for (var i = 0; i < a.length; i++) {
+      var addOptM = new Option();
+      addOptM = document.createElement("option")
+      addOptM.value = addOptM.textContent = b[i].textContent;
+
+      measType.appendChild(addOptM);
+   }
    amountSelect.setAttribute("name", "amount" + count)
    measType.setAttribute("name", "meastype" + count)
 
