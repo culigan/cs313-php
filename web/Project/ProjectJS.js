@@ -17,7 +17,7 @@ function addItem() {
    amountSelect.setAttribute("id", "amount" + count)
    measType.setAttribute("id", "meastype" + count)
 
-   var a = document.getElementById('amount');
+   var a = document.getElementById('amount' + count);
    var len = a.length;
    for (var i = 0; i < a.len; i++) {
       document.getElementById('amount' + count).innerHTML += "<option> " + a[i].textContent + "</option>";
