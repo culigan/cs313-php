@@ -23,7 +23,7 @@ function addItem() {
 
       amountSelect.appendChild(addOpt);
    }
-   var b = document.getElementsById('meastype0');
+   var b = document.getElementById('meastype0');
    for (var i = 0; i < b.length; i++) {
       document.getElementsById('meastype0').innerHTML += "<option> " + b[i].textContent + "</option>";
 
