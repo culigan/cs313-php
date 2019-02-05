@@ -18,8 +18,8 @@ try
 
     $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-    $rows = $db->query("SELECT * FROM MeasurementType;");
-            
+    $sizes = $db->query("SELECT * FROM MeasurementSize;");
+    $types = $db->query("SELECT * FROM MeasurementType;");
 }
 catch (PDOException $ex)
 {
@@ -52,12 +52,17 @@ catch (PDOException $ex)
          <div id="ingred">
             <select name="amount0"  required>
                <? 
-               foreach($rows as $row){
-               echo "<option> $row[measurementname]</option>";
+               foreach($sizes as $size){
+               echo "<option> $type[measurementname]</option>";
                }
                ?>
             </select>Amount
             <select name="meastype0" required>
+               <? 
+                  foreach($types as $type){
+                  echo "<option> $type[measurementname]</option>";
+                  }
+               ?>
             </select>Measurement Type
             <input name="ingredient0" type="text" required>Ingredient</br></br>
          </div>
