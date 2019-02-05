@@ -19,13 +19,13 @@ function addItem() {
    for (var i = 0; i < a.length; i++){
       //var addOpt = document.createElement("option");
       //addOpt.value = addOpt.textContent = a[i].textContent;
-      amountSelect.options[i] = new Option(a[i].textContent, a[i].value);
+      amountSelect.options[amountSelect.length] = new Option(a[i].textContent, a[i].value);
    }
    a = document.getElementsByName("meastype0");
    for (var i = 0; i < a.length; i++){
       //var addOptM = document.createElement("option");
       //addOptM.value = addOptM.textContent = a[i].textContent;
-      measType.options[i] = new Option(a[i].textContent, a[i].value);
+      measType.options[measType.length] = new Option(a[i].textContent, a[i].value);
    }
    ingredient.setAttribute("type", "text");
    ingredient.setAttribute("name", "ingredient" + count);
