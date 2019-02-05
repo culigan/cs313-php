@@ -4,7 +4,7 @@ function addItem() {
    var measType = document.createElement("select");
    var ingredient = document.createElement("input");
    var breakLine = document.createElement("br");
-   var count = (document.getElementById("formid").length - 3) / 3;
+   var count = (document.getElementById("formid").length - 4) / 4;
    var amountLab = document.createElement("label");
    var measureLab = document.createElement("label");
    var ingredLab = document.createElement("label");
