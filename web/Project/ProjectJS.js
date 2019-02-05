@@ -13,14 +13,10 @@ function addItem() {
    var lineBreak = document.createElement("div");
 
 
-   addOpt.value = addOpt.textContent = "1/2";
-   addOptM.value = addOptM.textContent = "Cup";
    amountLab.innerHTML = "Amount";
    measureLab.innerHTML = "Measurement Type";
    ingredLab.innerHTML = "Ingredients";
 
-   amountSelect.appendChild(addOpt);
-   measType.appendChild(addOptM);
 
    amountSelect.setAttribute("name", "amount" + count)
    measType.setAttribute("name", "meastype" + count)
