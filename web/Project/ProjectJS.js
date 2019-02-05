@@ -8,7 +8,7 @@ function addItem() {
    var lastingred = document.getElementById('formid')[count];
    lastingred = lastingred.id;
    var t = lastingred.indexOf("t");
-   count = parseInt(lastingred.slice(t + 1, lastingred.length)) + 1;
+   count = parseInt(lastingred.slice(t + 1, lastingred.length));
    /*var measureLab = document.createElement("label");
    var ingredLab = document.createElement("label");
    var lineBreak = document.createElement("div");
@@ -42,6 +42,7 @@ function addItem() {
       measType.appendChild(addOptM);*/
    }
    
+   count++;
    ingredient.setAttribute("type", "text");
    ingredient.setAttribute("id", "ingredient" + count);
    ingredient.setAttribute("required","");
