@@ -19,13 +19,13 @@ function addItem() {
    for (var i = 0; i < a.length; i++){
       var addOpt = document.createElement("option");
       addOpt.value = addOpt.textContent = a[i].textContent;
-      amountSelect.options[a.length] = addOpt;
+      amountSelect.options[a.length + i] = addOpt;
    }
    a = document.getElementsByName("meastype0");
    for (var i = 0; i < a.length; i++){
       var addOptM = document.createElement("option");
       addOptM.value = addOptM.textContent = a[i].textContent;
-      measType.options[a.length] = addOptM;
+      measType.options[a.length + i] = addOptM;
    }
    ingredient.setAttribute("type", "text");
    ingredient.setAttribute("name", "ingredient" + count);
