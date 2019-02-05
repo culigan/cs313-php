@@ -25,7 +25,7 @@ function addItem() {
    }
    var b = document.getElementById('meastype0');
    for (var i = 0; i < b.length; i++) {
-      document.getElementsById('meastype0').innerHTML += "<option> " + b[i].textContent + "</option>";
+      document.getElementById('meastype0').innerHTML += "<option> " + b[i].textContent + "</option>";
 
       /*var addOptM = new Option();
       addOptM = document.createElement("option")
