@@ -17,10 +17,24 @@ function addItem() {
    amountLab.innerHTML = "Amount";
    measureLab.innerHTML = "Measurement Type";
    ingredLab.innerHTML = "Ingredients";*/
+   ingredient.setAttribute("type", "text");
+   ingredient.setAttribute("id", "ingredient" + count);
+   ingredient.setAttribute("required", "");
+   var tempString = "return" + count;
+   lineBreak.setAttribute("id", tempString);
+
+   ingredDiv.appendChild(amountSelect);
+   ingredDiv.appendChild(amountLab);
+   ingredDiv.appendChild(measType);
+   ingredDiv.appendChild(measureLab);
+   ingredDiv.appendChild(ingredient);
+   ingredDiv.appendChild(ingredLab);
+   ingredDiv.appendChild(lineBreak);
+   count++;
    amountSelect.setAttribute("id", "amount" + count)
    measType.setAttribute("id", "meastype" + count)
 
-   var a = document.getElementById("amount" + count);
+   var a = document.getElementById("amount" + (count - 1));
    var len = a.length;
    for (var i = 0; i < a.len; i++) {
       document.getElementById("amount" + count).innerHTML += "<option> " + a[i].textContent + "</option>";
@@ -30,7 +44,7 @@ function addItem() {
 
       amountSelect.appendChild(addOpt);*/
    }
-   var b = document.getElementById("meastype" + count);
+   var b = document.getElementById("meastype" + (count - 1));
    var len = b.length;
    for (var i = 0; i < len; i++) {
       document.getElementById("meastype" + count).innerHTML += "<option> " + b[i].textContent + "</option>";
@@ -42,20 +56,7 @@ function addItem() {
       measType.appendChild(addOptM);*/
    }
    
-   count++;
-   ingredient.setAttribute("type", "text");
-   ingredient.setAttribute("id", "ingredient" + count);
-   ingredient.setAttribute("required","");
-   var tempString = "return" + count;
-   lineBreak.setAttribute("id", tempString);
-
-   ingredDiv.appendChild(amountSelect);
-   ingredDiv.appendChild(amountLab);
-   ingredDiv.appendChild(measType);
-   ingredDiv.appendChild(measureLab);
-   ingredDiv.appendChild(ingredient);
-   ingredDiv.appendChild(ingredLab);
-   ingredDiv.appendChild(lineBreak);
+   
    document.getElementById(tempString).innerHTML = "<br/>";
 
 }
