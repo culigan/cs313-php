@@ -24,6 +24,7 @@ function addItem() {
 
    ingredient.setAttribute("type", "text");
    ingredient.setAttribute("name", "ingredient" + count);
+   ingredient.setAttribute("required", "");
    var tempString = "return" + count;
    lineBreak.setAttribute("id", tempString);
 
@@ -38,24 +39,6 @@ function addItem() {
 
 }
 
-function populateSelect() {
-   const Client = require('pg');
-
-   const client = new Client({
-      connectionString: process.env.DATABASE_URL,
-      ssl: true,
-   });
-
-   client.connect();
-
-   client.query('SELECT * From MeasurementType;', (err, res) => {
-      if(err) throw err;
-      for(let row of res.rows){
-         console.log(JSON.stringify(row))
-      }
-      client.end();
-   })
-}
 
 function buttonClick(clothing) {
    $.ajax({
