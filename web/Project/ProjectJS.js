@@ -9,14 +9,14 @@ function addItem() {
    lastingred = lastingred.id;
    var t = lastingred.indexOf("t");
    count = parseInt(lastingred.slice(t + 1, lastingred.length)) + 1;
-   var measureLab = document.createElement("label");
+   /*var measureLab = document.createElement("label");
    var ingredLab = document.createElement("label");
    var lineBreak = document.createElement("div");
 
 
    amountLab.innerHTML = "Amount";
    measureLab.innerHTML = "Measurement Type";
-   ingredLab.innerHTML = "Ingredients";
+   ingredLab.innerHTML = "Ingredients";*/
    amountSelect.setAttribute("id", "amount" + count)
    measType.setAttribute("id", "meastype" + count)
 
