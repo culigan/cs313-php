@@ -91,7 +91,7 @@ catch (PDOException $ex)
                   $whereString = $whereString . "and ri.Ingredients like '%sugar%' " . $_POST['ingred'];   
                }
                $searchString = $searchString . $fromString;
-               if($whereString.length > 6)
+               //if($whereString.length > 6)
                   $searchString = $searchString . $whereString
                $searchString = $searchString . ";";
                echo $db->query($searchString);
