@@ -4,6 +4,8 @@ $db;
 
 try
 {
+   
+   
     $dbUrl = getenv('DATABASE_URL');
     $dbOpts = parse_url($dbUrl);
 
@@ -52,7 +54,7 @@ catch (PDOException $ex)
             ?>
          </select>Food Type
          <select name="mealCat0">
-            <option><option>
+            <option></option>
             <? 
                foreach($mcats as $mcat){
                  echo "<option> $mcat[categoryname]</option>";
@@ -65,7 +67,20 @@ catch (PDOException $ex)
       </form>
       <div id="results">
          <p id="resultPara">
-
+         <?
+            if(isset($_POST['type0'])){
+               echo $_POST['type0'];   
+            }
+            if(isset($_POST['mealCat0'])){
+               echo $_POST['mealCat0'];   
+            }
+            if(isset($_POST['recipename'])){
+               echo $_POST['recipename'];   
+            }
+            if(isset($_POST['ingred'])){
+               echo $_POST['ingred'];   
+   }
+         ?>
          </p>
       </div>
    </div>
