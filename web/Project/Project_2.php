@@ -68,18 +68,32 @@ catch (PDOException $ex)
       <div id="results">
          <p id="resultPara">
          <?
+            $searchString = "Select r.recipename, r.directions";
+            $fromString = " FROM recipes r ";
+            $whereString = " where";
             if(isset($_POST['type0'])){
-               echo $_POST['type0'];   
+               $searchString = $searchString . ", f.typename";
+               $fromString = " inner join FoodType f on r.foodtype_id = f.id ";
+               $whereString = " f.typename = $_POST['type0']";   
             }
             if(isset($_POST['mealCat0'])){
-               echo $_POST['mealCat0'];   
+               $searchString = $searchString . ", c.categoryname";
+               $fromString = $fromString . " inner join MealCategory m on r.MealCategory_ID = m.id ";
+               $whereString = $whereString . " AND m.categoryname = $_POST['mealCat0']";   
             }
             if(isset($_POST['recipename'])){
-               echo $_POST['recipename'];   
+               $whereString = $whereString . " AND r.recipename = $_POST['recipename'] ";   
             }
             if(isset($_POST['ingred'])){
-               echo $_POST['ingred'];   
-   }
+               $searchString = $searchString . ", i.ingredientname";
+               $fromString = $fromString . " inner join recipeitems ri on r.recipeitems_id = ri.id";
+               $whereString = $whereString . "and ri.Ingredients like '%sugar%'; $_POST['ingred']";   
+            }
+            $searchString = $searchString . $fromString
+            if($whereString.length > 6)
+               $searchString = $searchString . $whereString
+            $searchString = $searchString . ";";
+            echo $db->query($searchString);
          ?>
          </p>
       </div>
