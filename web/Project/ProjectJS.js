@@ -9,13 +9,14 @@ function addItem() {
    lastingred = lastingred.id;
    var t = lastingred.indexOf("t");
    count = parseInt(lastingred.slice(t + 1, lastingred.length));
-   /*var measureLab = document.createElement("label");
+   var amountLab.document.createAttribute("label");
+   var measureLab = document.createElement("label");
    var ingredLab = document.createElement("label");
 
 
    amountLab.innerHTML = "Amount";
    measureLab.innerHTML = "Measurement Type";
-   ingredLab.innerHTML = "Ingredients";*/
+   ingredLab.innerHTML = "Ingredients";
    count++;
    var lineBreak = document.createElement("div");
    ingredient.setAttribute("type", "text");
@@ -27,11 +28,11 @@ function addItem() {
    amountSelect.setAttribute("id", "amount" + count)
    measType.setAttribute("id", "meastype" + count)
    ingredDiv.appendChild(amountSelect);
-   //ingredDiv.appendChild(amountLab);
+   ingredDiv.appendChild(amountLab);
    ingredDiv.appendChild(measType);
-   //ingredDiv.appendChild(measureLab);
+   ingredDiv.appendChild(measureLab);
    ingredDiv.appendChild(ingredient);
-   //ingredDiv.appendChild(ingredLab);
+   ingredDiv.appendChild(ingredLab);
    ingredDiv.appendChild(lineBreak);
    
    var a = document.getElementById("amount" + (count - 1));
