@@ -35,8 +35,7 @@ function addItem() {
    ingredDiv.appendChild(lineBreak);
    
    var a = document.getElementById("amount" + (count - 1));
-   var len = a.length;
-   for (var i = 0; i < a.len; i++) {
+   for (var i = 0; i < a.length; i++) {
       document.getElementById("amount" + count).innerHTML += "<option> " + a[i].textContent + "</option>";
       /*var addOpt = new Option();
       addOpt = document.createElement("option")
@@ -45,8 +44,7 @@ function addItem() {
       amountSelect.appendChild(addOpt);*/
    }
    var b = document.getElementById("meastype" + (count - 1));
-   var len = b.length;
-   for (var i = 0; i < len; i++) {
+   for (var i = 0; i < b.length; i++) {
       document.getElementById("meastype" + count).innerHTML += "<option> " + b[i].textContent + "</option>";
 
       /*var addOptM = new Option();
