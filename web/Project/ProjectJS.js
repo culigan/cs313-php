@@ -9,7 +9,7 @@ function addItem() {
    lastingred = lastingred.id;
    var t = lastingred.indexOf("t");
    count = parseInt(lastingred.slice(t + 1, lastingred.length));
-   var amountLab = document.createAttribute("label");
+   var amountLab = document.createElement("label");
    var measureLab = document.createElement("label");
    var ingredLab = document.createElement("label");
 
