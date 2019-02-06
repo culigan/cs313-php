@@ -11,19 +11,18 @@ function addItem() {
    count = parseInt(lastingred.slice(t + 1, lastingred.length));
    /*var measureLab = document.createElement("label");
    var ingredLab = document.createElement("label");
-   var lineBreak = document.createElement("div");
 
 
    amountLab.innerHTML = "Amount";
    measureLab.innerHTML = "Measurement Type";
    ingredLab.innerHTML = "Ingredients";*/
+   var lineBreak = document.createElement("div");
    ingredient.setAttribute("type", "text");
    ingredient.setAttribute("id", "ingredient" + count);
    ingredient.setAttribute("required", "");
    var tempString = "return" + count;
    lineBreak.setAttribute("id", tempString);
 
-   count++;
    amountSelect.setAttribute("id", "amount" + count)
    measType.setAttribute("id", "meastype" + count)
    ingredDiv.appendChild(amountSelect);
