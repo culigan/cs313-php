@@ -26,11 +26,11 @@ function addItem() {
    amountSelect.setAttribute("id", "amount" + count)
    measType.setAttribute("id", "meastype" + count)
    ingredDiv.appendChild(amountSelect);
-   ingredDiv.appendChild(amountLab);
+   //ingredDiv.appendChild(amountLab);
    ingredDiv.appendChild(measType);
-   ingredDiv.appendChild(measureLab);
+   //ingredDiv.appendChild(measureLab);
    ingredDiv.appendChild(ingredient);
-   ingredDiv.appendChild(ingredLab);
+   //ingredDiv.appendChild(ingredLab);
    ingredDiv.appendChild(lineBreak);
    
    var a = document.getElementById("amount" + (count - 1));
