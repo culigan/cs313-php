@@ -90,11 +90,11 @@ catch (PDOException $ex)
                   $fromString = $fromString . " inner join recipeitems ri on r.recipeitems_id = ri.id";
                   $whereString = $whereString . "and ri.Ingredients like '%sugar%' " . $_POST['ingred'];   
                }
-               $searchString = $searchString . $fromString;
+               /*$searchString = $searchString . $fromString;
                if(strlen($whereString) > 6)
                   $searchString = $searchString . $whereString
                $searchString = $searchString . ";";
-               echo $db->query($searchString);
+               echo $db->query($searchString);*/
             }
          ?>
          </p>
