@@ -54,8 +54,8 @@ catch (PDOException $ex)
          <select name="mealCat0">
             <option><option>
             <? 
-               foreach($sizes as $size){
-                 echo "<option> $mcats[categoryname]</option>";
+               foreach($mcats as $mcat){
+                 echo "<option> $mcat[categoryname]</option>";
                }
             ?>
          </select>Meal Category </br></br>        
