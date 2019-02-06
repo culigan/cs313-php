@@ -67,7 +67,7 @@ catch (PDOException $ex)
       </form>
       <div id="results">
          <p id="resultPara">
-         <?
+         <?php
             if(!empty($_POST)){
                $searchString = "Select r.recipename, r.directions";
                $fromString = " FROM recipes r ";
