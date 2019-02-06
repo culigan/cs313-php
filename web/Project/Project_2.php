@@ -68,8 +68,8 @@ catch (PDOException $ex)
       <div id="results">
          <p id="resultPara">
          <?php
-            /*if(!empty($_POST)){
-               $searchString = "Select r.recipename, r.directions";
+            if(!empty($_POST)){
+               /*$searchString = "Select r.recipename, r.directions";
                $fromString = " FROM recipes r ";
                $whereString = " where";
                if(isset($_POST['type0'])){
@@ -94,8 +94,8 @@ catch (PDOException $ex)
                if($whereString.length > 6)
                   $searchString = $searchString . $whereString
                $searchString = $searchString . ";";
-               echo $db->query($searchString);
-            }*/
+               echo $db->query($searchString);*/
+            }
          ?>
          </p>
       </div>
