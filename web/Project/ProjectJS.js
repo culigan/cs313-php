@@ -16,7 +16,7 @@ function addItem() {
 
    amountLab.innerHTML = "Amount";
    measureLab.innerHTML = "Measurement Type";
-   ingredLab.innerHTML = "Ingredients";
+   ingredLab.innerHTML = "Ingredient";
    count++;
    var lineBreak = document.createElement("div");
    ingredient.setAttribute("type", "text");

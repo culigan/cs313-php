@@ -17,13 +17,8 @@ try
 
     $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-    foreach($db->query("SELECT * FROM MeasureType") as $row)
-            {
-                echo "<a class='scripture' href='display.php?id=$row[id]' >";
-                echo $row[book]." ".$row[chapter].":".$row[verse];
-                echo "</a><br/>";
-
-            }
+    $types = $db->query("SELECT * FROM FoodType;");
+    $mcats = $db->query("SELECT * FROM MealCategory;");
 }
 catch (PDOException $ex)
 {
@@ -33,35 +28,46 @@ catch (PDOException $ex)
 
 ?>
 
+
+
 <!DOCTYPE html>
 
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 <head>
    <meta charset="utf-8" />
-   <title>Shopping Page</title>
+   <title>Search Recipes</title>
    <link href="Project.css" rel="stylesheet">
-   <script src="AssignWeek3_B.js"></script>
+   <script src="ProjectJS.js"></script>
 </head>
 <body>
-   <header>Checkout</header>
+   <header>Search Recipes</header>
    <div id='itemdiv'>
-      <form action="Poject_2.php" method="post">
-         <p></p></br>
-         <div id="select">
-         <select name="amount0"  required>
-               <option value="1/2">1/2</option>
-            </select>Amount
-            <select name="meastype0" required>
-               <option value="Cup">Cup</option>
-            </select>Measurement Type
-         </div>
-         <input name="street" type="text" required>Street Address</br></br>
-         <input name="city" type="text" required>City</br></br>
-         <input name="state" type="text" required>State</br></br>
-         <input name="zip" type="text" required>Zip</br></br>
-         <p><a href="AssignWeek3_Cart.php">Return to Cart</a></p>
-         <input type="submit" value="Submit">
+      <form id="searchforum" action="Poject_2.php" method="post">         
+         <select name="type0" >
+            <option></option>
+            <? 
+               foreach($types as $type){
+                 echo "<option> $type[typename]</option>";
+               }
+            ?>
+         </select>Food Type
+         <select name="mealCat0">
+            <option><option>
+            <? 
+               foreach($sizes as $size){
+                 echo "<option> $mcats[categoryname]</option>";
+               }
+            ?>
+         </select>Meal Category </br></br>        
+         <input name="recipename" type="text">Recipe Name</br></br>
+         <input name="ingred" type="text" required>Ingredients</br></br>
+         <input type="submit" value="Search">
       </form>
+      <div id="results">
+         <p id="resultPara">
+
+         </p>
+      </div>
    </div>
 </body>
 </html>
