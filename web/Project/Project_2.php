@@ -44,7 +44,7 @@ catch (PDOException $ex)
 <body>
    <header>Search Recipes</header>
    <div id='itemdiv'>
-      <form id="searchforum" action="Poject_2.php" method="post">         
+      <form id="searchforum" action="Project_2.php" method="post">         
          <select name="type0" >
             <option></option>
             <? 
