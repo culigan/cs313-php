@@ -92,9 +92,9 @@ catch (PDOException $ex)
                }
                $searchString = $searchString . $fromString;
                if(strlen($whereString) > 6)
-                  $searchString = $searchString . $whereString
+                  $searchString = $searchString . $whereString;
                $searchString = $searchString . ";";
-               /*echo $db->query($searchString);*/
+               echo $db->query($searchString);
             }
          ?>
          </p>
