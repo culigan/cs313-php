@@ -42,7 +42,7 @@ catch (PDOException $ex)
    <header>Recipe</header>
    <div id='recipediv'>
       <?php
-
+         echo $_POST('id');
           foreach($db->query('SELECT * FROM Scriptures WHERE id ='.$_POST['id'].';') as $row)
             {
 
