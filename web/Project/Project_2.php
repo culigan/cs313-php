@@ -70,7 +70,7 @@ catch (PDOException $ex)
          <?php
             if(!empty($_POST)){
                $searchString = "Select r.recipename";
-               $fromString = " FROM recipes r ";
+               $fromString = " FROM recipe r ";
                $whereString = " where";
                if(isset($_POST['type0']) && !empty($_POST['type0'])){
                   //$searchString = $searchString . ", f.typename";
