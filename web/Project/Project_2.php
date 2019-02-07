@@ -84,7 +84,7 @@ catch (PDOException $ex)
                   if(strlen($whereString) < 8)
                      $whereString = $whereString . " m.categoryname = '" . $_POST['mealCat0'] . "'";   
                   else
-                     $whereString = $whereString . " AND m.categoryname = " . $_POST['mealCat0'] . "'";   
+                     $whereString = $whereString . " AND m.categoryname = '" . $_POST['mealCat0'] . "'";   
                   
                }
                if(isset($_POST['recipename']) && !empty($_POST['recipename'])){
