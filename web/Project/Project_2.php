@@ -69,11 +69,11 @@ catch (PDOException $ex)
          <p id="resultPara">
          <?php
             if(!empty($_POST)){
-               $searchString = "Select r.recipename, r.directions";
+               $searchString = "Select r.recipename";
                $fromString = " FROM recipes r ";
                $whereString = " where";
                if(isset($_POST['type0']) && !empty($_POST['type0'])){
-                  $searchString = $searchString . ", f.typename";
+                  //$searchString = $searchString . ", f.typename";
                   $fromString = $fromString . " inner join FoodType f on r.foodtype_id = f.id ";
                   $whereString = $whereString . " f.typename = " . $_POST['type0']; 
                   echo $searchString . "</br>";
@@ -81,7 +81,7 @@ catch (PDOException $ex)
                   echo $whereString . "</br>";
                }
                if(isset($_POST['mealCat0']) && !empty($_POST['mealCat0'])){
-                  $searchString = $searchString . ", c.categoryname";
+                  //$searchString = $searchString . ", c.categoryname";
                   $fromString = $fromString . " inner join MealCategory m on r.MealCategory_ID = m.id ";
                   if(strlen($whereString) < 8)
                      $whereString = $whereString . " m.categoryname = " . $_POST['mealCat0'];   
@@ -93,14 +93,14 @@ catch (PDOException $ex)
                }
                if(isset($_POST['recipename']) && !empty($_POST['recipename'])){
                   if(strlen($whereString) < 8)
-                     $whereString = $whereString . " r.recipename = " . $_POST['recipename'];   
+                     $whereString = $whereString . " r.recipename like '%" . $_POST['recipename'] . "%'";   
                   else 
-                     $whereString = $whereString . " AND r.recipename = " . $_POST['recipename'];   
+                     $whereString = $whereString . " AND r.recipename  like '%" . $_POST['recipename'] . "%'";   
                   echo $whereString . "</br>";
                }
                if(isset($_POST['ingred']) && !empty($_POST['ingred'])){
-                  $searchString = $searchString . ", i.ingredientname";
-                  $fromString = $fromString . " inner join recipeitems ri on r.recipeitems_id = ri.id";
+                  //$searchString = $searchString . ", i.ingredientname";
+                  $fromString = $fromString . " inner join recipeitems ri on r.id = ri.recipe_id";
                   if(strlen($whereString) < 8)
                      $whereString = $whereString . " ri.Ingredients like '" . $_POST['ingred'] . "'"; 
                   else 
@@ -113,9 +113,13 @@ catch (PDOException $ex)
                if(strlen($whereString) > 6)
                   $searchString = $searchString . $whereString;
                $searchString = $searchString . ";";
-               echo $searchString;
-               echo $db->query($searchString);
-               
+               foreach( $db->query($searchString) as row)
+               {
+                //echo "<a class='scripture' href='display.php?id=$row[id]' >";
+                echo $row[recipename];
+                //echo "</a><br/>";
+
+               }
             }
          ?>
          </p>
