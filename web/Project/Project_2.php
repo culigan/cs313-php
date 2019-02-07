@@ -95,7 +95,7 @@ catch (PDOException $ex)
                if(isset($_POST['ingred']) && !empty($_POST['ingred'])){
                   $searchString = $searchString . ", i.ingredientname";
                   $fromString = $fromString . " inner join recipeitems ri on r.recipeitems_id = ri.id";
-                  $whereString = $whereString . "and ri.Ingredients like '%sugar%' " . $_POST['ingred']; 
+                  $whereString = $whereString . "and ri.Ingredients like '$_POST['ingred']'"; 
                   echo $searchString . "</br>";
                   echo $fromString . "</br>";
                   echo $whereString . "</br>";  
