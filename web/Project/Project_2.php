@@ -76,9 +76,7 @@ catch (PDOException $ex)
                   //$searchString = $searchString . ", f.typename";
                   $fromString = $fromString . " inner join FoodType f on r.foodtype_id = f.id ";
                   $whereString = $whereString . " f.typename = " . $_POST['type0']; 
-                  echo $searchString . "</br>";
-                  echo $fromString . "</br>";
-                  echo $whereString . "</br>";
+                  
                }
                if(isset($_POST['mealCat0']) && !empty($_POST['mealCat0'])){
                   //$searchString = $searchString . ", c.categoryname";
@@ -87,9 +85,7 @@ catch (PDOException $ex)
                      $whereString = $whereString . " m.categoryname = " . $_POST['mealCat0'];   
                   else
                      $whereString = $whereString . " AND m.categoryname = " . $_POST['mealCat0'];   
-                  echo $searchString . "</br>";
-                  echo $fromString . "</br>";
-                  echo $whereString . "</br>";
+                  
                }
                if(isset($_POST['recipename']) && !empty($_POST['recipename'])){
                   if(strlen($whereString) < 8)
@@ -104,10 +100,8 @@ catch (PDOException $ex)
                   if(strlen($whereString) < 8)
                      $whereString = $whereString . " ri.ingredient like '%" . $_POST['ingred'] . "%'"; 
                   else 
-                     $whereString = $whereString . "and ri.ingredient like '%" . $_POST['ingred'] . "%'"; 
-                  echo $searchString . "</br>";
-                  echo $fromString . "</br>";
-                  echo $whereString . "</br>";  
+                     $whereString = $whereString . " and ri.ingredient like '%" . $_POST['ingred'] . "%'"; 
+                  
                }
                $searchString = $searchString . $fromString;
                if(strlen($whereString) > 6)
