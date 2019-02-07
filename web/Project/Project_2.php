@@ -39,6 +39,7 @@ catch (PDOException $ex)
    <meta charset="utf-8" />
    <title>Search Recipes</title>
    <link href="Project.css" rel="stylesheet">
+   <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
    <script src="ProjectJS.js"></script>
 </head>
 <body>
@@ -110,7 +111,7 @@ catch (PDOException $ex)
                foreach( $db->query($searchString) as $row)
                {
                 echo $row[id];
-                echo "<a class='recipefound' onclick='sendRecipeID('" . $row[id] . "')' href='#' >";
+                echo "<a class='recipefound' onclick='sendRecipeID('" . $row[id] . "')' href='' >";
                 echo $row[recipename];
                 echo "</a><br/>";
 
