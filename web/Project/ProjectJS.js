@@ -61,11 +61,11 @@ function addItem() {
 }
 
 
-function buttonClick(clothing) {
+function sendRecipeID(id) {
    $.ajax({
       url: 'http://calm-shelf-84172.herokuapp.com/Week3/Project_2.php',
       type: "POST",
-      data: { item: clothing },
+      data: { id: id },
       success: function (data) {
          alert("Item has been added to the cart!");
       },

@@ -107,12 +107,11 @@ catch (PDOException $ex)
                if(strlen($whereString) > 6)
                   $searchString = $searchString . $whereString;
                $searchString = $searchString . ";";
-               echo $searchString;
                foreach( $db->query($searchString) as $row)
                {
-                //echo "<a class='scripture' href='display.php?id=$row[id]' >";
+                echo "<a class='recipefound' onclick='sendRecipeID(" . row[id] . ")' href='#' >";
                 echo $row[recipename];
-                //echo "</a><br/>";
+                echo "</a><br/>";
 
                }
             }
