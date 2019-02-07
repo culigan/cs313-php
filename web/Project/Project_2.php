@@ -100,7 +100,7 @@ catch (PDOException $ex)
                }
                if(isset($_POST['ingred']) && !empty($_POST['ingred'])){
                   //$searchString = $searchString . ", i.ingredientname";
-                  $fromString = $fromString . " inner join recipeitems ri on r.id = ri.recipe_id";
+                  $fromString = $fromString . " join recipeitems ri on r.id = ri.recipe_id";
                   if(strlen($whereString) < 8)
                      $whereString = $whereString . " ri.ingredient like '%" . $_POST['ingred'] . "%'"; 
                   else 
