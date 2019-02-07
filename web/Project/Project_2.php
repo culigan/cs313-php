@@ -62,7 +62,7 @@ catch (PDOException $ex)
             ?>
          </select>Meal Category </br></br>        
          <input name="recipename" type="text">Recipe Name</br></br>
-         <input name="ingred" type="text" required>Ingredients</br></br>
+         <input name="ingred" type="text" >Ingredients</br></br>
          <input type="submit" value="Search">
       </form>
       <div id="results">
