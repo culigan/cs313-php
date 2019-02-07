@@ -75,16 +75,16 @@ catch (PDOException $ex)
                if(isset($_POST['type0']) && !empty($_POST['type0'])){
                   //$searchString = $searchString . ", f.typename";
                   $fromString = $fromString . " inner join FoodType f on r.foodtype_id = f.id ";
-                  $whereString = $whereString . " f.typename = " . $_POST['type0']; 
+                  $whereString = $whereString . " f.typename = '" . $_POST['type0'] . "'"; 
                   
                }
                if(isset($_POST['mealCat0']) && !empty($_POST['mealCat0'])){
                   //$searchString = $searchString . ", c.categoryname";
                   $fromString = $fromString . " inner join MealCategory m on r.MealCategory_ID = m.id ";
                   if(strlen($whereString) < 8)
-                     $whereString = $whereString . " m.categoryname = " . $_POST['mealCat0'];   
+                     $whereString = $whereString . " m.categoryname = '" . $_POST['mealCat0'] . "'";   
                   else
-                     $whereString = $whereString . " AND m.categoryname = " . $_POST['mealCat0'];   
+                     $whereString = $whereString . " AND m.categoryname = " . $_POST['mealCat0'] . "'";   
                   
                }
                if(isset($_POST['recipename']) && !empty($_POST['recipename'])){
