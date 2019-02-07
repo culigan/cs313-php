@@ -80,7 +80,7 @@ catch (PDOException $ex)
                }
                if(isset($_POST['mealCat0']) && !empty($_POST['mealCat0'])){
                   //$searchString = $searchString . ", c.categoryname";
-                  $fromString = $fromString . " inner join MealCategory m on r.MealCategory_ID = m.id ";
+                  $fromString = $fromString . " join MealCategory m on r.MealCategory_ID = m.id ";
                   if(strlen($whereString) < 8)
                      $whereString = $whereString . " m.categoryname = '" . $_POST['mealCat0'] . "'";   
                   else
