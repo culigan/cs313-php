@@ -83,19 +83,28 @@ catch (PDOException $ex)
                if(isset($_POST['mealCat0']) && !empty($_POST['mealCat0'])){
                   $searchString = $searchString . ", c.categoryname";
                   $fromString = $fromString . " inner join MealCategory m on r.MealCategory_ID = m.id ";
-                  $whereString = $whereString . " AND m.categoryname = " . $_POST['mealCat0'];   
+                  if($whereString.length < 8)
+                     $whereString = $whereString . " m.categoryname = " . $_POST['mealCat0'];   
+                  else
+                     $whereString = $whereString . " AND m.categoryname = " . $_POST['mealCat0'];   
                   echo $searchString . "</br>";
                   echo $fromString . "</br>";
                   echo $whereString . "</br>";
                }
                if(isset($_POST['recipename']) && !empty($_POST['recipename'])){
-                  $whereString = $whereString . " AND r.recipename = " . $_POST['recipename'];   
+                  if($whereString.length < 8)
+                     $whereString = $whereString . " r.recipename = " . $_POST['recipename'];   
+                  else 
+                     $whereString = $whereString . " AND r.recipename = " . $_POST['recipename'];   
                   echo $whereString . "</br>";
                }
                if(isset($_POST['ingred']) && !empty($_POST['ingred'])){
                   $searchString = $searchString . ", i.ingredientname";
                   $fromString = $fromString . " inner join recipeitems ri on r.recipeitems_id = ri.id";
-                  $whereString = $whereString . "and ri.Ingredients like '" . $_POST['ingred'] . "'"; 
+                  if($whereString.length < 8)
+                     $whereString = $whereString . " ri.Ingredients like '" . $_POST['ingred'] . "'"; 
+                  else 
+                     $whereString = $whereString . "and ri.Ingredients like '" . $_POST['ingred'] . "'"; 
                   echo $searchString . "</br>";
                   echo $fromString . "</br>";
                   echo $whereString . "</br>";  
