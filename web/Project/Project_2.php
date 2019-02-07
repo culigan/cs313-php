@@ -106,6 +106,10 @@ catch (PDOException $ex)
                $searchString = $searchString . ";";
                echo $searchString;
                echo $db->query($searchString);
+               unset($_POST['type0']);
+               unset($_POST['mealCat0']);
+               unset($_POST['recipename']);
+               unset($_POST['ingred']);
             }
          ?>
          </p>
