@@ -102,9 +102,9 @@ catch (PDOException $ex)
                   //$searchString = $searchString . ", i.ingredientname";
                   $fromString = $fromString . " inner join recipeitems ri on r.id = ri.recipe_id";
                   if(strlen($whereString) < 8)
-                     $whereString = $whereString . " ri.Ingredients like '" . $_POST['ingred'] . "'"; 
+                     $whereString = $whereString . " ri.ingredient like '%" . $_POST['ingred'] . "%'"; 
                   else 
-                     $whereString = $whereString . "and ri.Ingredients like '" . $_POST['ingred'] . "'"; 
+                     $whereString = $whereString . "and ri.ingredient like '%" . $_POST['ingred'] . "%'"; 
                   echo $searchString . "</br>";
                   echo $fromString . "</br>";
                   echo $whereString . "</br>";  
