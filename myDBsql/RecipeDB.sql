@@ -32,6 +32,7 @@ IngredientType_ID INT NOT NULL REFERENCES IngredientType(ID));
 CREATE TABLE Recipe (
 ID serial PRIMARY KEY,
 RecipeName VARCHAR(80) NOT NULL,
+RecipeItems_ID INT NOT NULL REFERENCES RecipeItems(ID),
 Directions TEXT,
 FoodType_ID INT NOT NULL REFERENCES FoodType(ID),
 MealCategory_ID INT NOT NULL REFERENCES MealCategory(ID),

@@ -75,20 +75,30 @@ catch (PDOException $ex)
                if(isset($_POST['type0'])){
                   $searchString = $searchString . ", f.typename";
                   $fromString = $fromString . " inner join FoodType f on r.foodtype_id = f.id ";
-                  $whereString = $where . " f.typename = " . $_POST['type0'];   
+                  $whereString = $where . " f.typename = " . $_POST['type0']; 
+                  echo $searchString . "</br>";
+                  echo $fromString . "</br>";
+                  echo $whereString . "</br>";
                }
                if(isset($_POST['mealCat0'])){
                   $searchString = $searchString . ", c.categoryname";
                   $fromString = $fromString . " inner join MealCategory m on r.MealCategory_ID = m.id ";
                   $whereString = $whereString . " AND m.categoryname = " . $_POST['mealCat0'];   
+                  echo $searchString . "</br>";
+                  echo $fromString . "</br>";
+                  echo $whereString . "</br>";
                }
                if(isset($_POST['recipename'])){
                   $whereString = $whereString . " AND r.recipename = " . $_POST['recipename'];   
+                  echo $whereString . "</br>";
                }
                if(isset($_POST['ingred'])){
                   $searchString = $searchString . ", i.ingredientname";
                   $fromString = $fromString . " inner join recipeitems ri on r.recipeitems_id = ri.id";
-                  $whereString = $whereString . "and ri.Ingredients like '%sugar%' " . $_POST['ingred'];   
+                  $whereString = $whereString . "and ri.Ingredients like '%sugar%' " . $_POST['ingred']; 
+                  echo $searchString . "</br>";
+                  echo $fromString . "</br>";
+                  echo $whereString . "</br>";  
                }
                $searchString = $searchString . $fromString;
                if(strlen($whereString) > 6)
