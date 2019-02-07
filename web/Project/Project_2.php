@@ -72,7 +72,7 @@ catch (PDOException $ex)
                $searchString = "Select r.recipename, r.directions";
                $fromString = " FROM recipes r ";
                $whereString = " where";
-               if(isset($_POST['type0']) && $_POST['type0'] != ""){
+               if(isset($_POST['type0'])  && $_POST['mealCat0'] != ""){                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             && $_POST['type0'] != ""){
                   $searchString = $searchString . ", f.typename";
                   $fromString = $fromString . " inner join FoodType f on r.foodtype_id = f.id ";
                   $whereString = $whereString . " f.typename = " . $_POST['type0']; 
