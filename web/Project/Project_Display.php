@@ -55,9 +55,12 @@ catch (PDOException $ex)
                echo $row1['id'];
                echo $row1['measurementsize_id'];
                echo $row1['measurementtype_id'];
-               echo $db->query('SELECT measurementsize FROM measurementsize WHERE id ='. $row1['measurementsize_id'] . ';');
+               $row2 = $db->query('SELECT measurementsize FROM measurementsize WHERE id ='. $row1['measurementsize_id'] . ';');
+               echo $row2['measurmentsize'];
                echo " ";
-               echo $db->query('SELECT measurementname FROM measurementtype WHERE id ='. $row1['measurementtype_id'] . ';');
+               $row3 $db->query('SELECT measurementname FROM measurementtype WHERE id ='. $row1['measurementtype_id'] . ';');
+               echo $row3['measurmentname'];
+               echo " ";
                echo "</br>";                   
             }
             echo "</span>";
