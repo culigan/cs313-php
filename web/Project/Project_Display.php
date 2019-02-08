@@ -43,14 +43,14 @@ catch (PDOException $ex)
    <header>Recipe</header>
    <div id='recipediv'>
       <?php
-         echo 'SELECT * FROM recipeitems WHERE recipe_id ='. id .';';
+         echo 'SELECT * FROM recipeitems WHERE recipe_id ='. $id .';';
          foreach($db->query('SELECT * FROM Recipe WHERE id = '. $id .';') as $row){
 
             echo "<p>";
             echo "<span class='spanrecipe'>";
             echo $row[recipename];
             echo "</br>";
-            foreach($db->query('SELECT * FROM recipeitems WHERE recipe_id ='. id .';') as $row1)
+            foreach($db->query('SELECT * FROM recipeitems WHERE recipe_id ='. $id .';') as $row1)
             {
                echo $db->query('SELECT measurementsize FROM measurementsize WHERE id ='. $row1[measurementsize_id] . ';');
                echo " ";
