@@ -3,7 +3,7 @@
 
 $db;
 $id = $_GET['id'];
-
+echo $id;
 try
 {
     $dbUrl = getenv('DATABASE_URL');
@@ -43,8 +43,8 @@ catch (PDOException $ex)
    <header>Recipe</header>
    <div id='recipediv'>
       <?php
-         echo $_GET('id');
-         foreach($db->query('SELECT * FROM Recipe WHERE id ='. $id .';') as $row){
+         echo $id;
+         foreach($db->query('SELECT * FROM Recipe WHERE id = '. $id .';') as $row){
 
             echo "<p>";
             echo "<span class='spanrecipe'>";
