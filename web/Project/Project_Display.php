@@ -52,6 +52,7 @@ catch (PDOException $ex)
             echo "</br>";
             foreach($db->query('SELECT * FROM recipeitems WHERE recipe_id ='. $id .';') as $row1)
             {
+               echo $row1;
                echo $db->query('SELECT measurementsize FROM measurementsize WHERE id ='. $row1[measurementsize_id] . ';');
                echo " ";
                echo $db->query('SELECT measurementname FROM measurementtype WHERE id ='. $row1[measurementtype_id] . ';');
