@@ -39,7 +39,7 @@ catch (PDOException $ex)
    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
    <script src="ProjectJS.js"></script>
 </head>
-<body >   
+<body>   
    <header>Recipe</header>
    <div id='recipediv'>
       <?php

@@ -110,8 +110,7 @@ catch (PDOException $ex)
                $searchString = $searchString . ";";
                foreach( $db->query($searchString) as $row)
                {
-                echo $row[id];
-                echo "<a class=\"recipefound\" href=\"Project_Display.php?id=" . (string)$row[id] . ");\" >";
+                echo "<a class=\"recipefound\" href=\"Project_Display.php?id=" . $row[id] . ";\" >";
                 echo $row[recipename];
                 echo "</a><br/>";
 
