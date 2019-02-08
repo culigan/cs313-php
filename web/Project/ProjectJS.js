@@ -63,7 +63,7 @@ function addItem() {
 
 function sendRecipeID(lookup) {
    $.ajax({
-      url: 'http://calm-shelf-84172.herokuapp.com/Project/Project_Display.php',
+      url: 'http://calm-shelf-84172.herokuapp.com/Week3/AssignWeek3_B.php',
       type: "POST",
       data: { id: lookup },
       success: function (data) {
