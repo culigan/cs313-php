@@ -111,7 +111,7 @@ catch (PDOException $ex)
                foreach( $db->query($searchString) as $row)
                {
                 echo $row[id];
-                echo "<a class=\"recipefound\" href=\"javascript:sendRecipeID('" . (string)$row[id] . "');\" >";
+                echo "<a class=\"recipefound\" href=\"Project_Display.php?id=" . (string)$row[id] . ");\" >";
                 echo $row[recipename];
                 echo "</a><br/>";
 
