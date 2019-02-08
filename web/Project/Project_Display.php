@@ -52,15 +52,15 @@ catch (PDOException $ex)
             echo "</br>";
             foreach($db->query('SELECT * FROM recipeitems WHERE recipe_id ='. $id .';') as $row1)
             {
-               echo $row1['id'];
-               echo $row1['measurementsize_id'];
-               echo $row1['measurementtype_id'];
-               $row2 = $db->query('SELECT measurementsize FROM measurementsize WHERE id ='. $row1['measurementsize_id'] . ';');
-               echo $row2['measurmentsize'];
-               echo " ";
-               $row3 $db->query('SELECT measurementname FROM measurementtype WHERE id ='. $row1['measurementtype_id'] . ';');
-               echo $row3['measurmentname'];
-               echo " ";
+               foreach($db->query('SELECT measurementsize FROM measurementsize WHERE id ='. $row1['measurementsize_id'] . ';') as $row2){
+                  echo $row2['measurmentsize'];
+                  echo " ";
+               }
+               foreach($db->query('SELECT measurementname FROM measurementtype WHERE id ='. $row1['measurementtype_id'] . ';') as $row3){
+                  echo $row3['measurmentname'];
+                  echo " ";
+               }
+               echo $row1['ingredient'];
                echo "</br>";                   
             }
             echo "</span>";
