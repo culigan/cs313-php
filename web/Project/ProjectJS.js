@@ -65,13 +65,12 @@ function sendRecipeID(lookup) {
    $.ajax({
       url: 'http://calm-shelf-84172.herokuapp.com/Project/Project_Display.php',
       type: "POST",
-      datatype: "text",
       data: { id: lookup },
       success: function (data) {
          alert("Item has been added to the cart!");
       },
-      error: function () {
-         alert("ERROR!");
+      error: function (data, success, failure) {
+         alert("ERROR:" + failure);
 
       }
    });
