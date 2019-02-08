@@ -3,7 +3,6 @@
 
 $db;
 $id = $_GET['id'];
-echo $id;
 try
 {
     $dbUrl = getenv('DATABASE_URL');
@@ -43,24 +42,23 @@ catch (PDOException $ex)
    <header>Recipe</header>
    <div id='recipediv'>
       <?php
-         echo 'SELECT * FROM recipeitems WHERE recipe_id ='. $id .';';
          foreach($db->query('SELECT * FROM Recipe WHERE id = '. $id .';') as $row){
 
             echo "<p>";
             echo "<span class='spanrecipe'>";
-            echo $row[recipename];
+            echo "<strong>$row[recipename]</strong>";
             echo "</br>";
             foreach($db->query('SELECT * FROM recipeitems WHERE recipe_id ='. $id .';') as $row1)
             {
-               foreach($db->query('SELECT measurementsize FROM measurementsize WHERE id ='. $row1['measurementsize_id'] . ';') as $row2){
+               foreach($db->query('SELECT measurementsize FROM measurementsize WHERE id ='. $row1[measurementsize_id] . ';') as $row2){
                   echo $row2['measurementsize'];
                   echo " ";
                }
-               foreach($db->query('SELECT measurementname FROM measurementtype WHERE id ='. $row1['measurementtype_id'] . ';') as $row3){
-                  echo $row3['measurementname'];
+               foreach($db->query('SELECT measurementname FROM measurementtype WHERE id ='. $row1[measurementtype_id] . ';') as $row3){
+                  echo $row3[measurementname];
                   echo " ";
                }
-               echo $row1['ingredient'];
+               echo $row1[ingredient];
                echo "</br>";                   
             }
             echo "</span>";
