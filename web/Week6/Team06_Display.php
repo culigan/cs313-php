@@ -30,31 +30,31 @@ catch (PDOException $ex)
   die();
 }
 
-   $insertStmt = $db->exec("Insert into scriptures (book, chapter, verse, content) values ('" . $book . "', '" . $chpt . "', '" . $verse . "', '" . $content ."');");
-    /*$insertIn = $this->pdo->prepare($insertStmt);
+   /*$insertStmt = $db->exec("Insert into scriptures (book, chapter, verse, content) values ('" . $book . "', '" . $chpt . "', '" . $verse . "', '" . $content ."');");
+    $insertIn = $this->pdo->prepare($insertStmt);
     $insertIn->bindValue(':book',$book);
     $insertIn->bindValue(':chpt',$chpt);
     $insertIn->bindValue(':verse',$verse);
     $insertIn->bindValue(':content',$content);
     $insertIn->execute();*
-   echo "got here </br>";*/
-   $newId = $db->lastInsertId('scriptures_id_seq');
+   echo "got here </br>";
+   $newId = $db->lastInsertId('scriptures_id_seq');*/
    
    if(isset($_POST['topic0'])){
       $topic = $_POST['topic0'];      
-      $inserttop = $db->exec("insert into topics (scripture_id, topics_id) values ( " . $newId . ", 1);");
+      $inserttop = $db->exec("insert into topics (scripture_id, topics_id) values ( 6, 1);");
       /*$inserttop->bindValue(':newId', $newId);
       $inserttop->execute();*/
    }
    if(isset($_POST['topic1'])){
       $topic1 = $_POST['topic1'];
-      $inserttop1 = $db->exec("insert into topics (scripture_id, topics_id) values ( " . $newId . ", 2);");
+      $inserttop1 = $db->exec("insert into topics (scripture_id, topics_id) values ( 1, 2);");
       /*$inserttop1->bindValue(':newId', $newId);
       $inserttop1->execute();*/
    }
    if(isset($_POST['topic2'])){
       $topic2 = $_POST['topic2'];
-      $inserttop2 = $db->exec("insert into topics (scripture_id, topics_id) values ( " . $newId . ", 3);");
+      $inserttop2 = $db->exec("insert into topics (scripture_id, topics_id) values (6, 3);");
       /*$inserttop2->bindValue(':newId', $newId);
       $inserttop2->execute();*/
    }
