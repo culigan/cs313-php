@@ -40,7 +40,8 @@ catch (PDOException $ex)
     $insertIn->execute();*/
 
    $newId = $db->lastInsertId('scriptures_id_seq');
-   
+   echo $newId;
+
    if(isset($_POST['topic0'])){
       $topic = $_POST['topic0'];   
       echo $topic;
