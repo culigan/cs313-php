@@ -39,7 +39,7 @@ catch (PDOException $ex)
     $insertIn->execute();*
    echo "got here </br>";
    $newId = $db->lastInsertId('scriptures_id_seq');*/
-   
+   echo $_POST['topic0'] . $_POST['topic1'] . $_POST['topic2'];
    if(isset($_POST['topic0'])){
       echo 'got here';
       $topic = $_POST['topic0'];      
