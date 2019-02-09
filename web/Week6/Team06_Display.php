@@ -41,7 +41,9 @@ catch (PDOException $ex)
    $newId = $db->lastInsertId('scriptures_id_seq');*/
    
    if(isset($_POST['topic0'])){
+      echo 'got here'
       $topic = $_POST['topic0'];      
+      echo $topic;
       $inserttop = $db-exec("insert into scripture_topic_link (scripture_id, topics_id) values ( 6, 1);");
       /*//$inserttop->bindValue(':newId', $newId);
       $inserttop->execute();*/
