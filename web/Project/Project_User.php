@@ -22,12 +22,9 @@
       $firstname = htmlspecialchars($_POST['fname']);
       $lastname = htmlspecialchars($_POST['lname']);
       echo "in session" . $username . $password . $firstname . $lastname;
-      $queryStmt = "select * From user_table where firstname = :firstname and lastname = :lastname and username = :username and password = :password;";
+      $queryStmt = "select username From user_table where username = :username";
       $queryStmt = $db->prepare($queryStmt);
       $queryStmt->bindValue(':username', $username);
-      $queryStmt->bindValue(':first', $firstname);
-      $queryStmt->bindValue(':last', $lastname);
-      $queryStmt->bindValue(':password', $password);
       $queryStmt->execute();
       $results = $queryStmt->fetchAll(PDO::FETCH_ASSOC);
 
@@ -36,7 +33,7 @@
       else
       {
          echo "in session 2";
-         $insertStmt ="Insert into User_Table (username, firstname, lastname) values (:username, :first, :last, :password);";
+         $insertStmt ="Insert into User_Table (username, firstname, lastname, password) values (:username, :first, :last, :password);";
          $insertIn = $db->prepare($insertStmt);
          $insertIn->bindValue(':username', $username);
          $insertIn->bindValue(':first', $firstname);
