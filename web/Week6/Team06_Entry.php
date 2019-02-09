@@ -1,7 +1,6 @@
 ﻿<?php
 
 $db;
-$id = $_GET['id'];
 try
 {
     $dbUrl = getenv('DATABASE_URL');
