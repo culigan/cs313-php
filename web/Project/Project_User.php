@@ -4,7 +4,7 @@
    require('DB_Connect.php');
    $db = connectToDB();
 
-   echo "connect";
+   /*echo "connect";
    $username;
    $password;
    $firstname;
@@ -65,7 +65,7 @@
       else
          header("Location: Project_create.php");
       
-   }
+   }*/
 ?>
 
 
