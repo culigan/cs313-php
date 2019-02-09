@@ -33,17 +33,23 @@
    }
    if(isset($_POST['topic1'])){
       $topic1 = $_POST['topic1'];
-      $inserttop1 = $db->exec("insert into scripture_topic_link (scripture_id, topics_id) values ( '" . $newId . "', 2);");
-      /*$inserttop1 = $db->prepare("insert into scripture_topic_link (scripture_id, topics_id) values ( :newId, 2);");
+      /*$inserttop1 = $db->exec("insert into scripture_topic_link (scripture_id, topics_id) values ( '" . $newId . "', 2);");//*/
+      $insertValue = 2;
+      $insertStmt2 = "insert into scripture_topic_link (scripture_id, topics_id) values ( :newId, :one);";
+      $inserttop1 = $db->prepare($insertStmt2);
       $inserttop1->bindValue(':newId', $newId);
-      $inserttop1->execute();//*/
+      $inserttop1->bindValue(':one', $insertValue);
+      $inserttop1->execute();
    }
    if(isset($_POST['topic2'])){
       $topic2 = $_POST['topic2'];
-      $inserttop2 = $db->exec("insert into scripture_topic_link (scripture_id, topics_id) values ('" . $newId . "', 3);");
-      /*$inserttop2 = $db->prepare("insert into scripture_topic_link (scripture_id, topics_id) values ( :newId, 3);");
+      /*$inserttop2 = $db->exec("insert into scripture_topic_link (scripture_id, topics_id) values ('" . $newId . "', 3);");//*/
+      $insertValue = 3;
+      $insertStmt3 = "insert into scripture_topic_link (scripture_id, topics_id) values ( :newId, :one);";
+      $inserttop2 = $db->prepare($insertStmt3);
       $inserttop2->bindValue(':newId', $newId);
-      $inserttop2->execute();//*/
+      $inserttop2->bindValue(':one', $insertValue);
+      $inserttop2->execute();
    }
 
 ?>
