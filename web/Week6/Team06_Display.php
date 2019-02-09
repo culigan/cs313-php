@@ -34,7 +34,7 @@ catch (PDOException $ex)
   die();
 }
 
-   echo "got here";
+  /* echo "got here";
    $insertStmt = "Insert into scriptures (book, chapter, verse, content) values (:book, :chpt, :verse, :content);";
     $insertIn = $this->pdo->prepare($insertStmt);
     $insertIn->bindValue(':book',$book);
@@ -62,9 +62,9 @@ catch (PDOException $ex)
       $inserttop2 = "insert into topics (scripture_id, topics_id) values ( :newId , 3);";
       $inserttop2->bindValue(':newId', $newId);
       $inserttop2->execute();
-   }/**/
+   }
 
-   echo "got here";
+   echo "got here";*/
 ?>
 
 <!DOCTYPE html>
