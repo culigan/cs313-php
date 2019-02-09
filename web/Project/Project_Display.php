@@ -2,7 +2,7 @@
 <?php
    session_start();
 
-   if(!isset($SESSION['user'])){
+   if(!isset($_SESSION['user'])){
       header("Location: Project_User.php");
       die();
    }

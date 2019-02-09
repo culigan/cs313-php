@@ -2,11 +2,13 @@
    session_start();
 
    $signin;
-   if(!isset($SESSION['user'])){
-      $signin = "SignIn";
+   echo
+   if(!isset($_SESSION['user'])){
+      $signin = "SignIn";      
    }
    else
       $signin = "SignOut";
+   echo $signin;
 ?>
 
 <!DOCTYPE html>

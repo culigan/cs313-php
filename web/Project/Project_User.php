@@ -9,7 +9,7 @@
    $password;
    $firstname;
    $lastname;
-   if(isset($SESSION['user']))
+   if(isset($_SESSION['user']))
    {
       session_destroy();
       header("Location: ProjectHome.php");
@@ -62,7 +62,7 @@
       if(count($queryStmt) > 0)
       {
          echo "inpost2";
-         $SESSION['user'] = $username;
+         $_SESSION['user'] = $username;
          header("Location: ProjectHome.php");         
       }   
       else
