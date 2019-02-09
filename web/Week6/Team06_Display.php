@@ -37,8 +37,8 @@ catch (PDOException $ex)
     $insertIn->bindValue(':verse',$verse);
     $insertIn->bindValue(':content',$content);
     $insertIn->execute();*
-   echo "got here </br>";*/
-   $newId = $db->lastInsertId('scriptures_id_seq');
+   echo "got here </br>";
+   $newId = $db->lastInsertId('scriptures_id_seq');*/
    
    if(isset($_POST['topic0'])){
       $topic = $_POST['topic0'];      
