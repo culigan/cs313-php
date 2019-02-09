@@ -33,6 +33,8 @@ catch (PDOException $ex)
   echo 'Error!: ' . $ex->getMessage();
   die();
 }
+
+   echo "got here";
    $insertStmt = "Insert into scriptures (book, chapter, verse, content) values (:book, :chpt, :verse, :content);";
     $insertIn = $this->pdo->prepare($insertStmt);
     $insertIn->bindValue(':book',$book);
@@ -40,7 +42,7 @@ catch (PDOException $ex)
     $insertIn->bindValue(':verse',$verse);
     $insertIn->bindValue(':content',$content);
     $insertIn->execute();
-   
+   echo "got here";
    $newId = $pdo->lastInsertId('product_id_seq');
    
    if(isset($_POST['topic0'])){
