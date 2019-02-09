@@ -43,21 +43,21 @@ catch (PDOException $ex)
    
    if(isset($_POST['topic0'])){
       $topic = $_POST['topic0'];      
-      $inserttop = $db-exec("insert into scripture_topic_link (scripture_id, topics_id) values ( '" . newId . "', 1);");
+      $inserttop = $db-exec("insert into scripture_topic_link (scripture_id, topics_id) values ( '" . $newId . "', 1);");
       /*$inserttop = $db-prepare("insert into scripture_topic_link (scripture_id, topics_id) values ( :newId, 1);");
       $inserttop->bindValue(':newId', $newId);
       $inserttop->execute();//*/
    }
    if(isset($_POST['topic1'])){
       $topic1 = $_POST['topic1'];
-      $inserttop1 = $db->exec("insert into scripture_topic_link (scripture_id, topics_id) values ( '" . newId . "', 2);");
+      $inserttop1 = $db->exec("insert into scripture_topic_link (scripture_id, topics_id) values ( '" . $newId . "', 2);");
       /*$inserttop1 = $db->prepare("insert into scripture_topic_link (scripture_id, topics_id) values ( :newId, 2);");
       $inserttop1->bindValue(':newId', $newId);
       $inserttop1->execute();//*/
    }
    if(isset($_POST['topic2'])){
       $topic2 = $_POST['topic2'];
-      $inserttop2 = $db->exec("insert into scripture_topic_link (scripture_id, topics_id) values ('" . newId . "', 3);");
+      $inserttop2 = $db->exec("insert into scripture_topic_link (scripture_id, topics_id) values ('" . $newId . "', 3);");
       /*$inserttop2 = $db->prepare("insert into scripture_topic_link (scripture_id, topics_id) values ( :newId, 3);");
       $inserttop2->bindValue(':newId', $newId);
       $inserttop2->execute();//*/
@@ -77,10 +77,11 @@ catch (PDOException $ex)
       <?php
          $count = 0;
          foreach($db->query('SELECT * FROM scriptures;') as $row){
-            echo $row['book'] . " " . $row['chapter'] . " " . $row['verse'] . "</br> ";
+            echo $row['book'] . " " . $row['chapter'] . " " . $row['verse'] . " ";
             foreach($db->query("SELECT t.name from topics t join scripture_topic_link stl on t.id = stl.topics_id where stl.scripture_id = '" . $row['id'] . "';") as $row1)
-               echo $row1['name'] . "</br> ";
+               echo $row1['name'] . " ";
          }
+         echo "</br>";
          /**/
       ?>
       
