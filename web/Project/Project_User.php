@@ -22,15 +22,16 @@
       $password = htmlspecialchars($_POST['pname']);
       $fisrtname = htmlspecialchars($_POST['fname']);
       $lastname = htmlspecialchars($_POST['lname']);
-      $queryStmt = "select * From user_table where firstname = :firstname and lastname = :lastname and username = :username password = :password;";
+      $queryStmt = "select * From user_table where firstname = :firstname and lastname = :lastname and username = :username and password = :password;";
       $queryStmt = $db->prepare($queryStmt);
       $queryStmt->bindValue(':username', $username);
       $queryStmt->bindValue(':first', $firstname);
       $queryStmt->bindValue(':last', $lastname);
       $queryStmt->bindValue(':password', $password);
       $queryStmt->execute();
+      $results = $queryStmt->fetchAll(PDO::FETCH_ASSOC);
 
-      if(count($queryStmt) > 0)
+      if(count($results) > 0)
          echo "The User Alredy Exists!";
       else
       {
@@ -45,10 +46,9 @@
       }
       
    }
-   echo "post";
+   
    if(isset($_POST['user']))
    {
-      echo "inPost";
       $username = $_POST['user'];
       $password = $_POST['pass'];
       $queryStmt = "select username, password From user_table where username = :username and password = :password;";
@@ -57,11 +57,9 @@
       $queryStmt->bindValue(':password', $password);
       $queryStmt->execute();
       $results = $queryStmt->fetchAll(PDO::FETCH_ASSOC);
-      echo "here";
-      echo count($results);
-      if(count($queryStmt) > 0)
+      
+      if(count($results) > 0)
       {
-         echo "inpost2";
          $_SESSION['user'] = $username;
          header("Location: ProjectHome.php");         
       }   

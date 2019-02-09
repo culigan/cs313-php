@@ -7,7 +7,6 @@
    }
    else
       $signin = "SignOut";
-   echo $signin;
 ?>
 
 <!DOCTYPE html>
