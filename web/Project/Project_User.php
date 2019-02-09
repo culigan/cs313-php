@@ -51,7 +51,7 @@
       echo "inPost";
       $username = $_POST['user'];
       $password = $_POST['pass'];
-      $queryStmt = "select * From user_table where username = :username password = :password;";
+      $queryStmt = "select * From user_table where username = :username and password = :password;";
       $queryStmt = $db->prepare($queryStmt);
       $queryStmt->bindValue(':username', $username);
       $queryStmt->bindValue(':first', $firstname);
