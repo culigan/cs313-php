@@ -1,7 +1,12 @@
 ﻿<?php
 
 $db;
-$id = $_GET['id'];
+$book = $_POST['book'];
+$chpt = $_POST['chpt'];
+$verse = $_POST['vers'];
+$content = $_POST['content'];
+
+
 try
 {
     $dbUrl = getenv('DATABASE_URL');
@@ -17,8 +22,7 @@ try
 
     $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-    $sizes = $db->query("SELECT * FROM MeasurementSize;");
-    $types = $db->query("SELECT * FROM MeasurementType;");
+    $sizes = $db->query("Insert into scriptures (book, chapter, verse, content) values (" . $book . ", " . $chpt . ", " . $verse . ", " . $content . ";");
 }
 catch (PDOException $ex)
 {
@@ -26,6 +30,21 @@ catch (PDOException $ex)
   die();
 }
 
+   $db->query("insert into scriptures (book, chapter, verse, content) values ( " . $book . ", " . $chpt . ", " . $verse . ", " . $content . ");";
+   $newId = $pdo->lastInsertId('product_id_seq');
+   
+   if(isset($_POST['topic0'])){
+      $topic = $_POST['topic0'];
+      $db->query("insert into topics (scripture_id, topics_id) values ( " . $newId . ", 1);";
+   }
+   if(isset($_POST['topic1'])){
+      $topic1 = $_POST['topic1'];
+      $db->query("insert into topics (scripture_id, topics_id) values ( " . $newId . ", 2);";
+   }
+   if(isset($_POST['topic2'])){
+      $topic2 = $_POST['topic2'];
+      $db->query("insert into topics (scripture_id, topics_id) values ( " . $newId . ", 3);";
+   }
 ?>
 
 <!DOCTYPE html>
@@ -36,20 +55,16 @@ catch (PDOException $ex)
     <title></title>
 </head>
 <body>
-   <form method="post" action="Team06_Display.php">
-      <input name="book" type="text" required />Book</br></br>
-      <input name="chpt" type="text" required />Chapter</br></br>
-      <input name="verse" type="text" required />Verse</br></br>
-      <textarea name="content" type="text" required>Content</textarea></br></br>
+   
       <?php
          $count = 0;
-         foreach($db->query('SELECT * FROM topics;') as $row){
-            echo "<input type='checkbox name='topic'" . count . 
-            " value='$row['name']'>";
+         foreach($db->query('SELECT * FROM scriptures;') as $row){
+            echo $row['book'] . " " . $row['chapter'] . " " . $row['verse'] . " ";
+            foreach($db->query("SELECT t.name from topic t join scripture_topic_link stl on t.id = stl.topics_id where stl.scripture_id = '" . $row['id'] . "';") as $row1)
+               echo $row['name'] . " ";
          }
          
       ?>
-      <button type="submit" value="Submit">Submit</button>
-   </form>
+      
 </body>
 </html>

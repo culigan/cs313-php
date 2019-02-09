@@ -16,8 +16,7 @@ try
 
     $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-    $sizes = $db->query("SELECT * FROM MeasurementSize;");
-    $types = $db->query("SELECT * FROM MeasurementType;");
+   
 }
 catch (PDOException $ex)
 {
@@ -42,8 +41,8 @@ catch (PDOException $ex)
       <textarea name="content" type="text" required>Content</textarea></br></br>
       <?php
          $count = 0;
-         foreach($db->query('SELECT * FROM topics;') as $row){
-            echo "<input type='checkbox' name='topic' >" . $row['name'] . "</br></br>";
+         foreach($db->query('SELECT * FROM topics order by id;') as $row){
+            echo "<input type='checkbox' name='topic" . count . "' >" . $row['name'] . "</br></br>";
             $count++;
          }
          
