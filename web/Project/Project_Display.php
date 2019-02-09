@@ -49,8 +49,11 @@ catch (PDOException $ex)
             echo "<strong>$row[recipename]</strong>";
             echo "</br>";
             $search = $db->prepare('SELECT * FROM recipeitems WHERE recipe_id = :recipe_id');
+            echo "here";
             $search->bindValue(':recipe_id', $id, PDO::PARAM_INT);
+            echo "here1";
             $search->execute();
+            echo "here2";
             $rec_id = $search->fetchAll(PDO::FETCH_ASSOC);
             echo $rec_id;
             foreach($rec_id as $row1);//$db->query('SELECT * FROM recipeitems WHERE recipe_id ='. $id .';')
