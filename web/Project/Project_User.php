@@ -4,6 +4,7 @@
    require('DB_Connect.php');
    $db = connectToDB();
 
+   echo "connect";
    $username;
    $password;
    $firstname;
@@ -13,7 +14,7 @@
       session_destroy();
       header("Location: ProjectHome.php");
    }
-   
+   echo "session";
    if(isset($_POST['fname']))
    {
       $username = $_POST['uname'];
@@ -42,8 +43,10 @@
       }
       
    }
+   echo "post";
    if(isset($_POST['user']))
    {
+      
       $username = $_POST['user'];
       $password = $_POST['pass'];
       $queryStmt = "select * From user_table where username = :username password = :password;";
