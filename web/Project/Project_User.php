@@ -17,7 +17,7 @@
    echo "session";
    if(isset($_POST['fname']))
    {
-      echo "in session";
+      echo "in session" . $username . $password . $firstname . $lastname;
       $username = htmlspecialchars($_POST['uname']);
       $password = htmlspecialchars($_POST['pname']);
       $fisrtname = htmlspecialchars($_POST['fname']);
