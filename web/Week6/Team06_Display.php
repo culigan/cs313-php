@@ -30,15 +30,15 @@ catch (PDOException $ex)
   die();
 }
 
-   //$insertStmt = $db->exec("Insert into scriptures (book, chapter, verse, content) values ('" . $book . "', '" . $chpt . "', '" . $verse . "', '" . $content ."');");
+   $insertStmt = $db->exec("Insert into scriptures (book, chapter, verse, content) values ('" . $book . "', '" . $chpt . "', '" . $verse . "', '" . $content ."');");
     /*$insertIn = $this->pdo->prepare($insertStmt);
     $insertIn->bindValue(':book',$book);
     $insertIn->bindValue(':chpt',$chpt);
     $insertIn->bindValue(':verse',$verse);
     $insertIn->bindValue(':content',$content);
     $insertIn->execute();*
-   echo "got here </br>";
-   $newId = $db->lastInsertId('scriptures_id_seq');*/
+   echo "got here </br>";*/
+   $newId = $db->lastInsertId('scriptures_id_seq');
    
    if(isset($_POST['topic0'])){
       $topic = $_POST['topic0'];      
