@@ -29,12 +29,11 @@
          $results = $queryStmt->fetchAll(PDO::FETCH_ASSOC);
 
          if(count($results) > 0){
-            echo "The User Alredy Exists!";
-            header("Location: Project_create.php");
+            echo "<strong style:font-size:20;>The User Alredy Exists!</strong>";
+            header("Location: Project_User.php");
          }
          else
-         {
-            echo "in session 2";
+         {            
             $insertStmt ="Insert into user_table (username, firstname, lastname, password) values (:username, :first, :last, :password);";
             $insertIn = $db->prepare($insertStmt);
             $insertIn->bindValue(':username', $username);
