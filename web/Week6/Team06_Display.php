@@ -42,7 +42,8 @@ catch (PDOException $ex)
    $newId = $db->lastInsertId('scriptures_id_seq');
    
    if(isset($_POST['topic0'])){
-      $topic = $_POST['topic0'];      
+      $topic = $_POST['topic0'];   
+      echo $topic;
       $inserttop = $db-exec("insert into scripture_topic_link (scripture_id, topics_id) values ( '" . $newId . "', 1);");
       /*$inserttop = $db-prepare("insert into scripture_topic_link (scripture_id, topics_id) values ( :newId, 1);");
       $inserttop->bindValue(':newId', $newId);
@@ -50,6 +51,7 @@ catch (PDOException $ex)
    }
    if(isset($_POST['topic1'])){
       $topic1 = $_POST['topic1'];
+      echo $topic1;
       $inserttop1 = $db->exec("insert into scripture_topic_link (scripture_id, topics_id) values ( '" . $newId . "', 2);");
       /*$inserttop1 = $db->prepare("insert into scripture_topic_link (scripture_id, topics_id) values ( :newId, 2);");
       $inserttop1->bindValue(':newId', $newId);
@@ -57,6 +59,7 @@ catch (PDOException $ex)
    }
    if(isset($_POST['topic2'])){
       $topic2 = $_POST['topic2'];
+      echo $topic2;
       $inserttop2 = $db->exec("insert into scripture_topic_link (scripture_id, topics_id) values ('" . $newId . "', 3);");
       /*$inserttop2 = $db->prepare("insert into scripture_topic_link (scripture_id, topics_id) values ( :newId, 3);");
       $inserttop2->bindValue(':newId', $newId);
