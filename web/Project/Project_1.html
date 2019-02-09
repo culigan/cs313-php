@@ -2,28 +2,20 @@
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 <head>
    <meta charset="utf-8" />
-   <title>Add a Recipe</title>
+   <title>User Login</title>
    <link href="Project.css" rel="stylesheet">
    <script src="ProjectJS.js"></script>
 </head>
-<body onload="populateSelect()">
-   
-   <header>Add a Recipe</header>
-   <div id='itemdiv'>
-      <form id="formid" action="AssignWeek3_Confirm.php" method="post">
-         <p></p></br>
-         <div id="ingred">
-            <select name="amount0" required>
-               <option value="1/2">1/2</option>
-            </select><label>Amount</label>
-            <select name="meastype0" required>
-               <option value="Cup">Cup</option>
-            </select><label>Measurement Type</label>
-            <input name="ingredient0" type="text" required><label>Ingredient</label></br></br>
-         </div>
-         <input name="add" type="button" value="Add another Ingredient" onclick="addItem()"></br></br>
-         <textarea name="direct" rows="4" cols="50" required>Enter directions here....</textarea></br></br>
-         <input type="submit" value="Submit">
+<body id="userbody">   
+   <header id="user">User Login</header>
+   <div id='userdiv'>
+      <form id="formid" action="ProjectHome.php" method="post">
+         <input name="user" type="text" placeholder="username" required></br>
+         <label>Username</label></br>
+         <input name="pass" type="password" placeholder="password"  required></br>
+         <label>Password</label></br>
+         <a href="button" value="Create User" onclick="createNewUser()">
+         <input type="submit" value="SignIn">
       </form>
    </div>
 </body>
