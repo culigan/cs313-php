@@ -2,17 +2,22 @@
 <?php
 
    session_start();
+   echo "test";
 
    if(!isset($_SESSION['user'])){
       header("Location: Project_User.php");
       die();
    }
+   echo "test";
 
    require('DB_Connect.php');
    $db = connectToDB;
+   echo "test";
 
-   $sizes = $db->query("SELECT * FROM MeasurementSize;");
-   $types = $db->query("SELECT * FROM MeasurementType;");
+   $sizes = $db->query("SELECT * FROM measurementsize;");
+   $types = $db->query("SELECT * FROM measurementtype;");
+   echo "test";
+
 ?>
 
 <!DOCTYPE html>
