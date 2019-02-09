@@ -33,7 +33,7 @@ catch (PDOException $ex)
   echo 'Error!: ' . $ex->getMessage();
   die();
 }
-   /*$insertStmt = "Insert into scriptures (book, chapter, verse, content) values (:book, :chpt, :verse, :content)";
+   $insertStmt = "Insert into scriptures (book, chapter, verse, content) values (:book, :chpt, :verse, :content)";
     $insertIn = $this->pdo->prepare($insertStmt);
     $insertIn->bindValue(':book',$book);
     $insertIn->bindValue(':chpt',$chpt);
@@ -60,7 +60,7 @@ catch (PDOException $ex)
       $inserttop2 = "insert into topics (scripture_id, topics_id) values ( :newId , 3);";
       $inserttop2->bindValue(':newId', $newId);
       $inserttop2->execute();
-   }*/
+   }/**/
 ?>
 
 <!DOCTYPE html>
@@ -73,13 +73,13 @@ catch (PDOException $ex)
 <body>
    
       <?php
-         /*$count = 0;
+         $count = 0;
          foreach($db->query('SELECT * FROM scriptures;') as $row){
             echo $row['book'] . " " . $row['chapter'] . " " . $row['verse'] . " ";
             foreach($db->query("SELECT t.name from topic t join scripture_topic_link stl on t.id = stl.topics_id where stl.scripture_id = '" . $row['id'] . "';") as $row1)
                echo $row['name'] . " ";
          }
-         */
+         /**/
       ?>
       
 </body>
