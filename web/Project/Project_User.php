@@ -6,10 +6,61 @@
 
    $username;
    $password;
-   if(isset($_POST['user'])
+   $firstname;
+   $lastname;
+   if(isset($SESSION['user']))
+   {
+      session_destroy();
+      header("Location: ProjectHome.php");
+   }
+   
+   if(isset($_POST['fname']))
+   {
+      $username = $_POST['uname'];
+      $password = $_POST['pname'];
+      $fisrtname = $_POST['fname'];
+      $lastname = $_POST['lname'];
+      $queryStmt = "select * From user_table where firstname = :firstname and lastname = :lastname and username = :username password = :password;";
+      $queryStmt = $db->prepare($queryStmt);
+      $queryStmt->bindValue(':username', $username);
+      $queryStmt->bindValue(':first', $firstname);
+      $queryStmt->bindValue(':last', $lastname);
+      $queryStmt->bindValue(':password', $password);
+      $queryStmt->execute();
+
+      if(count($queryStmt) > 0)
+         echo "The User Alredy Exists!";
+      else
+      {
+         $insertStmt ="Insert into User_Table (username, firstname, lastname) values (:username, :first, :last, :password);";
+         $insertIn = $db->prepare($insertStmt);
+         $insertIn->bindValue(':username', $username);
+         $insertIn->bindValue(':first', $firstname);
+         $insertIn->bindValue(':last', $lastname);
+         $insertIn->bindValue(':password', $password);
+         $insertIn->execute();
+      }
+      
+   }
+   if(isset($_POST['user']))
    {
       $username = $_POST['user'];
       $password = $_POST['pass'];
+      $queryStmt = "select * From user_table where username = :username password = :password;";
+      $queryStmt = $db->prepare($queryStmt);
+      $queryStmt->bindValue(':username', $username);
+      $queryStmt->bindValue(':first', $firstname);
+      $queryStmt->bindValue(':last', $lastname);
+      $queryStmt->bindValue(':password', $password);
+      $queryStmt->execute();
+      
+      if(count($queryStmt) > 0)
+      {
+         $SESSION['user'] = $username;
+         header("Location: ProjectHome.php");         
+      }   
+      else
+         header("Location: Project_create.php");
       
    }
 ?>

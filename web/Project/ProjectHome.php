@@ -2,7 +2,7 @@
    session_start();
 
    $signin;
-   if(!isset($_POST['user'])){
+   if(!isset($SESSION['user'])){
       $signin = "SignIn";
    }
    else
@@ -31,7 +31,7 @@
             <a href="Project_2.php">Search Recipes</a>
          </div>
          <div id="item">
-            <a id="signin" href="Project_User.php" value="SignIn"><?php echo $signin; ?></a>
+            <a id="signin" href="Project_User.php?user:in" value="SignIn"><?php echo $signin; ?></a>
          </div>
       </div>
       <div id="textdiv">
