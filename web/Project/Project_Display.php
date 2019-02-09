@@ -50,7 +50,7 @@ catch (PDOException $ex)
             echo "</br>";
             $search = $db->prepare('SELECT * FROM recipeitems WHERE recipe_id = :recipe_id');
             echo "here";
-            $search->bindValue(':recipe_id', $id, PDO::PARAM_INT);
+            $search->bindValue(':recipe_id', $id);
             echo "here1";
             $search->execute();
             echo "here2";
