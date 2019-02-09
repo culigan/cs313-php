@@ -51,14 +51,14 @@
       echo "inPost";
       $username = $_POST['user'];
       $password = $_POST['pass'];
-      $queryStmt = "select * From user_table where username = :username and password = :password;";
+      $queryStmt = "select username, password From user_table where username = :username and password = :password;";
       $queryStmt = $db->prepare($queryStmt);
       $queryStmt->bindValue(':username', $username);
-      $queryStmt->bindValue(':first', $firstname);
-      $queryStmt->bindValue(':last', $lastname);
       $queryStmt->bindValue(':password', $password);
       $queryStmt->execute();
-      
+      $results = $queryStmt->fetchAll(PDO::FETCH_ASSOC);
+      echo "here";
+      echo count($results);
       if(count($queryStmt) > 0)
       {
          echo "inpost2";
