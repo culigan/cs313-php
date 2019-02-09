@@ -1,10 +1,18 @@
 ﻿
 <?php
 
-$require('DB_Connect.php');
-$db = connectToDB
-$sizes = $db->query("SELECT * FROM MeasurementSize;");
-    $types = $db->query("SELECT * FROM MeasurementType;");
+   session_start();
+
+   if(!isset($_POST['user'])){
+      header("Location: Project_User.php");
+      die();
+   }
+
+   $require('DB_Connect.php');
+   $db = connectToDB;
+
+   $sizes = $db->query("SELECT * FROM MeasurementSize;");
+   $types = $db->query("SELECT * FROM MeasurementType;");
 ?>
 
 <!DOCTYPE html>
