@@ -2,13 +2,9 @@
 
 $db;
 $book = $_POST['book'];
-echo $book;
 $chpt = $_POST['chpt'];
-echo $chpt;
 $verse = $_POST['verse'];
-echo $verse;
 $content = $_POST['content'];
-echo $content;
 
 
 try
@@ -34,19 +30,18 @@ catch (PDOException $ex)
   die();
 }
 
-   echo "got here </br>";
-   $insertStmt = $db->exec("Insert into scriptures (book, chapter, verse, content) values ('" . $book . "', '" . $chpt . "', '" . $verse . "', '" . $content ."');");
+   //$insertStmt = $db->exec("Insert into scriptures (book, chapter, verse, content) values ('" . $book . "', '" . $chpt . "', '" . $verse . "', '" . $content ."');");
     /*$insertIn = $this->pdo->prepare($insertStmt);
     $insertIn->bindValue(':book',$book);
     $insertIn->bindValue(':chpt',$chpt);
     $insertIn->bindValue(':verse',$verse);
     $insertIn->bindValue(':content',$content);
     $insertIn->execute();*
-   echo "got here </br>";
-   $newId = $pdo->lastInsertId('product_id_seq');*/
+   echo "got here </br>";*/
+   $newId = $pdo->lastInsertId('product_id_seq');
    
    if(isset($_POST['topic0'])){
-      $topic = $_POST['topic0'];
+      $topic = $_POST['topic0'];      
       $inserttop = $db->exec("insert into topics (scripture_id, topics_id) values ( " . $newId . ", 1);");
       /*$inserttop->bindValue(':newId', $newId);
       $inserttop->execute();*/
@@ -64,7 +59,6 @@ catch (PDOException $ex)
       $inserttop2->execute();*/
    }
 
-   echo "got here </br>";
 ?>
 
 <!DOCTYPE html>
@@ -79,9 +73,9 @@ catch (PDOException $ex)
       <?php
          $count = 0;
          foreach($db->query('SELECT * FROM scriptures;') as $row){
-            echo $row['book'] . " " . $row['chapter'] . " " . $row['verse'] . " ";
+            echo $row['book'] . " " . $row['chapter'] . " " . $row['verse'] . "</br> ";
             foreach($db->query("SELECT t.name from topics t join scripture_topic_link stl on t.id = stl.topics_id where stl.scripture_id = '" . $row['id'] . "';") as $row1)
-               echo $row['name'] . " ";
+               echo $row['name'] . "</br> ";
          }
          /**/
       ?>
