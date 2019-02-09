@@ -51,7 +51,8 @@ catch (PDOException $ex)
             $search = $pdo->prepare('SELECT * FROM recipeitems WHERE recipe_id = :recipe_id');
             $search->bindValue(':recipe_id', $id, PDO::PARAM_INT);
             $search->execute();
-            foreach($search as $row1);//$db->query('SELECT * FROM recipeitems WHERE recipe_id ='. $id .';')
+            $rec_id = $search->fetchAll(PDO::FETCH_ASSOC);
+            foreach($rec_id as $row1);//$db->query('SELECT * FROM recipeitems WHERE recipe_id ='. $id .';')
             {
                foreach($db->query('SELECT measurementsize FROM measurementsize WHERE id ='. $row1[measurementsize_id] . ';') as $row2){
                   echo $row2['measurementsize'];
