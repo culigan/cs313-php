@@ -48,7 +48,7 @@ catch (PDOException $ex)
             echo "<span class='spanrecipe'>";
             echo "<strong>$row[recipename]</strong>";
             echo "</br>";
-            $search = $pdo->prepare('SELECT * FROM recipeitems WHERE recipe_id = :recipe_id');
+            $search = $db->prepare('SELECT * FROM recipeitems WHERE recipe_id = :recipe_id');
             $search->bindValue(':recipe_id', $id, PDO::PARAM_INT);
             $search->execute();
             $rec_id = $search->fetchAll(PDO::FETCH_ASSOC);
