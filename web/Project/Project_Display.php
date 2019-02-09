@@ -48,7 +48,6 @@ catch (PDOException $ex)
             echo "<span class='spanrecipe'>";
             echo "<strong>$row[recipename]</strong>";
             echo "</br>";
-            $stmt = $pdo->prepare('SELECT * FROM recipeitems WHERE recipe_id = :id'
             foreach($db->query('SELECT * FROM recipeitems WHERE recipe_id ='. $id .';') as $row1)
             {
                foreach($db->query('SELECT measurementsize FROM measurementsize WHERE id ='. $row1[measurementsize_id] . ';') as $row2){
