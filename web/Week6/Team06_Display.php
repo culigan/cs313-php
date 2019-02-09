@@ -9,15 +9,15 @@
 
    require('DB_Connect.php');
    $db = connectToDB();
-    $insertStmt = $db->exec("Insert into scriptures (book, chapter, verse, content) values ('" . $book . "', '" . $chpt . "', '" . $verse . "', '" .$content . "');");
-   
-    /*$insertStmt ="Insert into scriptures (book, chapter, verse, content) values (:book, :chpt, :verse, :content);";
+    /*$insertStmt = $db->exec("Insert into scriptures (book, chapter, verse, content) values ('" . $book . "', '" . $chpt . "', '" . $verse . "', '" .$content . "');");
+   */
+    $insertStmt ="Insert into scriptures (book, chapter, verse, content) values (:book, :chpt, :verse, :content);";
     $insertIn = $db->prepare($insertStmt);
     $insertIn->bindValue(':book',$book);
     $insertIn->bindValue(':chpt',$chpt);
     $insertIn->bindValue(':verse',$verse);
     $insertIn->bindValue(':content',$content);
-    $insertIn->execute();*/
+    $insertIn->execute();
 
    $newId = $db->lastInsertId('scriptures_id_seq');
 

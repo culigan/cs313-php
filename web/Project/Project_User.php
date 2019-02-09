@@ -1,7 +1,17 @@
 ﻿<?php
    session_start();
 
-   
+   require('DB_Connect.php');
+   $db = connectToDB();
+
+   $username;
+   $password;
+   if(isset($_POST['user'])
+   {
+      $username = $_POST['user'];
+      $password = $_POST['pass'];
+      
+   }
 ?>
 
 
@@ -16,7 +26,7 @@
 <body id="userbody">   
    <header id="user">User Login</header>
    <div id='userdiv'>
-      <form id="formid" action="ProjectHome.php" method="post">
+      <form id="formid" action="GetUserData.php" method="post">
          <input name="user" type="text" placeholder="username" required></br>
          <label>Username</label></br>
          <input name="pass" type="password" placeholder="password"  required></br>
