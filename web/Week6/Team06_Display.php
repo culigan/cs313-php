@@ -24,7 +24,7 @@
    if(isset($_POST['topic0'])){
       $topic = $_POST['topic0'];   
       /*$inserttop = $db->exec("insert into scripture_topic_link (scripture_id, topics_id) values ( " . $newId . ", 1);");//*/
-      $inserttop = $db-prepare("insert into scripture_topic_link (scripture_id, topics_id) values ( :newId, 1);");
+      $inserttop = $db-prepare("insert into scripture_topic_link (scripture_id, topics_id) values ( :newId, '1');");
       $inserttop->bindValue(':newId', $newId);
       $inserttop->execute();
    }
