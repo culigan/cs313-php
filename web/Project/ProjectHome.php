@@ -2,7 +2,6 @@
    session_start();
 
    $signin;
-   echo
    if(!isset($_SESSION['user'])){
       $signin = "SignIn";      
    }
