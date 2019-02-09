@@ -62,7 +62,7 @@
             echo "</p>";
          }
       ?>
-      <button id="edit" name"edit">Edit Recipe</button>
+      <a href="Project_Edit.php?id=<?php echo $id; ?>" >Edit Recipe</a>
    </div>
 </body>
 </html>
