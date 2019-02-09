@@ -4,6 +4,8 @@
    require('DB_Connect.php');
    $db = connectToDB();
 
+   if(isset($_GET['already']))
+      echo "<strong style='font-size:20px;'>User Already Exists!<strong>";
    try
    {
       $username;
@@ -29,8 +31,7 @@
          $results = $queryStmt->fetchAll(PDO::FETCH_ASSOC);
 
          if(count($results) > 0){
-            echo "<strong style:font-size:20;>The User Alredy Exists!</strong>";
-            header("Location: Project_User.php");
+            header("Location: Project_User.php?already=true");
          }
          else
          {            
