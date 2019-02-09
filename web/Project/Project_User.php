@@ -14,7 +14,7 @@
          <label>Username</label></br>
          <input name="pass" type="password" placeholder="password"  required></br>
          <label>Password</label></br>
-         <a href="Project_create.html" value="Create User" >
+         <label><a href="Project_create.html" value="Create User" >Create User</label>
          <input type="submit" value="SignIn">
       </form>
    </div>
