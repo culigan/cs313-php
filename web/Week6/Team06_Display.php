@@ -32,7 +32,7 @@ catch (PDOException $ex)
     $insertStmt = $db->exec("Insert into scriptures (book, chapter, verse, content) values ('" . $book . "', '" . $chpt . "', '" . $verse . "', '" .$content . "');");
    
     /*$insertStmt = $db->prepare("Insert into scriptures (book, chapter, verse, content) values (:book, :chpt, :verse, :content);");
-    $insertIn = $this->pdo->prepare($insertStmt);
+    $insertIn = $db->prepare($insertStmt);
     $insertIn->bindValue(':book',$book);
     $insertIn->bindValue(':chpt',$chpt);
     $insertIn->bindValue(':verse',$verse);
@@ -45,7 +45,7 @@ catch (PDOException $ex)
    if(isset($_POST['topic0'])){
       $topic = $_POST['topic0'];   
       echo $topic;
-      $inserttop = $db-exec("insert into scripture_topic_link (scripture_id, topics_id) values ( " . $newId . ", 1);");
+      $inserttop = $db->exec("insert into scripture_topic_link (scripture_id, topics_id) values ( " . $newId . ", 1);");
       /*$inserttop = $db-prepare("insert into scripture_topic_link (scripture_id, topics_id) values ( :newId, 1);");
       $inserttop->bindValue(':newId', $newId, PDO::PARAM_INT);
       $inserttop->execute();//*/
