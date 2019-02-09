@@ -42,7 +42,7 @@ catch (PDOException $ex)
       <?php
          $count = 0;
          foreach($db->query('SELECT * FROM topics order by id;') as $row){
-            echo "<input type='checkbox' name='topic" . count . "' >" . $row['name'] . "</br></br>";
+            echo "<input type='checkbox' name='topic" . $count . "' >" . $row['name'] . "</br></br>";
             $count++;
          }
          
