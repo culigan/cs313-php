@@ -73,13 +73,13 @@ catch (PDOException $ex)
 <body>
    
       <?php
-         $count = 0;
+         /*$count = 0;
          foreach($db->query('SELECT * FROM scriptures;') as $row){
             echo $row['book'] . " " . $row['chapter'] . " " . $row['verse'] . " ";
             foreach($db->query("SELECT t.name from topic t join scripture_topic_link stl on t.id = stl.topics_id where stl.scripture_id = '" . $row['id'] . "';") as $row1)
                echo $row['name'] . " ";
          }
-         
+         */
       ?>
       
 </body>
