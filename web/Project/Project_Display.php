@@ -1,6 +1,8 @@
 ﻿
 <?php
+   echo "test";
    session_start();
+
    echo "test";
 
    if(!isset($_SESSION['user'])){
