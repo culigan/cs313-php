@@ -42,10 +42,10 @@ catch (PDOException $ex)
       <textarea name="content" type="text" required>Content</textarea></br></br>
       <?php
          $count = 0;
-         foreach($db->query('SELECT * FROM topics;') as $row){
+         //foreach($db->query('SELECT * FROM topics;') as $row){
             //echo "<input type='checkbox' name='topic' value='" . $row['name'] . "'/>";
             count++;
-         }
+         //}
          
       ?>
       <button type="submit" value="Submit">Submit</button>
