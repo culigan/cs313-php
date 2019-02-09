@@ -4,64 +4,73 @@
    require('DB_Connect.php');
    $db = connectToDB();
 
-   echo "connect";
-   $username;
-   $password;
-   $firstname;
-   $lastname;
-   if(isset($_SESSION['user']))
+   try
    {
-      session_destroy();
-      header("Location: ProjectHome.php");
-   }
-   echo "session";
-   if(isset($_POST['fname']))
-   {
-      $username = htmlspecialchars($_POST['uname']);
-      $password = htmlspecialchars($_POST['pname']);
-      $firstname = htmlspecialchars($_POST['fname']);
-      $lastname = htmlspecialchars($_POST['lname']);
-      $queryStmt = "select username From user_table where username = :username";
-      $queryStmt = $db->prepare($queryStmt);
-      $queryStmt->bindValue(':username', $username);
-      $queryStmt->execute();
-      $results = $queryStmt->fetchAll(PDO::FETCH_ASSOC);
-
-      if(count($results) > 0)
-         echo "The User Alredy Exists!";
-      else
+      $username;
+      $password;
+      $firstname;
+      $lastname;
+      if(isset($_SESSION['user']))
       {
-         echo "in session 2";
-         $insertStmt ="Insert into user_table (username, firstname, lastname, password) values (:username, :first, :last, :password);";
-         $insertIn = $db->prepare($insertStmt);
-         $insertIn->bindValue(':username', $username);
-         $insertIn->bindValue(':first', $firstname);
-         $insertIn->bindValue(':last', $lastname);
-         $insertIn->bindValue(':password', $password);
-         $insertIn->execute();
+         session_destroy();
+         header("Location: ProjectHome.php");
       }
-      
-   }
-   
-   if(isset($_POST['user']))
-   {
-      $username = $_POST['user'];
-      $password = $_POST['pass'];
-      $queryStmt = "select username, password From user_table where username = :username and password = :password;";
-      $queryStmt = $db->prepare($queryStmt);
-      $queryStmt->bindValue(':username', $username);
-      $queryStmt->bindValue(':password', $password);
-      $queryStmt->execute();
-      $results = $queryStmt->fetchAll(PDO::FETCH_ASSOC);
-      
-      if(count($results) > 0)
+
+      if(isset($_POST['fname']))
       {
-         $_SESSION['user'] = $username;
-         header("Location: ProjectHome.php");         
-      }   
-      else
-         header("Location: Project_create.php");
+         $username = htmlspecialchars($_POST['uname']);
+         $password = htmlspecialchars($_POST['pname']);
+         $firstname = htmlspecialchars($_POST['fname']);
+         $lastname = htmlspecialchars($_POST['lname']);
+         $queryStmt = "select username From user_table where username = :username";
+         $queryStmt = $db->prepare($queryStmt);
+         $queryStmt->bindValue(':username', $username);
+         $queryStmt->execute();
+         $results = $queryStmt->fetchAll(PDO::FETCH_ASSOC);
+
+         if(count($results) > 0){
+            echo "The User Alredy Exists!";
+            header("Location: Project_create.php");
+         }
+         else
+         {
+            echo "in session 2";
+            $insertStmt ="Insert into user_table (username, firstname, lastname, password) values (:username, :first, :last, :password);";
+            $insertIn = $db->prepare($insertStmt);
+            $insertIn->bindValue(':username', $username);
+            $insertIn->bindValue(':first', $firstname);
+            $insertIn->bindValue(':last', $lastname);
+            $insertIn->bindValue(':password', $password);
+            $insertIn->execute();
+         }
       
+      }
+   
+      if(isset($_POST['user']))
+      {
+         $username = $_POST['user'];
+         $password = $_POST['pass'];
+         $queryStmt = "select username, password From user_table where username = :username and password = :password;";
+         $queryStmt = $db->prepare($queryStmt);
+         $queryStmt->bindValue(':username', $username);
+         $queryStmt->bindValue(':password', $password);
+         $queryStmt->execute();
+         $results = $queryStmt->fetchAll(PDO::FETCH_ASSOC);
+      
+         if(count($results) > 0)
+         {
+            $_SESSION['user'] = $username;
+            header("Location: ProjectHome.php");         
+         }   
+         else
+            header("Location: Project_create.php");
+      
+      }
+   }
+   catch (PDOException $ex)
+   {
+      echo 'Error!: ' . $ex->getMessage();
+      die();
    }
 ?>
 
