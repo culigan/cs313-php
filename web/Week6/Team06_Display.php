@@ -35,7 +35,7 @@ catch (PDOException $ex)
 }
 
    echo "got here </br>";
-   $insertStmt = $db->exec("Insert into scriptures (book, chapter, verse, content) values (" . $book . ", " . $chpt . ", " . $verse . ", " . $content .");");
+   $insertStmt = $db->exec("Insert into scriptures (book, chapter, verse, content) values ('" . $book . "', '" . $chpt . "', '" . $verse . "', '" . $content ."');");
     /*$insertIn = $this->pdo->prepare($insertStmt);
     $insertIn->bindValue(':book',$book);
     $insertIn->bindValue(':chpt',$chpt);
