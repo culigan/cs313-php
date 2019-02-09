@@ -17,10 +17,11 @@
    echo "session";
    if(isset($_POST['fname']))
    {
-      $username = $_POST['uname'];
-      $password = $_POST['pname'];
-      $fisrtname = $_POST['fname'];
-      $lastname = $_POST['lname'];
+      echo "in session";
+      $username = htmlspecialchars($_POST['uname']);
+      $password = htmlspecialchars($_POST['pname']);
+      $fisrtname = htmlspecialchars($_POST['fname']);
+      $lastname = htmlspecialchars($_POST['lname']);
       $queryStmt = "select * From user_table where firstname = :firstname and lastname = :lastname and username = :username password = :password;";
       $queryStmt = $db->prepare($queryStmt);
       $queryStmt->bindValue(':username', $username);
@@ -33,6 +34,7 @@
          echo "The User Alredy Exists!";
       else
       {
+         echo "in session 2";
          $insertStmt ="Insert into User_Table (username, firstname, lastname) values (:username, :first, :last, :password);";
          $insertIn = $db->prepare($insertStmt);
          $insertIn->bindValue(':username', $username);
@@ -46,7 +48,7 @@
    echo "post";
    if(isset($_POST['user']))
    {
-      
+      echo "inPost";
       $username = $_POST['user'];
       $password = $_POST['pass'];
       $queryStmt = "select * From user_table where username = :username password = :password;";
@@ -59,13 +61,14 @@
       
       if(count($queryStmt) > 0)
       {
+         echo "inpost2";
          $SESSION['user'] = $username;
          header("Location: ProjectHome.php");         
       }   
       else
          header("Location: Project_create.php");
       
-   }/**/
+   }
 ?>
 
 
@@ -80,7 +83,7 @@
 <body id="userbody">   
    <header id="user">User Login</header>
    <div id='userdiv'>
-      <form id="formid" action="GetUserData.php" method="post">
+      <form id="formid" action="Project_User.php" method="post">
          <input name="user" type="text" placeholder="username" required></br>
          <label>Username</label></br>
          <input name="pass" type="password" placeholder="password"  required></br>
