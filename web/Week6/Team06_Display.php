@@ -26,20 +26,20 @@ try
 
     $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-    $insertStmt = "Insert into scriptures (book, chapter, verse, content) values (:book, :chpt, :verse, :content)";
-    $insertIn = $this->pdo->prepare($insertStmt);
-    $insertIn->bindValue(':book',$book);
-    $insertIn->bindValue(':chpt',$chpt);
-    $insertIn->bindValue(':verse',$verse);
-    $insertIn->bindValue(':content',$content);
-    $insertIn->execute();
+    
 }
 catch (PDOException $ex)
 {
   echo 'Error!: ' . $ex->getMessage();
   die();
 }
-
+   /*$insertStmt = "Insert into scriptures (book, chapter, verse, content) values (:book, :chpt, :verse, :content)";
+    $insertIn = $this->pdo->prepare($insertStmt);
+    $insertIn->bindValue(':book',$book);
+    $insertIn->bindValue(':chpt',$chpt);
+    $insertIn->bindValue(':verse',$verse);
+    $insertIn->bindValue(':content',$content);
+    $insertIn->execute();
    
    $newId = $pdo->lastInsertId('product_id_seq');
    
@@ -60,7 +60,7 @@ catch (PDOException $ex)
       $inserttop2 = "insert into topics (scripture_id, topics_id) values ( :newId , 3);";
       $inserttop2->bindValue(':newId', $newId);
       $inserttop2->execute();
-   }
+   }*/
 ?>
 
 <!DOCTYPE html>
