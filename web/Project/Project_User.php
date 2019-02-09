@@ -19,7 +19,7 @@
    {
       $username = htmlspecialchars($_POST['uname']);
       $password = htmlspecialchars($_POST['pname']);
-      $fisrtname = htmlspecialchars($_POST['fname']);
+      $firstname = htmlspecialchars($_POST['fname']);
       $lastname = htmlspecialchars($_POST['lname']);
       echo "in session" . $username . $password . $firstname . $lastname;
       $queryStmt = "select * From user_table where firstname = :firstname and lastname = :lastname and username = :username and password = :password;";
