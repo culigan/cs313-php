@@ -62,32 +62,32 @@ session_start();
                if(isset($_POST['type0']) && !empty($_POST['type0'])){
                   //$searchString = $searchString . ", f.typename";
                   $fromString = $fromString . " inner join FoodType f on r.foodtype_id = f.id ";
-                  $whereString = $whereString . " f.typename = '" . $_POST['type0'] . "'"; 
+                  $whereString = $whereString . " f.typename = '" . htmlspecialchars($_POST['type0']) . "'"; 
                   
                }
                if(isset($_POST['mealCat0']) && !empty($_POST['mealCat0'])){
                   //$searchString = $searchString . ", c.categoryname";
                   $fromString = $fromString . " join mealcategory m on r.mealcategory_id = m.id ";
                   if(strlen($whereString) < 8)
-                     $whereString = $whereString . " m.categoryname = '" . $_POST['mealCat0'] . "'";   
+                     $whereString = $whereString . " m.categoryname = '" . htmlspecialchars($_POST['mealCat0']) . "'";   
                   else
-                     $whereString = $whereString . " AND m.categoryname = '" . $_POST['mealCat0'] . "'";   
+                     $whereString = $whereString . " AND m.categoryname = '" . htmlspecialchars($_POST['mealCat0']) . "'";   
                   
                }
                if(isset($_POST['recipename']) && !empty($_POST['recipename'])){
                   if(strlen($whereString) < 8)
-                     $whereString = $whereString . " r.recipename like '%" . $_POST['recipename'] . "%'";   
+                     $whereString = $whereString . " r.recipename like '%" . htmlspecialchars($_POST['recipename']) . "%'";   
                   else 
-                     $whereString = $whereString . " AND r.recipename  like '%" . $_POST['recipename'] . "%'";   
+                     $whereString = $whereString . " AND r.recipename  like '%" . htmlspecialchars($_POST['recipename']) . "%'";   
                   echo $whereString . "</br>";
                }
                if(isset($_POST['ingred']) && !empty($_POST['ingred'])){
                   //$searchString = $searchString . ", i.ingredientname";
                   $fromString = $fromString . " join recipeitems ri on r.id = ri.recipe_id";
                   if(strlen($whereString) < 8)
-                     $whereString = $whereString . " ri.ingredient like '%" . $_POST['ingred'] . "%'"; 
+                     $whereString = $whereString . " ri.ingredient like '%" . htmlspecialchars($_POST['ingred']) . "%'"; 
                   else 
-                     $whereString = $whereString . " and ri.ingredient like '%" . $_POST['ingred'] . "%'"; 
+                     $whereString = $whereString . " and ri.ingredient like '%" . htmlspecialchars($_POST['ingred']) . "%'"; 
                   
                }
                $searchString = $searchString . $fromString;
