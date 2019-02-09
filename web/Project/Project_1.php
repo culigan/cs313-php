@@ -15,7 +15,6 @@
    {
       $sizes = $db->query("SELECT * FROM measurementsize;");
       $types = $db->query("SELECT * FROM measurementtype;");
-      echo "test";
    }
    catch (PDOException $ex)
    {
