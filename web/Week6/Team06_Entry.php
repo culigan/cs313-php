@@ -1,5 +1,5 @@
 ﻿<?php
-echo "first";
+
 $db;
 try
 {
@@ -24,7 +24,7 @@ catch (PDOException $ex)
   echo 'Error!: ' . $ex->getMessage();
   die();
 }
-echo "test";
+
 ?>
 
 <!DOCTYPE html>
@@ -40,7 +40,14 @@ echo "test";
       <input name="chpt" type="text" required />Chapter</br></br>
       <input name="verse" type="text" required />Verse</br></br>
       <textarea name="content" type="text" required>Content</textarea></br></br>
-      
+      <?php
+         $count = 0;
+         foreach($db->query('SELECT * FROM topics;') as $row){
+            echo "<input type='checkbox' name='topic' value='" . $row['name'] . "'/>";
+            count++;
+         }
+         
+      ?>
       <button type="submit" value="Submit">Submit</button>
    </form>
 </body>
