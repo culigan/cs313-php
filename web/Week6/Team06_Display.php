@@ -22,7 +22,13 @@ try
 
     $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-    $sizes = $db->query("Insert into scriptures (book, chapter, verse, content) values (" . $book . ", " . $chpt . ", " . $verse . ", " . $content . ";");
+    $insertStmt = "Insert into scriptures (book, chapter, verse, content) values (:book, :chpt, :verse, :content)";
+    $insertIn = $this->pdo->prepare($insertStmt);
+    $insertIn->bindValue(':book',$book);
+    $insertIn->bindValue(':chpt',$chpt);
+    $insertIn->bindValue(':verse',$verse);
+    $insertIn->bindValue(':content',$content);
+    $insertIn->execute();
 }
 catch (PDOException $ex)
 {
@@ -30,20 +36,26 @@ catch (PDOException $ex)
   die();
 }
 
-   $db->query("insert into scriptures (book, chapter, verse, content) values ( " . $book . ", " . $chpt . ", " . $verse . ", " . $content . ");";
+   
    $newId = $pdo->lastInsertId('product_id_seq');
    
    if(isset($_POST['topic0'])){
       $topic = $_POST['topic0'];
-      $db->query("insert into topics (scripture_id, topics_id) values ( " . $newId . ", 1);";
+      $inserttop = "insert into topics (scripture_id, topics_id) values ( :newId , 1);";
+      $inserttop->bindValue(':newId', $newId);
+      $inserttop->execute();
    }
    if(isset($_POST['topic1'])){
       $topic1 = $_POST['topic1'];
-      $db->query("insert into topics (scripture_id, topics_id) values ( " . $newId . ", 2);";
+      $inserttop1 = "insert into topics (scripture_id, topics_id) values ( :newId , 2);";
+      $inserttop1->bindValue(':newId', $newId);
+      $inserttop1->execute();
    }
    if(isset($_POST['topic2'])){
       $topic2 = $_POST['topic2'];
-      $db->query("insert into topics (scripture_id, topics_id) values ( " . $newId . ", 3);";
+      $inserttop2 = "insert into topics (scripture_id, topics_id) values ( :newId , 3);";
+      $inserttop2->bindValue(':newId', $newId);
+      $inserttop2->execute();
    }
 ?>
 
