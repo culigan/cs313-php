@@ -12,8 +12,17 @@
    require('DB_Connect.php');
    $db = connectToDB();
 
-   $sizes = $db->query("SELECT * FROM MeasurementSize;");
-    $types = $db->query("SELECT * FROM MeasurementType;");
+   echo "test";
+   try
+   {
+      $sizes = $db->query("SELECT * FROM MeasurementSize;");
+      $types = $db->query("SELECT * FROM MeasurementType;");
+   }
+   catch (PDOException $ex)
+   {
+      echo 'Error!: ' . $ex->getMessage();
+      die();
+   }
 }
 ?>
 
