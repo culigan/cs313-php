@@ -28,6 +28,9 @@
             <a href="Project_1.php">Add Recipes</a>
          </div>
          <div id="item">
+            <a href="Project_2.php">Edit Recipes</a>
+         </div>
+         <div id="item">
             <a href="Project_2.php">Search Recipes</a>
          </div>
          <div id="item">
