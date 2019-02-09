@@ -1,5 +1,5 @@
 ﻿<?php
-
+echo "first";
 $db;
 try
 {
@@ -24,7 +24,7 @@ catch (PDOException $ex)
   echo 'Error!: ' . $ex->getMessage();
   die();
 }
-
+echo "test";
 ?>
 
 <!DOCTYPE html>
@@ -32,7 +32,7 @@ catch (PDOException $ex)
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="utf-8" />
-    <title></title>
+    <title>ScriptureEntry</title>
 </head>
 <body>
    <form method="post" action="Team06_Display.php">
