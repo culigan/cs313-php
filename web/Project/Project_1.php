@@ -9,7 +9,7 @@
    }
 
    require('DB_Connect.php');
-   $db = connectToDB;
+   $db = connectToDB();
 
    try
    {
