@@ -3,9 +3,9 @@
 $db;
 $book = $_POST['book'];
 echo $book;
-$chpt = $_POST['chpt'];\
+$chpt = $_POST['chpt'];
 echo $chpt;
-$verse = $_POST['vers'];
+$verse = $_POST['verse'];
 echo $verse;
 $content = $_POST['content'];
 echo $content;
