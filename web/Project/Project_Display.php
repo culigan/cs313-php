@@ -62,6 +62,7 @@
             echo "</p>";
          }
       ?>
+      <button id="edit" name"edit">Edit Recipe</button>
    </div>
 </body>
 </html>
