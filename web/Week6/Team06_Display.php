@@ -25,7 +25,7 @@
       $topic = $_POST['topic0'];   
       $insertValue = 1;
       /*$inserttop = $db->exec("insert into scripture_topic_link (scripture_id, topics_id) values ( " . $newId . ", 1);");//*/
-      $insertStmt1 = "insert into scripture_topic_link (scripture_id, topics_id) values ( :newId, :one);"
+      $insertStmt1 = "insert into scripture_topic_link (scripture_id, topics_id) values ( :newId, :one);";
       $inserttop = $db->prepare($insertStmt1);
       $inserttop->bindValue(':newId', $newId);
       $inserttop->bindValue(':one', $insertValue);
