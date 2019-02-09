@@ -8,7 +8,7 @@
       die();
    }
 
-   $require('DB_Connect.php');
+   require('DB_Connect.php');
    $db = connectToDB;
 
    $sizes = $db->query("SELECT * FROM MeasurementSize;");
