@@ -28,7 +28,7 @@
       echo 'Error!: ' . $ex->getMessage();
       die();
    }
-}
+
 ?>
 
 <!DOCTYPE html>
