@@ -1,13 +1,16 @@
 ﻿
 <?php
    session_start();
+   echo "test";
 
    if(!isset($_SESSION['user'])){
       header("Location: Project_User.php");
       die();
    }
+   echo "test";
 
    $id = $_GET['id'];
+   echo "test";
 
    require('DB_Connect.php');
    $db = connectToDB();
