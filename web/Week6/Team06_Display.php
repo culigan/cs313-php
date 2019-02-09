@@ -2,9 +2,13 @@
 
 $db;
 $book = $_POST['book'];
-$chpt = $_POST['chpt'];
+echo $book;
+$chpt = $_POST['chpt'];\
+echo $chpt;
 $verse = $_POST['vers'];
+echo $verse;
 $content = $_POST['content'];
+echo $content;
 
 
 try
@@ -64,7 +68,7 @@ catch (PDOException $ex)
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="utf-8" />
-    <title></title>
+    <title>Scriptures Displayed</title>
 </head>
 <body>
    
