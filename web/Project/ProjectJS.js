@@ -61,19 +61,17 @@ function addItem() {
 }
 
 
-function sendRecipeID(lookup) {
-   $.post("http://calm-shelf-84172.herokuapp.com/Project/Project_Display.php", { id: lookup });
-}
-   /*$.ajax({
-      url: 'http://calm-shelf-84172.herokuapp.com/Project/Project_Display.php',
+function buttonClick(username) {
+   $.ajax({
+      url: 'http://calm-shelf-84172.herokuapp.com/Week3/AssignWeek3_B.php',
       type: "POST",
-      data: { id: lookup },
+      data: { user: username },
       success: function (data) {
          alert("Item has been added to the cart!");
       },
-      error: function (data, success, failure) {
-         alert("ERROR:" + failure);
+      error: function () {
+         alert("ERROR!");
 
       }
    });
-}*/
+}

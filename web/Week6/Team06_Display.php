@@ -11,7 +11,7 @@
    $db = connectToDB();
     $insertStmt = $db->exec("Insert into scriptures (book, chapter, verse, content) values ('" . $book . "', '" . $chpt . "', '" . $verse . "', '" .$content . "');");
    
-    /*$insertStmt = $db->prepare("Insert into scriptures (book, chapter, verse, content) values (:book, :chpt, :verse, :content);");
+    /*$insertStmt ="Insert into scriptures (book, chapter, verse, content) values (:book, :chpt, :verse, :content);";
     $insertIn = $db->prepare($insertStmt);
     $insertIn->bindValue(':book',$book);
     $insertIn->bindValue(':chpt',$chpt);

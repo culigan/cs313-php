@@ -1,32 +1,20 @@
 ﻿
 <?php
+   session_start();
 
-$db;
-$id = $_GET['id'];
-try
-{
-    $dbUrl = getenv('DATABASE_URL');
-    $dbOpts = parse_url($dbUrl);
+   if(!isset($_POST['user'])){
+      header("Location: Project_User.php");
+      die();
+   }
 
-    $dbHost = $dbOpts["host"];
-    $dbPort = $dbOpts["port"];
-    $dbUser = $dbOpts["user"];
-    $dbPassword = $dbOpts["pass"];
-    $dbName = ltrim($dbOpts["path"],'/');
+   $id = $_GET['id'];
 
-    $db = new PDO("pgsql:host=$dbHost;port=$dbPort;dbname=$dbName", $dbUser, $dbPassword);
+   require('DB_Connect.php');
+   $db = connectToDB();
 
-    $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-
-    $sizes = $db->query("SELECT * FROM MeasurementSize;");
+   $sizes = $db->query("SELECT * FROM MeasurementSize;");
     $types = $db->query("SELECT * FROM MeasurementType;");
 }
-catch (PDOException $ex)
-{
-  echo 'Error!: ' . $ex->getMessage();
-  die();
-}
-
 ?>
 
 <!DOCTYPE html>
