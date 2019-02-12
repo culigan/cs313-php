@@ -1,0 +1,60 @@
+﻿<?php
+
+session_start();
+
+   if(!isset($_SESSION['user'])){
+      header("Location: Project_User.php");
+      die();
+   }
+
+   $id = $_GET['id'];
+
+   require('DB_Connect.php');
+   $db = connectToDB();
+    $sizes = $db->query("SELECT * FROM measurementsize;");
+    $types = $db->query("SELECT * FROM measurementtype;");
+    $rname = $db->query("SELECT recipename FROM recipe where id = $id;");
+    $items = $db->query("SELECT ri.ingredient as ingredient, ms.measurementsize as msize, mt.measurementname as mtype FROM recipeitems ri join measurementsize ms on ri.measurementsize_id = ms.id join measurementtype mt on ri.measurementtype_id = mt.id  where recipe_id = $id;")
+?>
+
+
+
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+   <meta charset="utf-8" />
+   <title>Search Recipes</title>
+   <link href="Project.css" rel="stylesheet">
+   <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+   <script src="ProjectJS.js"></script>
+</head>
+<body>
+   <header>Search Recipes</header>
+   <div id='itemdiv'>
+      <form id="searchforum" action="Project_2.php" method="post">         
+         <input name="recipename" type="text"><?php $rname ?></br></br>
+         <?php
+            foreach($items as $item)
+            {
+               echo "<select name='size0' value='$item[msize]><option></option>";             
+               foreach($sizes as $size){
+                  echo "<option > $size[measurementsize]</option>";
+               }
+            
+               echo "</select>Food Type";
+               echo "<select name='type0'><option></option>";
+             
+               foreach($types as $type){
+                  echo "<option> $type[measurementname]</option>";
+               }
+            
+               echo "</select>Meal Category </br></br>";
+               echo "<input name='ingred0' type='text'>Ingredient</br></br>";
+            }
+         ?>
+         <input type="submit" value="Save Changes">
+      </form>      
+   </div>
+</body>
+</html>

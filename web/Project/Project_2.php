@@ -6,9 +6,9 @@ session_start();
       header("Location: Project_User.php");
       die();
    }
-
-   $id = $_GET['id'];
-
+   $edit;
+   if(isset($_GET['type']))
+      $SESSION['type'] = $_GET['type'];  
    require('DB_Connect.php');
    $db = connectToDB();
     $types = $db->query("SELECT * FROM FoodType;");
@@ -96,11 +96,18 @@ session_start();
                $searchString = $searchString . ";";
                foreach( $db->query($searchString) as $row)
                {
-                echo "<a class=\"recipefound\" href=\"Project_Display.php?id=" . $row[id] . ";\" >";
-                echo $row[recipename];
-                echo "</a><br/>";
-
+                  if($_SESSION['type'] == "edit"){
+                      echo "<a class=\"recipefound\" href=\"Project_Edit.php?id=" . $row[id] . ";\" >";
+                      echo $row[recipename];
+                      echo "</a><br/>";
+                  }
+                  else{
+                      echo "<a class=\"recipefound\" href=\"Project_Display.php?id=" . $row[id] . ";\" >";
+                      echo $row[recipename];
+                      echo "</a><br/>";
+                  }
                }
+               unset($_SESSION['type']);
             }
          ?>
          </p>
