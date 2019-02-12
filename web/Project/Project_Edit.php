@@ -43,7 +43,7 @@ session_start();
             {
                echo "<select name='size$item[rid]' value='$item[msize]' textcontent='$item[msize]'><option></option>";             
                foreach($sizes as $size){
-                  if($type[measurementsize] == $item[msize])
+                  if($size[measurementsize] == $item[msize])
                      echo "<option value='$size[id]' selected> $size[measurementsize]</option>";
                   else
                      echo "<option value='$size[id]'> $size[measurementsize]</option>";                     
