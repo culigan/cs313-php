@@ -11,9 +11,7 @@ session_start();
 
    require('DB_Connect.php');
    $db = connectToDB();
-    $sizes = $db->query("SELECT * FROM measurementsize;");
-    $types = $db->query("SELECT * FROM measurementtype;");
-    $rname = $db->query("SELECT recipename FROM recipe where id = $id;");
+   $rname = $db->query("SELECT recipename FROM recipe where id = $id;");
     $search = "SELECT ri.id as rid, ri.ingredient as ingredient, ms.measurementsize as msize,";
     $search .= "mt.measurementname as mtype FROM recipeitems ri join measurementsize ";
     $search .= "ms on ri.measurementsize_id = ms.id join measurementtype mt on ";
@@ -43,7 +41,9 @@ session_start();
          
             foreach($items as $item)
             {
-               echo $item[rid] . "</br>";
+               $sizes = $db->query("SELECT * FROM measurementsize;");
+               $types = $db->query("SELECT * FROM measurementtype;");
+    
                echo "<select name='size$item[rid]' value='$item[msize]' textcontent='$item[msize]'><option></option>";             
                foreach($sizes as $size){
                   if($size[measurementsize] == $item[msize])
