@@ -38,12 +38,12 @@ session_start();
    <div id='itemdiv'>
       <form id="searchforum" action="Project_Update.php" method="post">         
          <?php 
-            //echo $rname[recipename];
+            echo $rname;
             //echo "<input name='recipenam' type='text' value='$rname[recipename]'>Recipe Name</br></br>"; 
          
             foreach($items as $item)
             {
-               echo $item[id] . "</br>";
+               echo $item[rid] . "</br>";
                echo "<select name='size$item[rid]' value='$item[msize]' textcontent='$item[msize]'><option></option>";             
                foreach($sizes as $size){
                   if($size[measurementsize] == $item[msize])
