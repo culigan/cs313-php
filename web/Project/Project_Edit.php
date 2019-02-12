@@ -41,22 +41,20 @@ session_start();
          <?php
             foreach($items as $item)
             {
-               echo $item[msize];
-               echo $item[mtype];
-               echo "<select name='size$item[rid]' value='$item[msize]'><option></option>";             
+               echo "<select name='size$item[rid]' value='$item[msize]' textcontent='$item[msize]'><option></option>";             
                foreach($sizes as $size){
                   echo "<option > $size[measurementsize]</option>";
                }
             
                echo "</select>Measurement Size";
-               echo "<select name='type$item[rid]' value='$item[mtype]'><option></option>";
+               echo "<select name='type$item[rid]' value='$item[mtype]' textcontent='$item[mtype]'><option></option>";
              
                foreach($types as $type){
                   echo "<option> $type[measurementname]</option>";
                }
             
                echo "</select>Measurement Type";
-               echo "<input name='ingred$item[rid]' type='text'>Ingredient</br></br>";
+               echo "<input name='ingred$item[rid]' type='text' value='$item[ingredient]'>Ingredient</br></br>";
             }
          ?>
          <input type="submit" value="Save Changes">
