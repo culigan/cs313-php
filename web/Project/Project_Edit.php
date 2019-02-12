@@ -41,6 +41,8 @@ session_start();
          <?php
             foreach($items as $item)
             {
+               echo $item[msize];
+               echo $item[mtype];
                echo "<select name='size$item[rid]' value='$item[msize]'><option></option>";             
                foreach($sizes as $size){
                   echo "<option > $size[measurementsize]</option>";
