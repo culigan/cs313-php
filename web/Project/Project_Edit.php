@@ -37,10 +37,11 @@ session_start();
    <header>Search Recipes</header>
    <div id='itemdiv'>
       <form id="searchforum" action="Project_Update.php" method="post">         
-         <input name="recipename" type="text" value='rname[recipename]'><?php echo "Recipe Name"; ?></br></br>
+         <input name="recipename" type="text" value='$rname[recipename]'><?php echo "Recipe Name"; ?></br></br>
          <?php
             foreach($items as $item)
             {
+               echo $item[id] . "</br>";
                echo "<select name='size$item[rid]' value='$item[msize]' textcontent='$item[msize]'><option></option>";             
                foreach($sizes as $size){
                   if($size[measurementsize] == $item[msize])
