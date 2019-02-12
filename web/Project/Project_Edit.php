@@ -37,20 +37,27 @@ session_start();
    <header>Search Recipes</header>
    <div id='itemdiv'>
       <form id="searchforum" action="Project_Update.php" method="post">         
-         <input name="recipename" type="text"><?php $rname ?></br></br>
+         <input name="recipename" type="text"><?php $rname[recipename] ?></br></br>
          <?php
             foreach($items as $item)
             {
                echo "<select name='size$item[rid]' value='$item[msize]' textcontent='$item[msize]'><option></option>";             
                foreach($sizes as $size){
-                  echo "<option > $size[measurementsize]</option>";
+                  if($type[measurementsize] == $item[msize])
+                     echo "<option value='$size[id]' selected> $size[measurementsize]</option>";
+                  else
+                     echo "<option value='$size[id]'> $size[measurementsize]</option>";                     
                }
             
                echo "</select>Measurement Size";
                echo "<select name='type$item[rid]' value='$item[mtype]' textcontent='$item[mtype]'><option></option>";
              
                foreach($types as $type){
-                  echo "<option> $type[measurementname]</option>";
+                  if($type[measurementname] == $item[mtype])
+                     echo "<option value='$type[id]' selected> $type[measurementname]</option>";
+                  else
+                     echo "<option value='$type[id]'> $type[measurementname]</option>";
+                     
                }
             
                echo "</select>Measurement Type";
