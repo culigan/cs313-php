@@ -14,7 +14,11 @@ session_start();
     $sizes = $db->query("SELECT * FROM measurementsize;");
     $types = $db->query("SELECT * FROM measurementtype;");
     $rname = $db->query("SELECT recipename FROM recipe where id = $id;");
-    $items = $db->query("SELECT ri.ingredient as ingredient, ms.measurementsize as msize, mt.measurementname as mtype FROM recipeitems ri join measurementsize ms on ri.measurementsize_id = ms.id join measurementtype mt on ri.measurementtype_id = mt.id  where recipe_id = $id;")
+    $search = "SELECT ri.ingredient as ingredient, ms.measurementsize as msize,";
+    $search .= "mt.measurementname as mtype FROM recipeitems ri join measurementsize ";
+    $search .= "ms on ri.measurementsize_id = ms.id join measurementtype mt on ";
+    $search .= "ri.measurementtype_id = mt.id  where recipe_id = $id;";
+    $items = $db->query($search);
 ?>
 
 
@@ -32,7 +36,7 @@ session_start();
 <body>
    <header>Search Recipes</header>
    <div id='itemdiv'>
-      <form id="searchforum" action="Project_2.php" method="post">         
+      <form id="searchforum" action="Project_Update.php" method="post">         
          <input name="recipename" type="text"><?php $rname ?></br></br>
          <?php
             foreach($items as $item)
