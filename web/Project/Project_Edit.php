@@ -38,8 +38,8 @@ session_start();
    <div id='itemdiv'>
       <form id="searchforum" action="Project_Update.php" method="post">         
          <?php 
-            echo $rname[recipename];
-            echo "<input name='recipenam' type='text' value='$rname[recipename]'>Recipe Name</br></br>"; 
+            //echo $rname[recipename];
+            //echo "<input name='recipenam' type='text' value='$rname[recipename]'>Recipe Name</br></br>"; 
          
             foreach($items as $item)
             {
