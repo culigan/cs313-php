@@ -37,7 +37,7 @@ session_start();
    <header>Search Recipes</header>
    <div id='itemdiv'>
       <form id="searchforum" action="Project_Update.php" method="post">         
-         <input name="recipename" type="text" value='<?php echo $rname[recipename]; ?>'>Recipe Name</br></br>
+         <?php echo "<input name='recipenam' type='text' value='$rname[recipename]'>Recipe Name</br></br>; ?>";
          <?php
             foreach($items as $item)
             {
