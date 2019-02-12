@@ -46,14 +46,14 @@ session_start();
                   echo "<option > $size[measurementsize]</option>";
                }
             
-               echo "</select>Food Type";
-               echo "<select name='type0'><option></option>";
+               echo "</select>Measurement Size";
+               echo "<select name='type0' value='$item[mtype]><option></option>";
              
                foreach($types as $type){
                   echo "<option> $type[measurementname]</option>";
                }
             
-               echo "</select>Meal Category </br></br>";
+               echo "</select>Measurement Type</br></br>";
                echo "<input name='ingred0' type='text'>Ingredient</br></br>";
             }
          ?>
