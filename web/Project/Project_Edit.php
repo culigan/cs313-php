@@ -8,7 +8,7 @@ session_start();
    }
 
    $id = $_GET['id'];
-
+   echo $id;
    require('DB_Connect.php');
    $db = connectToDB();
    $rname = $db->prepare("SELECT recipename FROM recipe where id = :id;");
@@ -40,8 +40,8 @@ session_start();
    <div id='itemdiv'>
       <form id="searchforum" action="Project_Update.php" method="post">         
          <?php 
-            echo $results;
-            echo "<input name='recipenam' type='text' value='$results[recipename]'>Recipe Name</br></br>"; 
+            //echo $results;
+            //echo "<input name='recipenam' type='text' value='$results[recipename]'>Recipe Name</br></br>"; 
          
             foreach($items as $item)
             {
