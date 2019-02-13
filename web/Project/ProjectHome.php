@@ -22,7 +22,7 @@
       <header>Family Recipes</header>
       <div class="menudiv" id="menu">
          <div id="item">
-            <a href="ProjectHome.html">Home</a>
+            <a href="ProjectHome.php">Home</a>
          </div>
          <div id="item">
             <a href="Project_1.php">Add Recipes</a>

@@ -56,7 +56,7 @@ session_start();
          <p id="resultPara">
          <?php
             if(!empty($_POST)){
-               $searchString = "Select r.id, r.recipename";
+               $searchString = "Select r.id, r.recipename";s
                $fromString = " FROM recipe r ";
                $whereString = " where";
                if(isset($_POST['type0']) && !empty($_POST['type0'])){
@@ -102,7 +102,7 @@ session_start();
                       echo "</a><br/>";
                   }
                   else{
-                      echo "<a class=\"recipefound\" href=\"Project_Display.php?id=" . $row[id] . ";\" >";
+                      echo "<a class='recipefound' href='Project_Display.php?id=$row[id]' >";
                       echo $row[recipename];
                       echo "</a><br/>";
                   }
