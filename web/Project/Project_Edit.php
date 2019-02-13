@@ -12,22 +12,22 @@ session_start();
    try
    {
 
-   $id = $_GET['id'];
-   echo $id;
-   require('DB_Connect.php');
-   $db = connectToDB();
-   echo $id;
-   $rname = $db->query("SELECT recipename as name FROM recipe where id = " . $id . ";");
-   echo $rname[name];
-    $search = "SELECT ri.id as rid, ri.ingredient as ingredient, ms.measurementsize as msize,";
-    $search .= " mt.measurementname as mtype FROM recipeitems ri join measurementsize ";
-    $search .= "ms on ri.measurementsize_id = ms.id join measurementtype mt on ";
-    $search .= "ri.measurementtype_id = mt.id  where recipe_id = " . $id . ";";
-    echo $search;
-    $items = $db->query($search);
-    echo $id;
-    //echo $items[rid];
-    echo $id;
+      $id = $_GET['id'];
+      echo $id;
+      require('DB_Connect.php');
+      $db = connectToDB();
+      echo $id;
+      $rname = $db->query("SELECT recipename as name FROM recipe where id = " . $id . ";");
+      echo $rname->rowCount();
+       $search = "SELECT ri.id as rid, ri.ingredient as ingredient, ms.measurementsize as msize,";
+       $search .= " mt.measurementname as mtype FROM recipeitems ri join measurementsize ";
+       $search .= "ms on ri.measurementsize_id = ms.id join measurementtype mt on ";
+       $search .= "ri.measurementtype_id = mt.id  where recipe_id = " . $id . ";";
+       echo $search;
+       $items = $db->query($search);
+       echo $id;
+       //echo $items[rid];
+       echo $id;
    }
    catch (PDOException $ex)
       {
