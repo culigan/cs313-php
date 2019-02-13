@@ -7,7 +7,7 @@ session_start();
       die();
    }
    $id;
-   $item;
+   $items;
    $db;
    try
    {
@@ -17,19 +17,14 @@ session_start();
    require('DB_Connect.php');
    $db = connectToDB();
    echo $id;
-   $rname = $db->prepare("SELECT recipename FROM recipe where id = :id;");
-   $rname->bindValue(':id', $id);
-   $rname->execute();
-   $results = $rname->fetchAll(PDO::FETCH_ASSOC);
-   echo $results[recipename];
+   $rname = $db->query("SELECT recipename FROM recipe where id = $id;");
+   echo $rname[recipename];
     $search = "SELECT ri.id as rid, ri.ingredient as ingredient, ms.measurementsize as msize,";
     $search .= " mt.measurementname as mtype FROM recipeitems ri join measurementsize ";
     $search .= "ms on ri.measurementsize_id = ms.id join measurementtype mt on ";
-    $search .= "ri.measurementtype_id = mt.id  where recipe_id = :id;";
+    $search .= "ri.measurementtype_id = mt.id  where recipe_id = $id;";
     echo $search;
-    $items = $db->prepare($search);
-    $items->bindValue(':id', $id);
-    $items->execute();
+    $items = $db->query($search);
     echo $id;
     //echo $items[rid];
     echo $id;
