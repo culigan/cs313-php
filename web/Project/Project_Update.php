@@ -1,7 +1,7 @@
 ﻿<?php
    echo "here";
-   /*/echo count($_POST);
-   $count = count($_POST);
+   echo count($_POST);
+   /*/$count = count($_POST);
    $count = ($count - 1) / 3;
       echo "here";
     $stmt = $db->query("Update recipe set recipename = $_POST['recipenam']" );
