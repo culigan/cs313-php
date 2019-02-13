@@ -56,7 +56,7 @@ session_start();
          <p id="resultPara">
          <?php
             if(!empty($_POST)){
-               $searchString = "Select r.id, r.recipename";s
+               $searchString = "Select r.id, r.recipename";
                $fromString = " FROM recipe r ";
                $whereString = " where";
                if(isset($_POST['type0']) && !empty($_POST['type0'])){
@@ -97,17 +97,17 @@ session_start();
                foreach( $db->query($searchString) as $row)
                {
                   if($_SESSION['type'] == "edit"){
-                      echo "<a class='recipefound' href='Project_Edit.php?id=" . $row[id] . "' >";
+                      echo "<a class=\"recipefound\" href=\"Project_Edit.php?id=" . $row[id] . "\" >";
                       echo $row[recipename];
                       echo "</a><br/>";
                   }
                   else{
-                      echo "<a class='recipefound' href='Project_Display.php?id=". $row[id] . "' >";
+                      echo "<a class=\"recipefound\" href=\"Project_Display.php?id=" . $row[id] . "\" >";
                       echo $row[recipename];
                       echo "</a><br/>";
                   }
                }
-               unset($_SESSION['type']);
+               //unset($_SESSION['type']);
             }
          ?>
          </p>
