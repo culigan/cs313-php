@@ -20,7 +20,9 @@ session_start();
     $search .= "mt.measurementname as mtype FROM recipeitems ri join measurementsize ";
     $search .= "ms on ri.measurementsize_id = ms.id join measurementtype mt on ";
     $search .= "ri.measurementtype_id = mt.id  where recipe_id = $id;";
+    echo $search;
     $items = $db->query($search);
+    echo $items;
 ?>
 
 
