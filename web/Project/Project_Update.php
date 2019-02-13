@@ -1,6 +1,7 @@
 ﻿<?php
    $count = count($_POST);
    $recID = $_POST['size0'];
+   $ingredID = $_POST['ingred0'];
    //$intrecID =  chop($recID, "item");
    echo $recID;
    $count = ($count - 1) / 3;
