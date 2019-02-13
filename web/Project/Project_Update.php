@@ -1,5 +1,6 @@
 ﻿<?php
-
+   echo "here";
+   echo count($_POST);
    $count = count($_POST);
    $count = ($count - 1) / 3;
       echo "here";
