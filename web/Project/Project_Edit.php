@@ -13,7 +13,7 @@ session_start();
    $db = connectToDB();
    echo $id;
    $rname = $db->prepare("SELECT recipename FROM recipe where id = :id;");
-   $rname->bindValue(':username', $id);
+   $rname->bindValue(':id', $id);
    $rname->execute();
    $results = $rname->fetchAll(PDO::FETCH_ASSOC);
    echo $id;
