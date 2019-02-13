@@ -20,9 +20,12 @@ session_start();
     $search = "SELECT ri.id as rid, ri.ingredient as ingredient, ms.measurementsize as msize,";
     $search .= "mt.measurementname as mtype FROM recipeitems ri join measurementsize ";
     $search .= "ms on ri.measurementsize_id = ms.id join measurementtype mt on ";
-    $search .= "ri.measurementtype_id = mt.id  where recipe_id = $id;";
+    $search .= "ri.measurementtype_id = mt.id  where recipe_id = :id;";
     echo $search;
-    $items = $db->query($search);
+    $items = $db->prepare($search);
+    $items->bindValue(':id', $id);
+    $items->execute();
+    echo $id;
     echo $items;
 ?>
 
