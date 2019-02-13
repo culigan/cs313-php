@@ -6,6 +6,11 @@ session_start();
       header("Location: Project_User.php");
       die();
    }
+   $id;
+   $item;
+   $db;
+   try
+   {
 
    $id = $_GET['id'];
    echo $id;
@@ -27,6 +32,12 @@ session_start();
     $items->execute();
     echo $id;
     echo $items;
+   }
+   catch (PDOException $ex)
+      {
+        echo 'Error!: ' . $ex->getMessage();
+        die();
+      }
 ?>
 
 
