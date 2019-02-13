@@ -53,7 +53,7 @@ session_start();
              echo $search;
              $items = $db->query($search);
     
-            echo "<input name='recipenam' type='text' value='$results[recipename]'>Recipe Name</br></br>"; 
+            echo "<input name='recipenam' type='text' value='" . $rname[recipename] . "'>Recipe Name</br></br>"; 
          
             foreach($items as $item)
             {
