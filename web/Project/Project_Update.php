@@ -1,7 +1,10 @@
 ﻿<?php
    $count = count($_POST);
+   $recID = $_POST['size0'];
+   $intrecID =  parseInt(chop($recID, "item"));
+   echo $intrecID;
    $count = ($count - 1) / 3;
-   $stmt = $db->query("Update recipe set recipename = $_POST['recipenam']" );
+   $stmt = $db->query("Update recipe set recipename = $_POST['recipenam'] where id = " );
    echo $stmt;
     /*///$stmt->bindValue(':recipename', $_POST['recipenam']);
     //$stmt->execute();
