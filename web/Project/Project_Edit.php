@@ -55,7 +55,7 @@ session_start();
                $sizes = $db->query("SELECT * FROM measurementsize;");
                $types = $db->query("SELECT * FROM measurementtype;");
     
-               echo "<select name='size$counter' value='$item[rid]' textcontent='$item[msize]'><option></option>";             
+               echo "<select name='size$counter' value='$item[id]' textcontent='$item[msize]'><option></option>";             
                foreach($sizes as $size){
                   if($size[measurementsize] == $item[msize])
                      echo "<option value='$size[id]' selected> $size[measurementsize]</option>";

@@ -1,8 +1,8 @@
 ﻿<?php
    $count = count($_POST);
    $recID = $_POST['size0'];
-   $intrecID =  parseInt(chop($recID, "item"));
-   echo $intrecID;
+   //$intrecID =  chop($recID, "item");
+   echo $recID;
    $count = ($count - 1) / 3;
    //$stmt = $db->query("Update recipe set recipename = $_POST['recipenam'] where id = " );
    //echo $stmt;
