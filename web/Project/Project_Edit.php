@@ -46,14 +46,16 @@ session_start();
    <div id='itemdiv'>
       <form id="searchforum" action="Project_Update.php" method="post">         
          <?php 
-            echo "<input name='recipenam' type='text' value='" . $results[0][name] . "'>Recipe Name</br></br>"; 
+            foreach($rname as $name)
+               echo "<input name='recipenam' type='text' value='" . $name[name] . "'>Recipe Name</br></br>"; 
          
+            $counter = 0;
             foreach($items as $item)
             {
                $sizes = $db->query("SELECT * FROM measurementsize;");
                $types = $db->query("SELECT * FROM measurementtype;");
     
-               echo "<select name='size$item[rid]' value='$item[msize]' textcontent='$item[msize]'><option></option>";             
+               echo "<select name='size$counter' value='$item[rid]' textcontent='$item[msize]'><option></option>";             
                foreach($sizes as $size){
                   if($size[measurementsize] == $item[msize])
                      echo "<option value='$size[id]' selected> $size[measurementsize]</option>";
@@ -62,7 +64,7 @@ session_start();
                }
             
                echo "</select>Measurement Size";
-               echo "<select name='type$item[rid]' value='$item[mtype]' textcontent='$item[mtype]'><option></option>";
+               echo "<select name='type$counter' value='$item[rid]' textcontent='$item[mtype]'><option></option>";
              
                foreach($types as $type){
                   if($type[measurementname] == $item[mtype])
@@ -73,7 +75,8 @@ session_start();
                }
             
                echo "</select>Measurement Type";
-               echo "<input name='ingred$item[rid]' type='text' value='$item[ingredient]'>Ingredient</br></br>";
+               echo "<input name='ingred$counter' type='text' value='$item[ingredient]'>Ingredient</br></br>";
+               $counter++;
             }
          ?>
          <input type="submit" value="Save Changes">
