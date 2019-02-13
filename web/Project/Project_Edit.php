@@ -11,8 +11,11 @@ session_start();
 
    require('DB_Connect.php');
    $db = connectToDB();
-   $rname = $db->query("SELECT recipename FROM recipe where id = $id;");
-   echo $rname;
+   $rname = $db->prepare("SELECT recipename FROM recipe where id = :id;");
+   $rname->bindValue(':username', $id);
+   $rname->execute();
+   $results = $rname->fetchAll(PDO::FETCH_ASSOC);
+
     $search = "SELECT ri.id as rid, ri.ingredient as ingredient, ms.measurementsize as msize,";
     $search .= "mt.measurementname as mtype FROM recipeitems ri join measurementsize ";
     $search .= "ms on ri.measurementsize_id = ms.id join measurementtype mt on ";
@@ -37,8 +40,8 @@ session_start();
    <div id='itemdiv'>
       <form id="searchforum" action="Project_Update.php" method="post">         
          <?php 
-            echo $rname;
-            echo "<input name='recipenam' type='text' value='$rname[recipename]'>Recipe Name</br></br>"; 
+            echo $results;
+            echo "<input name='recipenam' type='text' value='$results[recipename]'>Recipe Name</br></br>"; 
          
             foreach($items as $item)
             {
