@@ -11,11 +11,12 @@ session_start();
    echo $id;
    require('DB_Connect.php');
    $db = connectToDB();
+   echo $id;
    $rname = $db->prepare("SELECT recipename FROM recipe where id = :id;");
    $rname->bindValue(':username', $id);
    $rname->execute();
    $results = $rname->fetchAll(PDO::FETCH_ASSOC);
-
+   echo $id;
     $search = "SELECT ri.id as rid, ri.ingredient as ingredient, ms.measurementsize as msize,";
     $search .= "mt.measurementname as mtype FROM recipeitems ri join measurementsize ";
     $search .= "ms on ri.measurementsize_id = ms.id join measurementtype mt on ";
