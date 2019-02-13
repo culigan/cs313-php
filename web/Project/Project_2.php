@@ -97,7 +97,7 @@ session_start();
                foreach( $db->query($searchString) as $row)
                {
                   if($_SESSION['type'] == "edit"){
-                      echo "<a class=\"recipefound\" href=\"Project_Edit.php?id=" . $row[id] . ";\" >";
+                      echo "<a class='recipefound' href='Project_Edit.php?id=$row[id]' >";
                       echo $row[recipename];
                       echo "</a><br/>";
                   }
