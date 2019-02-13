@@ -31,7 +31,7 @@ session_start();
     $items->bindValue(':id', $id);
     $items->execute();
     echo $id;
-    echo $items[rid];
+    //echo $items[rid];
     echo $id;
    }
    catch (PDOException $ex)
