@@ -3,10 +3,10 @@
    $count = count($_POST);
    $count = ($count - 1) / 3;
       
-    $stmt = $db->query("Update recipe set recipename = :recipename" );
-    $stmt->bindValue(':recipename', $_POST['recipenam']);
-    $stmt->execute();
-
+    $stmt = $db->query("Update recipe set recipename = $_POST['recipenam']" );
+    //$stmt->bindValue(':recipename', $_POST['recipenam']);
+    //$stmt->execute();
+    echo "here";
     for($i = 0; $i < $count; $i++)
     {
       $ingredStmt = "Update recipeitems Set measurementsize_id = $_POST['size$count'], ";
