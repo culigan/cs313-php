@@ -1,11 +1,9 @@
 ﻿<?php
-   echo "here";
-   echo count($_POST);
    $count = count($_POST);
    $count = ($count - 1) / 3;
-      echo "here";
-    /*/$stmt = $db->query("Update recipe set recipename = $_POST['recipenam']" );
-    //$stmt->bindValue(':recipename', $_POST['recipenam']);
+   $stmt = $db->query("Update recipe set recipename = $_POST['recipenam']" );
+   echo $stmt;
+    /*///$stmt->bindValue(':recipename', $_POST['recipenam']);
     //$stmt->execute();
     echo "here";
     for($i = 0; $i < $count; $i++)
