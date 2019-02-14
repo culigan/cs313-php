@@ -1,4 +1,8 @@
 ﻿<?php
+   require('DB_Connect.php');
+   $db = connectToDB();
+      
+
    $count = count($_POST);
    $sizeID = $_POST['size0'];
    $typeID = $_POST['type0'];
@@ -11,7 +15,9 @@
    $count = ($count - 3) / 3;
    echo $count;
    $stmt = "Update recipe recipename, directions set recipename = " . $_POST['recipenam'] . ", directions = " . $direct . " where id = " . $recid ;
-   //echo $stmt;
+   echo $stmt;
+   $q = $db->prepare($stmt);
+   $q->execute();
     /*///$stmt->bindValue(':recipename', $_POST['recipenam']);
     //$stmt->execute();
     echo "here";
