@@ -15,7 +15,7 @@ session_start();
       $id = $_GET['id'];
       require('DB_Connect.php');
       $db = connectToDB();
-      $rname = $db->query("SELECT recipename as name FROM recipe where id = " . $id . ";");
+      $rname = $db->query("SELECT recipename as name, directions FROM recipe where id = " . $id . ";");
       $search = "SELECT ri.id as rid, ri.ingredient as ingredient, ms.measurementsize as msize,";
       $search .= " mt.measurementname as mtype FROM recipeitems ri join measurementsize ";
       $search .= "ms on ri.measurementsize_id = ms.id join measurementtype mt on ";
@@ -78,6 +78,9 @@ session_start();
                echo "<input name='ingred$counter' type='text' value='$item[ingredient]'>Ingredient</br></br>";
                $counter++;
             }
+            foreach($rname as $name)
+               echo "<textarea name='direct' rows='10' cols='50' >$name[directions]</textarea></br></br>"; 
+            echo "<input name='recid' type='hidden' value=$id>";
          ?>
          <input type="submit" value="Save Changes">
       </form>      

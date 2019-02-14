@@ -1,12 +1,16 @@
 ﻿<?php
    $count = count($_POST);
-   $recID = $_POST['size0'];
+   $sizeID = $_POST['size0'];
+   $typeID = $_POST['type0'];
    $ingredID = $_POST['ingred0'];
+   $direct = $_POST['direct'];
    echo $ingredID;
-   //$intrecID =  chop($recID, "item");
+   $recID = $_POST['recid'];
    echo $recID;
-   $count = ($count - 1) / 3;
-   //$stmt = $db->query("Update recipe set recipename = $_POST['recipenam'] where id = " );
+   echo $count;
+   $count = ($count - 3) / 3;
+   echo $count;
+   $stmt = $db->prepare("Update recipe recipename, directions set recipename = $_POST['recipenam'], directions = $direct where id = $recid" );
    //echo $stmt;
     /*///$stmt->bindValue(':recipename', $_POST['recipenam']);
     //$stmt->execute();
