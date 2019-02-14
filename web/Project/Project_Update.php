@@ -21,6 +21,7 @@
     ///$stmt->bindValue(':recipename', $_POST['recipenam']);
     //$stmt->execute();*/
     echo "here";
+    echo $_POST['size0'];
     for($i = 0; $i < $count; $i++)
     {
       $ingredStmt = "Update recipeitems Set measurementsize_id = " . $_POST['size$count'] . ", ";
