@@ -14,7 +14,7 @@
    echo $count;
    $count = ($count - 3) / 3;
    echo $count;
-   $stmt = "Update recipe set recipename = '" . $_POST['recipenam'] . "', directions = '" . $direct . "' where id = " . $recID ";";
+   $stmt = "Update recipe set recipename = '" . $_POST['recipenam'] . "', directions = '" . $direct . "' where id = " . $recID . ";";
    echo $stmt;
    $q = $db->query($stmt);
    /*$q->execute();
