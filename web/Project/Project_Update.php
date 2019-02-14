@@ -33,7 +33,7 @@
 
     echo "<span>Recipe Saved </span>";
     usleep(5000);
-    header("Location: Project_2.php");*/
+    header("Location: Project_2.php");
 
 ?>
 
