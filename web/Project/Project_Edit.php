@@ -81,8 +81,7 @@ session_start();
                echo "<input name='ingred$counter' type='text' value='$item[ingredient]'>Ingredient</br></br>";
                $counter++;
             }
-            foreach($rname as $name1)
-               echo "<textarea name='direct' rows='10' cols='50' >$savedirects</textarea></br></br>"; 
+            echo "<textarea name='direct' rows='10' cols='50' >$savedirects</textarea></br></br>"; 
             echo "<input name='recid' type='hidden' value=$id>";
          ?>
          <input type="submit" value="Save Changes">
