@@ -14,14 +14,11 @@
    echo $count;
    $count = ($count - 3) / 3;
    echo $count;
-   $stmt = "Update recipe recipename, directions set recipename = :recipename, directions = :direct where id = :id" ;
+   $stmt = "Update recipe recipename, directions set recipename = " . $_POST['recipenam'] . ", directions = " . $direct . " where id = " . $recid ;
    echo $stmt;
-   $q = $db->prepare($stmt);
-   $q->bindValue(':recipename', $_POST['recipenam']);
-   $q->bindValue(':direct', $direct);
-   $q->bindValue(':id', $recID);
-   $q->execute();
-    /*///$stmt->bindValue(':recipename', $_POST['recipenam']);
+   $q = $db->query($stmt);
+   /*$q->execute();
+    ///$stmt->bindValue(':recipename', $_POST['recipenam']);
     //$stmt->execute();
     echo "here";
     for($i = 0; $i < $count; $i++)
