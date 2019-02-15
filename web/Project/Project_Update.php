@@ -9,7 +9,7 @@
    $ingredID = $_POST['ingred0'];
    $direct = $_POST['direct'];
    $recID = $_POST['recid'];
-   $count = ($count - 3) / 3;
+   $count = ($count - 4) / 3;
    $stmt = "Update recipe set recipename = '" . $_POST['recipenam'] . "', directions = '" . $direct . "' where id = " . $recID . ";";
    $q = $db->query($stmt);
    /*$q->execute();
@@ -26,9 +26,10 @@
       $tempsize = "size" . $i;
       $temptype = "type" . $i;
       $tempingred = "ingred" . $i;
+      $temprecid = "recitemid" . $i;
       $ingredStmt = "Update recipeitems Set measurementsize_id = $_POST[$tempsize], ";
 	   $ingredStmt .= "measurementtype_id = $_POST[$temptype], ingredient = '$_POST[$tempingred]' ";
-      $ingredStmt .= "Where recipe_id = $recipeID; ";
+      $ingredStmt .= "Where recipe_id = $recipeID and id = ; ";
       //echo $ingredStmt . "</br>";
       $updateStmt = $db->query($ingredStmt);
     }
