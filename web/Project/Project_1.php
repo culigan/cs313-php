@@ -11,7 +11,7 @@
    require('DB_Connect.php');
    $db = connectToDB();
 
-   if(isset($_POST['ammount0']))
+   /*if(isset($_POST['ammount0']))
    {
       $name = $_POST['recipename'];
       $count = count($_POST);
@@ -39,11 +39,11 @@
          $insertUserID->bindValue(':foodtype_id', $recfood);
          $insertUserID->bindValue(':user_id', $userResults[0].[id]);
          $insertUserID->execute();
-      /*for($i = 0; $i < $count; $i++)
+      for($i = 0; $i < $count; $i++)
       {
          
-      }*/
-   }
+      }
+   }*/
 
    try
    {
