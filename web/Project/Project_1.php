@@ -44,7 +44,8 @@
          
       }
    }*/
-
+   $foodtype;
+   $meals;
    try
    {
       $sizes = $db->query("SELECT * FROM measurementsize;");
