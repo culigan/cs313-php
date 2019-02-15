@@ -12,16 +12,13 @@
    $count = ($count - 3) / 4;
    $stmt = "Update recipe set recipename = '" . $_POST['recipenam'] . "', directions = '" . $direct . "' where id = " . $recID . ";";
    $q = $db->query($stmt);
-   /*$q->execute();
-    ///$stmt->bindValue(':recipename', $_POST['recipenam']);
-    //$stmt->execute();*/
     $recname = "recipenam";
     $qzs = $db->query("Select id from recipe where recipename = '$_POST[$recname]';");
     $recipeID;
     foreach($qzs as $qz)
       $recipeID = $qz[id];
-    echo $recipeID;
-    for($i = 0; $i < $count; $i++)
+   
+   for($i = 0; $i < $count; $i++)
     {
       $tempsize = "size" . $i;
       $temptype = "type" . $i;
@@ -30,13 +27,12 @@
       $ingredStmt = "Update recipeitems Set measurementsize_id = $_POST[$tempsize], ";
 	   $ingredStmt .= "measurementtype_id = $_POST[$temptype], ingredient = '$_POST[$tempingred]' ";
       $ingredStmt .= "Where recipe_id = $recipeID and id = $_POST[$temprecid]; ";
-      //echo $ingredStmt . "</br>";
       $updateStmt = $db->query($ingredStmt);
     }
 
     echo "<span>Recipe Saved </span>";
-    //usleep(5000);
-    //header("Location: Project_2.php");
+    usleep(5000);
+    header("Location: Project_2.php");
 
 ?>
 
