@@ -37,7 +37,7 @@ session_start();
    <script src="ProjectJS.js"></script>
 </head>
 <body>
-   <?php echo $update . "</br>";
+   <?php echo $update . "</br>";?>
    <header>Search Recipes</header>
    <div id='itemdiv'>
       <form id="searchforum" action="Project_2.php" method="post">         
