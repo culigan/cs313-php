@@ -79,7 +79,7 @@ session_start();
                      $whereString = $whereString . " r.recipename like '%" . htmlspecialchars($_POST['recipename']) . "%'";   
                   else 
                      $whereString = $whereString . " AND r.recipename  like '%" . htmlspecialchars($_POST['recipename']) . "%'";   
-                  echo $whereString . "</br>";
+                  echo "</br>";
                }
                if(isset($_POST['ingred']) && !empty($_POST['ingred'])){
                   //$searchString = $searchString . ", i.ingredientname";
