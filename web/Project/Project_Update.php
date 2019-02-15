@@ -29,7 +29,7 @@
       $temprecid = "recitemid" . $i;
       $ingredStmt = "Update recipeitems Set measurementsize_id = $_POST[$tempsize], ";
 	   $ingredStmt .= "measurementtype_id = $_POST[$temptype], ingredient = '$_POST[$tempingred]' ";
-      $ingredStmt .= "Where recipe_id = $recipeID and id = $temprecid; ";
+      $ingredStmt .= "Where recipe_id = $recipeID and id = $_POST[$temprecid]; ";
       echo $ingredStmt . "</br>";
       //$updateStmt = $db->query($ingredStmt);
     }
