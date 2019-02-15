@@ -86,14 +86,14 @@
             <select id="food" name="food"  required>
                <? 
                foreach($foodtype as $food){
-               echo "<option value=$food[id]> $food[categoryname]</option>";
+               echo "<option value=$food[id]> $food[typename]</option>";
                }
                ?>
             </select>Food Type
             <select id="mealcat" name="mealcat"  required>
                <? 
                foreach($meals as $meal){
-               echo "<option value=$meal[id]> $meal[typename]</option>";
+               echo "<option value=$meal[id]> $meal[categoryname]</option>";
                }
                ?>
             </select>Amount
