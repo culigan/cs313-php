@@ -81,10 +81,11 @@ session_start();
             
                echo "</select>Measurement Type";
                echo "<input name='ingred$counter' type='text' value='$item[ingredient]'>Ingredient</br></br>";
+               echo "<input name='recitemid$counter' type='hidden' value='$idrecitem'>";
+
                $counter++;
             }
             echo "<textarea name='direct' rows='10' cols='50' >$savedirect</textarea></br></br>"; 
-            echo "<input name='recitemid' type='hidden' value='$idrecitem$counter'>";
             echo "<input name='recid' type='hidden' value=$id>";
          ?>
          <input type="submit" value="Save Changes">
