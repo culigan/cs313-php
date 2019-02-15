@@ -26,7 +26,7 @@
     {
       $ingredStmt = "Update recipeitems Set measurementsize_id = $_POST['size$i], ";
 	   $ingredStmt .= "measurementtype_id = $_POST['type$i'], ingredient = '$_POST['ingred$i']' ";
-      $ingredStmt .= "Where recipe_id = (Select id from recipe where recipename = '$_POST['recipenam'])'; ";
+      //$ingredStmt .= "Where recipe_id = (Select id from recipe where recipename = '$_POST['recipenam'])'; ";
       //$updateStmt = $db->query($ingredStmt);
       //$updateStmt->execute();
     }
