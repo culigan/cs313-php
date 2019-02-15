@@ -50,8 +50,8 @@
    {
       $sizes = $db->query("SELECT * FROM measurementsize;");
       $types = $db->query("SELECT * FROM measurementtype;");
-      //$foodtype = $db->query("SELECT * FROM foodtype;")
-      //$meals = $db->query("SELECT * FROM mealcategory;")
+      $foodtype = $db->query("SELECT * FROM foodtype;")
+      $meals = $db->query("SELECT * FROM mealcategory;")
    }
    catch (PDOException $ex)
    {
@@ -93,7 +93,7 @@
             <select id="mealcat" name="mealcat"  required>
                <? 
                foreach($meals as $meal){
-               echo "<option value=$meal[id]> $meal[measurementsize]</option>";
+               echo "<option value=$meal[id]> $meal[typename]</option>";
                }
                ?>
             </select>Amount
