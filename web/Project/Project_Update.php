@@ -17,13 +17,13 @@
     //$stmt->execute();*/
     for($i = 0; $i < $count; $i++)
     {
-      $temp = "size" . $i;
-      echo $temp;
+      $tempsize = "size" . $i;
+      $temptype = "type" . $i;
+      $tempingred = "ingred" . $i;
       $ingredStmt = "Update recipeitems Set measurementsize_id = $_POST[$temp], ";
-      echo $ingredStmt . "</br>";
-	   //$ingredStmt .= "measurementtype_id = $_POST['type$i'], ingredient = '$_POST['ingred$i']' ";
-      //$ingredStmt .= "Where recipe_id = (Select id from recipe where recipename = '$_POST['recipenam'])'; ";
-      //$updateStmt = $db->query($ingredStmt);
+	   $ingredStmt .= "measurementtype_id = $_POST[$temptype], ingredient = $_POST['$tempingred]' ";
+      $ingredStmt .= "Where recipe_id = (Select id from recipe where recipename = '$_POST['recipenam'])'; ";
+      $updateStmt = $db->query($ingredStmt);
       //$updateStmt->execute();
     }
 
