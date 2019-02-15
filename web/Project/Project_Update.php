@@ -9,7 +9,7 @@
    $ingredID = $_POST['ingred0'];
    $direct = $_POST['direct'];
    $recID = $_POST['recid'];
-   $count = ($count - 4) / 3;
+   $count = ($count - 3) / 4;
    $stmt = "Update recipe set recipename = '" . $_POST['recipenam'] . "', directions = '" . $direct . "' where id = " . $recID . ";";
    $q = $db->query($stmt);
    /*$q->execute();
