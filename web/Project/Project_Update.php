@@ -4,7 +4,7 @@
       
 
    $count = count($_POST);
-   $sizeID = $_POST['size0'];
+   echo $_POST['recitemid0'];
    $typeID = $_POST['type0'];
    $ingredID = $_POST['ingred0'];
    $direct = $_POST['direct'];
@@ -29,9 +29,9 @@
       $temprecid = "recitemid" . $i;
       $ingredStmt = "Update recipeitems Set measurementsize_id = $_POST[$tempsize], ";
 	   $ingredStmt .= "measurementtype_id = $_POST[$temptype], ingredient = '$_POST[$tempingred]' ";
-      $ingredStmt .= "Where recipe_id = $recipeID and id = ; ";
-      //echo $ingredStmt . "</br>";
-      $updateStmt = $db->query($ingredStmt);
+      $ingredStmt .= "Where recipe_id = $recipeID and id = $temprecid; ";
+      echo $ingredStmt . "</br>";
+      //$updateStmt = $db->query($ingredStmt);
     }
 
     echo "<span>Recipe Saved </span>";
