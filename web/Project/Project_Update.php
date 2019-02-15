@@ -34,8 +34,8 @@
     }
 
     echo "<span>Recipe Saved </span>";
-    usleep(5000);
-    header("Location: Project_2.php");
+    //usleep(5000);
+    //header("Location: Project_2.php");
 
 ?>
 
