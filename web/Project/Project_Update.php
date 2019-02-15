@@ -8,25 +8,19 @@
    $typeID = $_POST['type0'];
    $ingredID = $_POST['ingred0'];
    $direct = $_POST['direct'];
-   echo $ingredID;
    $recID = $_POST['recid'];
-   echo $recID;
-   echo $count;
    $count = ($count - 3) / 3;
-   echo $count;
    $stmt = "Update recipe set recipename = '" . $_POST['recipenam'] . "', directions = '" . $direct . "' where id = " . $recID . ";";
-   echo $stmt;
    $q = $db->query($stmt);
    /*$q->execute();
     ///$stmt->bindValue(':recipename', $_POST['recipenam']);
     //$stmt->execute();*/
-    echo "here";
-    echo $_POST['size0'];
     for($i = 0; $i < $count; $i++)
     {
       $temp = "size" . $i;
       echo $temp;
-      //$ingredStmt = "Update recipeitems Set measurementsize_id = $_POST['size$i], ";
+      $ingredStmt = "Update recipeitems Set measurementsize_id = $_POST['$temp'], ";
+      echo $ingredStmt . "</br>";
 	   //$ingredStmt .= "measurementtype_id = $_POST['type$i'], ingredient = '$_POST['ingred$i']' ";
       //$ingredStmt .= "Where recipe_id = (Select id from recipe where recipename = '$_POST['recipenam'])'; ";
       //$updateStmt = $db->query($ingredStmt);
