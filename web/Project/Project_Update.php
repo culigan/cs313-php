@@ -16,7 +16,7 @@
     ///$stmt->bindValue(':recipename', $_POST['recipenam']);
     //$stmt->execute();*/
     $recname = "recipenam";
-    $q2 = $db->query("Select id from recipe where recipename = '$_POST[$recname]';")
+    $q2 = $db->query("Select id from recipe where recipename = '$_POST[$recname]';");
     //$recipeID = $q2[0][id];
     echo $q2;
     for($i = 0; $i < $count; $i++)
