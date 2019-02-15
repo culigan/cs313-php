@@ -15,7 +15,7 @@ session_start();
       $id = $_GET['id'];
       require('DB_Connect.php');
       $db = connectToDB();
-      $rname = $db->query("SELECT ri.id as  recitemid, recipename as name, directions as directs FROM recipe where id = " . $id . ";");
+      $rname = $db->query("SELECT recipename as name, directions as directs FROM recipe where id = " . $id . ";");
       $search = "SELECT ri.id as rid, ri.ingredient as ingredient, ms.measurementsize as msize,";
       $search .= " mt.measurementname as mtype FROM recipeitems ri join measurementsize ";
       $search .= "ms on ri.measurementsize_id = ms.id join measurementtype mt on ";
@@ -52,7 +52,6 @@ session_start();
             {
                echo "<input name='recipenam' size='35' type='text' value='" . $name[name] . "'>Recipe Name</br></br>"; 
                $savedirect = $name[directs];
-               $idrecitem = $name[recitemid];
             }
             $counter = 0;
             foreach($items as $item)
@@ -81,7 +80,7 @@ session_start();
             
                echo "</select>Measurement Type";
                echo "<input name='ingred$counter' type='text' value='$item[ingredient]'>Ingredient</br></br>";
-               echo "<input name='recitemid$counter' type='hidden' value='$idrecitem'>";
+               echo "<input name='recitemid$counter' type='hidden' value='$item[rid]'>";
 
                $counter++;
             }
