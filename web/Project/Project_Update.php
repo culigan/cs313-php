@@ -31,25 +31,7 @@
     }
 
     echo "<span>Recipe Saved </span>";
-    usleep(5000);
-    header("Location: Project_2.php");
+    header("Location: Project_2.php?updated=updated");
 
 ?>
 
-
-
-<!DOCTYPE html>
-
-<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
-<head>
-   <meta charset="utf-8" />
-   <title>Update</title>
-   <link href="Project.css" rel="stylesheet">
-   <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-   <script src="ProjectJS.js"></script>
-</head>
-<body>
-   <header>Updated</header>
-   
-</body>
-</html>

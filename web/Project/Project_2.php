@@ -7,12 +7,18 @@ session_start();
       die();
    }
    $edit;
+   $update;
+   
    if(isset($_GET['type']))
       $SESSION['type'] = $_GET['type'];  
+   if(isset($_GET['updated']))
+      $update = "Recipe Updated Successfully!";
+   
    require('DB_Connect.php');
    $db = connectToDB();
-    $types = $db->query("SELECT * FROM FoodType;");
-    $mcats = $db->query("SELECT * FROM MealCategory;");
+   
+   $types = $db->query("SELECT * FROM FoodType;");
+   $mcats = $db->query("SELECT * FROM MealCategory;");
 
 ?>
 
@@ -29,6 +35,7 @@ session_start();
    <script src="ProjectJS.js"></script>
 </head>
 <body>
+   <?php echo $update . "</br>";
    <header>Search Recipes</header>
    <div id='itemdiv'>
       <form id="searchforum" action="Project_2.php" method="post">         
