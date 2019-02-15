@@ -96,7 +96,7 @@
                   echo "<option value=$meal[id]> $meal[categoryname]</option>";
                }
                ?>
-            </select>Amount
+            </select>Meal Category
             
          <div id="ingred">
             <select id="amount0" name="amount0"  required>
