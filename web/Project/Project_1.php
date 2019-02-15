@@ -85,7 +85,7 @@
             <input name="recipename" type="text" required>Recipe Name</br></br>
             <select id="food" name="food"  required>
                <? 
-               print_r(foodtypes);
+               print_r($foodtypes);
                //foreach($foodtypes as $food){
               // echo "<option value=$food[id]> $food[typename]</option>";
                //}
@@ -93,7 +93,7 @@
             </select>Food Type
             <select id="mealcat" name="mealcat"  required>
                <? 
-               print_r(meals);
+               print_r($meals);
                ///foreach($meals as $meal){
                //echo "<option value=$meal[id]> $meal[categoryname]</option>";
                //}
