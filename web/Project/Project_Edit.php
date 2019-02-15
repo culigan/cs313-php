@@ -47,10 +47,12 @@ session_start();
       <form id="searchforum" action="Project_Update.php" method="post">         
          <?php 
             $savedirect;
+            $idrecitem;
             foreach($rname as $name)
             {
                echo "<input name='recipenam' size='35' type='text' value='" . $name[name] . "'>Recipe Name</br></br>"; 
                $savedirect = $name[directs];
+               $idrecitem = $name[recitemid];
             }
             $counter = 0;
             foreach($items as $item)
@@ -82,7 +84,7 @@ session_start();
                $counter++;
             }
             echo "<textarea name='direct' rows='10' cols='50' >$savedirect</textarea></br></br>"; 
-            echo "<input name='recitemid' type='hidden' value='" . $rname[recitemid] . $counter . "'>";
+            echo "<input name='recitemid' type='hidden' value='$idrecitem$counter'>";
             echo "<input name='recid' type='hidden' value=$id>";
          ?>
          <input type="submit" value="Save Changes">
