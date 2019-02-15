@@ -15,6 +15,7 @@
    /*$q->execute();
     ///$stmt->bindValue(':recipename', $_POST['recipenam']);
     //$stmt->execute();*/
+    $recname = "recipenam";
     for($i = 0; $i < $count; $i++)
     {
       $tempsize = "size" . $i;
@@ -22,7 +23,7 @@
       $tempingred = "ingred" . $i;
       $ingredStmt = "Update recipeitems Set measurementsize_id = $_POST[$temp], ";
 	   $ingredStmt .= "measurementtype_id = $_POST[$temptype], ingredient = '" . $_POST[$tempingred] . "' ";
-      $ingredStmt .= "Where recipe_id = (Select id from recipe where recipename = '" . $_POST['recipenam'] . "'); ";
+      $ingredStmt .= "Where recipe_id = (Select id from recipe where recipename = '$_POST[recname]'); ";
       $updateStmt = $db->query($ingredStmt);
       //$updateStmt->execute();
     }
