@@ -50,7 +50,7 @@
    {
       $sizes = $db->query("SELECT * FROM measurementsize;");
       $types = $db->query("SELECT * FROM measurementtype;");
-      $foodtype = $db->query("SELECT * FROM foodtype;")
+      //$foodtype = $db->query("SELECT * FROM foodtype;")
       $meals = $db->query("SELECT * FROM mealcategory;")
    }
    catch (PDOException $ex)
