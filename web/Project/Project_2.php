@@ -12,8 +12,10 @@ session_start();
    if(isset($_GET['type']))
       $SESSION['type'] = $_GET['type'];  
    if(isset($_GET['updated']))
+   {
       $update = "Recipe Updated Successfully!";
-   
+      unset($_GET['updated']);
+      }
    require('DB_Connect.php');
    $db = connectToDB();
    
