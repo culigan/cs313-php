@@ -16,11 +16,11 @@
     ///$stmt->bindValue(':recipename', $_POST['recipenam']);
     //$stmt->execute();*/
     $recname = "recipenam";
-    $q2 = $db->query("Select id from recipe where recipename = '$_POST[$recname]';");
+    $qzs = $db->query("Select id from recipe where recipename = '$_POST[$recname]';");
     $recipeID;
-    foreach($q2 as $qz)
+    foreach($qzs as $qz)
       $recipeID = $qz[id];
-    echo $q2;
+    echo $recipeID;
     for($i = 0; $i < $count; $i++)
     {
       $tempsize = "size" . $i;
