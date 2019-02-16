@@ -22,7 +22,7 @@
    <script src="Team.js"></script>
 </head>
 <body id="userbody">   
-   <header id="user">Welcome Page</header>
+   <header id="user">Welcome <?php echo $_SESSION['user']; ?></header>
    <div id='userdiv'>
       <label><a href="Team_SignIn.php" value="SignIn" >Sign In</a></label>
    </div>
