@@ -2,6 +2,12 @@
    require('DB_Connect.php');
    $db = connectToDB();
       
+   $signin;
+   if(!isset($_SESSION['user'])){
+      $signin = "SignIn";      
+   }
+   else
+      $signin = "SignOut";
 
    $count = count($_POST);
    echo $_POST['recitemid0'];

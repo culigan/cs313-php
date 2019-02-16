@@ -2,6 +2,13 @@
 <?php
    session_start();
 
+   $signin;
+   if(!isset($_SESSION['user'])){
+      $signin = "SignIn";      
+   }
+   else
+      $signin = "SignOut";
+
    if(!isset($_SESSION['user'])){
       header("Location: Project_User.php");
       die();
