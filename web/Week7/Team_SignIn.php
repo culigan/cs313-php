@@ -41,7 +41,7 @@
       if(isset($_POST['user']))
       {
          $username = $_POST['user'];
-         $password = $_POST['pass'];
+         $password = password_hash($_POST['pass'], PASSWORD_DEFAULT);
          $queryStmt = "select username, password From usersignin_table where username = :username";
          $queryStmt = $db->prepare($queryStmt);
          $queryStmt->bindValue(':username', $username);
