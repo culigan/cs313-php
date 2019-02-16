@@ -26,7 +26,7 @@
       echo $recfood;
       $reccat = $_POST['mealcat'];
       echo $reccat;
-      $userID = $db->query("SELECT id FROM user_table where username = " . $_SESSION['user'] . ";");
+      $userID = $db->query("SELECT id FROM user_table where username = '" . $_SESSION['user'] . "';");
       
       print_r(userID);
       $insertString = "Insert Into Recipe (recipename, Directions, FoodType_ID,";
