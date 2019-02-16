@@ -42,7 +42,6 @@ session_start();
    <script src="ProjectJS.js"></script>
 </head>
 <body>
-   <header>Search Recipes</header>
    <div class="contain" id="container">
       <header>Family Recipes</header>
       <div class="menudiv" id="menu">
@@ -63,6 +62,7 @@ session_start();
          </div>
       </div>
    </div>
+   <header>Search Recipes</header>
    <div id='itemdiv'>
       <form id="searchforum" action="Project_Update.php" method="post">         
          <?php 

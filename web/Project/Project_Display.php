@@ -35,7 +35,6 @@
    <script src="ProjectJS.js"></script>
 </head>
 <body>   
-   <header>Recipe</header>
    <div class="contain" id="container">
       <header>Family Recipes</header>
       <div class="menudiv" id="menu">
@@ -56,6 +55,7 @@
          </div>
       </div>
    </div>
+   <header>Recipe</header>
    <div id='recipediv'>
       <?php
          foreach($db->query('SELECT * FROM Recipe WHERE id = '. $id .';') as $row){

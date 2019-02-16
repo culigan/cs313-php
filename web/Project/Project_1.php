@@ -90,7 +90,6 @@
    <script src="ProjectJS.js"></script>
 </head>
 <body >   
-   <header>Add a Recipe</header>
    <div class="contain" id="container">
       <header>Family Recipes</header>
       <div class="menudiv" id="menu">
@@ -111,6 +110,7 @@
          </div>
       </div>
    </div>
+   <header>Add a Recipe</header>
    <div id='itemdiv'>
       <form id="formid" action="Project_1.php" method="post">
          <p>

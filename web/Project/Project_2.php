@@ -38,7 +38,6 @@ session_start();
 </head>
 <body>
    <?php echo $update . "</br>";?>
-   <header>Search Recipes</header>
    <div class="contain" id="container">
       <header>Family Recipes</header>
       <div class="menudiv" id="menu">
@@ -59,6 +58,7 @@ session_start();
          </div>
       </div>
    </div>
+   <header>Search Recipes</header>
    <div id='itemdiv'>
       <form id="searchforum" action="Project_2.php" method="post">         
          <select name="type0" >
