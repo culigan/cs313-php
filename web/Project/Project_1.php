@@ -46,15 +46,12 @@
       for($i = 0; $i < $count; $i++)
       {
          $msize = $_POST['amount' . $i];
-         echo $msize;
          $mtype = $_POST['meastype' . $i];
-         echo $mtype;
          $ingredient = $_POST['ingredient' . $i];
-         echo $ingredient;
-         $insertString1 = "Insert Into Recipeitems (measurementsize, measuremnttype, ingredient, recipe_id";
-      $insertString1 .= ") Values (:msize, :mtype, :ingredient, :lastID)";
-      echo $insertString1 . "</br>";
-      $insertUserID = $db->prepare($insertString1);
+         $insertString1 = "Insert Into Recipeitems (measurementsize, measurementtype, ingredient, recipe_id";
+         $insertString1 .= ") Values (:msize, :mtype, :ingredient, :lastID)";
+         echo $insertString1 . "</br>";
+         $insertUserID = $db->prepare($insertString1);
          $insertUserID1->bindValue(':msize', $msize);
          $insertUserID1->bindValue(':mtype', $mtype);
          $insertUserID1->bindValue(':ingredient', $ingredient);
