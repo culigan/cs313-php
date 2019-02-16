@@ -32,7 +32,7 @@
       print_r($userResults);
       $insertUserID = $db->prepare("Insert Into Recipe (recipename, Directions, FoodType_ID,";
       $insertUserID .= " mealcategory_id, user_id) Values (:recipename, :directions, :foodtype_id,";
-      $insertUserID .= " :mealcategory_id, :user_id)";
+      $insertUserID .= " :mealcategory_id, :user_id)");
          $insertUserID->bindValue(':recipename', $recipen);
          $insertUserID->bindValue(':directions', $direct);
          $insertUserID->bindValue(':mealcategory_id', $reccat);
