@@ -15,17 +15,12 @@
    {
       $name = $_POST['recipename'];
       $count = $_POST['count'];
-      echo $count;
       $addSize;
       $addType;
       $recipen = $_POST['recipename'];
-      echo $recipen;
       $direct = $_POST['direct'];
-      echo $direct;
       $recfood = $_POST['food'];
-      echo $recfood;
       $reccat = $_POST['mealcat'];
-      echo $reccat;
       /*$userID = $db->query("SELECT id FROM user_table where username = '" . $_SESSION['user'] . "';");
       foreach($userID as $user)
          print_r($user[id]);*/
@@ -35,12 +30,9 @@
          $queryStmt->bindValue(':username', $username);
          $queryStmt->execute();
          $results = $queryStmt->fetchAll(PDO::FETCH_ASSOC);
-      print_r($results);
-      echo $results[0][id];
       $insertString = "Insert Into Recipe (recipename, Directions, FoodType_ID,";
       $insertString .= " mealcategory_id, user_id) Values (:recipename, :directions, :foodtype_id,";
       $insertString .= " :mealcategory_id, :user_id)";
-      echo $insertString . "</br>";
       $insertUserID = $db->prepare($insertString);
          $insertUserID->bindValue(':recipename', $recipen);
          $insertUserID->bindValue(':directions', $direct);
@@ -48,8 +40,23 @@
          $insertUserID->bindValue(':foodtype_id', $recfood);
          $insertUserID->bindValue(':user_id', $results[0][id]);
          $insertUserID->execute();
+
+         $lastID = 3;//lastInsertID()
+         
       for($i = 0; $i < $count; $i++)
       {
+         $msize = $_POST['amount' . $i];
+         $mtype = $_POST['meastype' . $i];
+         $ingredient = $_POST['ingredient' . $i];
+         $insertString1 = "Insert Into Recipeitems (measurementsize, measuremnttype, ingredient, recipe_id";
+      $insertString1 .= ") Values (:msize, :mtype, :ingredient, :lastID)";
+      echo $insertString1 . "</br>";
+      $insertUserID = $db->prepare($insertString1);
+         $insertUserID1->bindValue(':msize', $msize);
+         $insertUserID1->bindValue(':mtype', $mtype);
+         $insertUserID1->bindValue(':ingredient', $ingredient);
+         $insertUserID1->bindValue(':lastID', $lastID);
+         $insertUserID1->execute();
          
       }
    }
