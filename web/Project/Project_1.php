@@ -36,15 +36,17 @@
          $queryStmt->execute();
          $results = $queryStmt->fetchAll(PDO::FETCH_ASSOC);
       print_r($results);
+      echo $results[0][id];
       $insertString = "Insert Into Recipe (recipename, Directions, FoodType_ID,";
       $insertString .= " mealcategory_id, user_id) Values (:recipename, :directions, :foodtype_id,";
       $insertString .= " :mealcategory_id, :user_id)";
+      echo $insertString . "</br>";
       $insertUserID = $db->prepare($insertString);
          $insertUserID->bindValue(':recipename', $recipen);
          $insertUserID->bindValue(':directions', $direct);
          $insertUserID->bindValue(':mealcategory_id', $reccat);
          $insertUserID->bindValue(':foodtype_id', $recfood);
-         $insertUserID->bindValue(':user_id', $userResults[0].[id]);
+         $insertUserID->bindValue(':user_id', $results[0][id]);
          $insertUserID->execute();
       for($i = 0; $i < $count; $i++)
       {
