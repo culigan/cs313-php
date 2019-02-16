@@ -66,6 +66,9 @@ header{
 #textdiv{
    background-color:white;
    font-size:30px;
+   color:darkcyan;
+   padding:10%;
+   text-align:justify;
 }
 
 #foot{
