@@ -60,7 +60,7 @@
          }   
          else
             header("Location: Team_SignUp.php");
-         unset($_POST['user']);
+         //unset($_POST['user']);
       }
    }
    catch (PDOException $ex)
