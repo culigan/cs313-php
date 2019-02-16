@@ -30,7 +30,7 @@
          $queryStmt->bindValue(':username', $username);
          $queryStmt->execute();
          $results = $queryStmt->fetchAll(PDO::FETCH_ASSOC);
-      $insertString = "Insert Into Recipe (recipename, Directions, FoodType_ID,";
+      /*$insertString = "Insert Into Recipe (recipename, Directions, FoodType_ID,";
       $insertString .= " mealcategory_id, user_id) Values (:recipename, :directions, :foodtype_id,";
       $insertString .= " :mealcategory_id, :user_id)";
       $insertUserID = $db->prepare($insertString);
@@ -39,15 +39,18 @@
          $insertUserID->bindValue(':mealcategory_id', $reccat);
          $insertUserID->bindValue(':foodtype_id', $recfood);
          $insertUserID->bindValue(':user_id', $results[0][id]);
-         $insertUserID->execute();
+         $insertUserID->execute();*/
 
          $lastID = 3;//lastInsertID()
          
       for($i = 0; $i < $count; $i++)
       {
          $msize = $_POST['amount' . $i];
+         echo $msize;
          $mtype = $_POST['meastype' . $i];
+         echo $mtype;
          $ingredient = $_POST['ingredient' . $i];
+         echo $ingredient;
          $insertString1 = "Insert Into Recipeitems (measurementsize, measuremnttype, ingredient, recipe_id";
       $insertString1 .= ") Values (:msize, :mtype, :ingredient, :lastID)";
       echo $insertString1 . "</br>";
