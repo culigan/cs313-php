@@ -28,7 +28,7 @@
       echo $reccat;
       $username = $_POST['user'];
       $userID = $db->prepare("SELECT id FROM user_table where username = :username;");.
-      $userID->bindValue(':username', $username);
+      $userID->bindParam(':username', $username);
       $userID->execute();
       $user = $userID->fetchAll(PDO::FETCH_ASSOC)
       //foreach($userID as $user)
