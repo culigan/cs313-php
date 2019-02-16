@@ -13,7 +13,6 @@
    {
       $username;
       $password;
-      echo "here";
       if(isset($_POST['uname']))
       {
          $username = htmlspecialchars($_POST['uname']);
@@ -48,13 +47,16 @@
          $queryStmt->execute();
          $results = $queryStmt->fetchAll(PDO::FETCH_ASSOC);
       
-         if(count($results) > 0 && password_verify(results[0][password], $password))
+         if(count($results) > 0)
          {
-            $_SESSION['user'] = $username;
-            header("Location: Team_Welcome.php");         
+            if(password_verify(results[0][password], $password) )
+              {
+                  $_SESSION['user'] = $username;
+                  header("Location: Team_Welcome.php"); 
+              }
+              else
+                  echo "The password was incorrect!";
          }   
-         else if(!password_verify(results[0][password], $password))
-            echo "The password was incorrect!";
          else
             header("Location: Team_SignUp.php");
          unset($_POST['user']);
