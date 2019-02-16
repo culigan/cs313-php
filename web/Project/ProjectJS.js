@@ -39,12 +39,12 @@ function addItem() {
    
    var a = document.getElementById("amount" + (count - 1));
    for (var i = 0; i < a.length; i++) {
-      document.getElementById("amount" + count).innerHTML += "<option value='" + a[i].value + "> " + a[i].textContent + "</option>";
+      document.getElementById("amount" + count).innerHTML += "<option value='" + a[i].value + "'> " + a[i].textContent + "</option>";
       
    }
    var b = document.getElementById("meastype" + (count - 1));
    for (var i = 0; i < b.length; i++) {
-      document.getElementById("meastype" + count).innerHTML += "<option value='" + b[i].value + "> " + b[i].textContent + "</option>";
+      document.getElementById("meastype" + count).innerHTML += "<option value='" + b[i].value + "'> " + b[i].textContent + "</option>";
 
    }
    
