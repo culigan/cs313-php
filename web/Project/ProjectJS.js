@@ -5,7 +5,7 @@ function addItem() {
    var ingredient = document.createElement("input");
    var breakLine = document.createElement("br");
    var count = parseInt(document.getElementById("count").value);
-   document.getElementById("count").value = (count++).toString();
+   document.getElementById("count").value = (++count).toString();
    document.getElementById("direct").value = count;
    var amountLab = document.createElement("label");
    var measureLab = document.createElement("label");
