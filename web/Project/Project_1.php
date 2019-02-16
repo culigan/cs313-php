@@ -41,7 +41,7 @@
          $insertUserID->bindValue(':user_id', $results[0][id]);
          $insertUserID->execute();*/
 
-         $lastID = 3;//lastInsertID();
+         $lastID = 4;//lastInsertID();
          
       for($i = 0; $i != ($count + 1); $i++)
       {
@@ -49,14 +49,14 @@
          echo $msize;
          $mtype = $_POST['meastype' . $i];
          $ingredient = $_POST['ingredient' . $i];
-         $insertString = "Insert Into recipeitems (measurementsize_id, measurementtype_id, ingredient, recipe_id) Values ($msize, $mtype, '$ingredient', $lastID);";
+         $insertString = "Insert Into recipeitems (measurementsize_id, measurementtype_id, ingredient, recipe_id) Values (:amounts, :typem, :ingre, :last)";
          echo $insertString . "</br>";
-         $insertUserID = $db->query($insertString);
-         /*$insertUserID->bindValue(':amounts', $msize);
+         $insertUserID = $db->prepare($insertString);
+         $insertUserID->bindValue(':amounts', $msize);
          $insertUserID->bindValue(':typem', $mtype);
          $insertUserID->bindValue(':ingre', $ingredient);
          $insertUserID->bindValue(':last', $lastID);
-         $insertUserID->execute();*/
+         $insertUserID->execute();
          
       }
    }
