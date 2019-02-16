@@ -4,7 +4,7 @@ function addItem() {
    var measType = document.createElement("select");
    var ingredient = document.createElement("input");
    var breakLine = document.createElement("br");
-   var count = parseInt(document.getElementById('formid').length) - 4;
+   var count = parseInt(document.getElementById('formid').length) - 5;
    var lastingred = document.getElementById('formid')[count];
    lastingred = lastingred.id;
    var t = lastingred.indexOf("t");
