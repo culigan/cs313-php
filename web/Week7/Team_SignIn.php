@@ -34,13 +34,14 @@
             $insertIn->bindValue(':password', $password);
             $insertIn->execute();
          }
+         unset($_POST['uname']);
       
       }
    
       if(isset($_POST['user']))
       {
          $username = $_POST['user'];
-         $password = password_hash($_POST['pass'], PASSWORD_DEFAULT);
+         $password = $_POST['pass'];
          $queryStmt = "select username, password From user_table where username = :username";
          $queryStmt = $db->prepare($queryStmt);
          $queryStmt->bindValue(':username', $username);
