@@ -41,7 +41,7 @@
       if(isset($_POST['user']))
       {
          $username = $_POST['user'];
-         $password = password_hash($_POST['pass'], PASSWORD_DEFAULT);
+         $password = $_POST['pass'], PASSWORD_DEFAULT;
          $queryStmt = "select username, password From usersignin_table where username = :username";
          $queryStmt = $db->prepare($queryStmt);
          $queryStmt->bindValue(':username', $username);
@@ -50,7 +50,7 @@
       
          if(count($results) > 0)
          {
-            if(password_verify(results[0][password], $password) )
+            if(password_verify($password, $results[0][password]) )
               {
                   $_SESSION['user'] = $username;
                   header("Location: Team_Welcome.php"); 
