@@ -18,12 +18,15 @@ function addItem() {
    var lineBreak = document.createElement("div");
    ingredient.setAttribute("type", "text");
    ingredient.setAttribute("id", "ingredient" + count);
+   ingredient.setAttribute("name", "ingredient" + count);
    ingredient.setAttribute("required", "");
    var tempString = "return" + count;
    lineBreak.setAttribute("id", tempString);
 
    amountSelect.setAttribute("id", "amount" + count)
+   amountSelect.setAttribute("name", "amount" + count)
    measType.setAttribute("id", "meastype" + count)
+   measType.setAttribute("name", "meastype" + count)
    ingredDiv.appendChild(amountSelect);
    ingredDiv.appendChild(amountLab);
    ingredDiv.appendChild(measType);
