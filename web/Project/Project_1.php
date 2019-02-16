@@ -26,8 +26,10 @@
       echo $recfood;
       $reccat = $_POST['mealcat'];
       echo $reccat;
-      $userID = $db->query("SELECT id FROM user_table where username = '" . $_SESSION['user'] . "';");
-      foreach($userID as $user)
+      $userID = $db->prepare("SELECT id FROM user_table where username = '" . $_SESSION['user'] . "';");.
+      $userID->execute();
+      $user = $userID->fetchAll(PDO::FETCH_ASSOC)
+      //foreach($userID as $user)
          print_r($user[id]);
       $insertString = "Insert Into Recipe (recipename, Directions, FoodType_ID,";
       $insertString .= " mealcategory_id, user_id) Values (:recipename, :directions, :foodtype_id,";
