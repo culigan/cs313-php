@@ -4,12 +4,12 @@
    require('DB_Connect.php');
    $db = connectToDB();
 
-   if(isset($_GET['already'])
+   if(isset($_GET['already']))
    {
       unset($_GET['already']);
       echo "This user already exists.";
    }
-   /*try
+   try
    {
       $username;
       $password;
@@ -64,7 +64,7 @@
    {
       echo 'Error!: ' . $ex->getMessage();
       die();
-   }*/
+   }
 
    
 ?>
