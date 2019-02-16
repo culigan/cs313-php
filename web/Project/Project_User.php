@@ -83,9 +83,9 @@
    <link href="Project.css" rel="stylesheet">
    <script src="ProjectJS.js"></script>
 </head>
-<body id="userbody">      
+<body id="userbody">   
+   <header id="user">User Login</header>
    <div id='userdiv'>
-      <header id="user">User Login</header>
       <form id="formid" action="Project_User.php" method="post">
          <input name="user" type="text" placeholder="username" required></br>
          <label>Username</label></br>
