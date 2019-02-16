@@ -84,37 +84,39 @@
          }
          ?>
          </p></br>
-         <input name="recipename" type="text" required>Recipe Name</br></br>
-         <select id="food" name="food"  required>
-            <? 
-            foreach($foodtypes as $food){
-               echo "<option value=$food[id]> $food[typename]</option>";
-            }
-            ?>
-         </select>Food Type
-         <select id="mealcat" name="mealcat"  required>
-            <? 
-            foreach($meals as $meal){
-               echo "<option value=$meal[id]> $meal[categoryname]</option>";
-            }
-            ?>
-         </select>Meal Category</br></br>
-            
-         <select id="amount0" name="amount0"  required>
-            <? 
-            foreach($sizes as $size){
-            echo "<option value=$size[id]> $size[measurementsize]</option>";
-            }
-            ?>
-         </select>Amount
-         <select id="meastype0" name="meastype0" required>
-            <? 
-               foreach($types as $type){
-               echo "<option value=$type[id]> $type[measurementname]</option>";
+            <input name="recipename" type="text" required>Recipe Name</br></br>
+            <select id="food" name="food"  required>
+               <? 
+               foreach($foodtypes as $food){
+                  echo "<option value=$food[id]> $food[typename]</option>";
                }
-            ?>
-         </select>Measurement Type
-         <input id="ingredient0" name="ingredient0" type="text" required>Ingredient</br></br>
+               ?>
+            </select>Food Type
+            <select id="mealcat" name="mealcat"  required>
+               <? 
+               foreach($meals as $meal){
+                  echo "<option value=$meal[id]> $meal[categoryname]</option>";
+               }
+               ?>
+            </select>Meal Category</br></br>
+            
+         <div id="ingred">
+            <select id="amount0" name="amount0"  required>
+               <? 
+               foreach($sizes as $size){
+               echo "<option value=$size[id]> $size[measurementsize]</option>";
+               }
+               ?>
+            </select>Amount
+            <select id="meastype0" name="meastype0" required>
+               <? 
+                  foreach($types as $type){
+                  echo "<option value=$type[id]> $type[measurementname]</option>";
+                  }
+               ?>
+            </select>Measurement Type
+            <input id="ingredient0" name="ingredient0" type="text" required>Ingredient</br></br>
+         </div>
          <input name="add" type="button" value="Add another Ingredient" onclick="addItem()"></br></br>
          <textarea name="direct" rows="4" cols="50" required>Enter directions here....</textarea></br></br>
          <input type="submit" value="Submit">
