@@ -26,12 +26,16 @@
       echo $recfood;
       $reccat = $_POST['mealcat'];
       echo $reccat;
-      $username = $_POST['user'];
-      $userID = $db->prepare("SELECT id FROM user_table where username = :username", array(PDO::ATTR_CURSOR => PDO::CURSOR_FWDONLY));
-      $userID->execute(array(':username' => $username));
-      $user = $userID->fetchAll(PDO::FETCH_ASSOC)
-      //foreach($userID as $user)
-         //print_r($user);
+      /*$userID = $db->query("SELECT id FROM user_table where username = '" . $_SESSION['user'] . "';");
+      foreach($userID as $user)
+         print_r($user[id]);*/
+      $username = $_SESSION['user'];
+         $queryStmt = "select id From user_table where username = :username;";
+         $queryStmt = $db->prepare($queryStmt);
+         $queryStmt->bindValue(':username', $username);
+         $queryStmt->execute();
+         $results = $queryStmt->fetchAll(PDO::FETCH_ASSOC);
+      
       $insertString = "Insert Into Recipe (recipename, Directions, FoodType_ID,";
       $insertString .= " mealcategory_id, user_id) Values (:recipename, :directions, :foodtype_id,";
       $insertString .= " :mealcategory_id, :user_id)";
@@ -41,7 +45,7 @@
          $insertUserID->bindValue(':mealcategory_id', $reccat);
          $insertUserID->bindValue(':foodtype_id', $recfood);
          $insertUserID->bindValue(':user_id', $userResults[0].[id]);
-         //$insertUserID->execute();
+         $insertUserID->execute();
       for($i = 0; $i < $count; $i++)
       {
          
