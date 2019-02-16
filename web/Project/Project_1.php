@@ -11,7 +11,7 @@
    require('DB_Connect.php');
    $db = connectToDB();
 
-   /*if(isset($_POST['ammount0']))
+   if(isset($_POST['ammount0']))
    {
       $name = $_POST['recipename'];
       $count = count($_POST);
@@ -43,7 +43,7 @@
       {
          
       }
-   }*/
+   }
    $foodtype;
    $meals;
    try
@@ -96,7 +96,7 @@
                   echo "<option value=$meal[id]> $meal[categoryname]</option>";
                }
                ?>
-            </select>Meal Category
+            </select>Meal Category</br></br>
             
          <div id="ingred">
             <select id="amount0" name="amount0"  required>
