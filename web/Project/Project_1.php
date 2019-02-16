@@ -14,7 +14,7 @@
    if(isset($_POST['amount0']))
    {
       $name = $_POST['recipename'];
-      $count = count($_POST);
+      $count = $_POST['count'];
       echo $count;
       $count = ($count - 5) / 3;
       echo $count;
@@ -119,6 +119,7 @@
          </div>
          <input name="add" type="button" value="Add another Ingredient" onclick="addItem()"></br></br>
          <textarea name="direct" rows="4" cols="50" required>Enter directions here....</textarea></br></br>
+         <input id="count" name="count" type="hidden" value="1">
          <input type="submit" value="Submit">
       </form>
    </div>
