@@ -37,22 +37,13 @@ function addItem() {
    
    var a = document.getElementById("amount" + (count - 1));
    for (var i = 0; i < a.length; i++) {
-      document.getElementById("amount" + count).innerHTML += "<option> " + a[i].textContent + "</option>";
-      /*var addOpt = new Option();
-      addOpt = document.createElement("option")
-      addOpt.value = addOpt.textContent = a[i].textContent;
-
-      amountSelect.appendChild(addOpt);*/
+      document.getElementById("amount" + count).innerHTML += "<option value='" + a[i].value + "> " + a[i].textContent + "</option>";
+      
    }
    var b = document.getElementById("meastype" + (count - 1));
    for (var i = 0; i < b.length; i++) {
-      document.getElementById("meastype" + count).innerHTML += "<option> " + b[i].textContent + "</option>";
+      document.getElementById("meastype" + count).innerHTML += "<option value='" + b[i].value + "> " + b[i].textContent + "</option>";
 
-      /*var addOptM = new Option();
-      addOptM = document.createElement("option")
-      addOptM.value = addOptM.textContent = b[i].textContent;
-
-      measType.appendChild(addOptM);*/
    }
    
    
