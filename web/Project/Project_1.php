@@ -38,7 +38,7 @@
       $insertUserID->bindValue(':user_id', $results[0][id]);
       $insertUserID->execute();
 
-      $lastID = lastInsertID();
+      $lastID = lastInsertId();
          
       for($i = 0; $i != ($count + 1); $i++)
       {
