@@ -49,7 +49,7 @@
          echo $msize;
          $mtype = $_POST['meastype' . $i];
          $ingredient = $_POST['ingredient' . $i];
-         $insertString = "Insert Into recipeitems (measurementsize_id, measurementtype_id, ingredient, recipe_id) Values ($msize, $mtype, '$ingredient', lastID)";
+         $insertString = "Insert Into recipeitems (measurementsize_id, measurementtype_id, ingredient, recipe_id) Values ($msize, $mtype, '$ingredient', $lastID)";
          echo $insertString . "</br>";
          $insertUserID = $db->prepare($insertString);
          /*$insertUserID->bindValue(':amounts', $msize);
