@@ -38,7 +38,8 @@
          </div>
       </div>
       <div id="textdiv">
-         This will be an explanation of the website.
+         Welcome to our recipe storage site.  The purpose of the site is to give us a place where 
+         we can store and share our favorite recipes. Please enter any recipe you would like to share.
       </div>
    </div>
    <footer id="foot">
