@@ -42,7 +42,7 @@
          $insertUserID->execute();*/
 
          $lastID = 4;//lastInsertID();
-         
+         print_r( $_POST);
       for($i = 0; $i != ($count + 1); $i++)
       {
          $msize = $_POST['amount' . $i];
