@@ -11,7 +11,7 @@
    require('DB_Connect.php');
    $db = connectToDB();
 
-   if(isset($_POST['ammount0']))
+   if(isset($_POST['amount0']))
    {
       $name = $_POST['recipename'];
       $count = count($_POST);
