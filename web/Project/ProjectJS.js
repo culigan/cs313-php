@@ -23,10 +23,12 @@ function addItem() {
    var tempString = "return" + count;
    lineBreak.setAttribute("id", tempString);
 
-   amountSelect.setAttribute("id", "amount" + count)
-   amountSelect.setAttribute("name", "amount" + count)
-   measType.setAttribute("id", "meastype" + count)
-   measType.setAttribute("name", "meastype" + count)
+   amountSelect.setAttribute("id", "amount" + count);
+   amountSelect.setAttribute("name", "amount" + count);
+   amountSelect.setAttribute("value", "1");
+   measType.setAttribute("id", "meastype" + count);
+   measType.setAttribute("name", "meastype" + count);
+   measType.setAttribute("value", "1");
    ingredDiv.appendChild(amountSelect);
    ingredDiv.appendChild(amountLab);
    ingredDiv.appendChild(measType);
