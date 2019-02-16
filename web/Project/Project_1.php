@@ -91,6 +91,26 @@
 </head>
 <body >   
    <header>Add a Recipe</header>
+   <div class="contain" id="container">
+      <header>Family Recipes</header>
+      <div class="menudiv" id="menu">
+         <div id="item">
+            <a href="ProjectHome.php">Home</a>
+         </div>
+         <div id="item">
+            <a href="Project_1.php">Add Recipes</a>
+         </div>
+         <div id="item">
+            <a href="Project_2.php?type=edit">Edit Recipes</a>
+         </div>
+         <div id="item">
+            <a href="Project_2.php">Search Recipes</a>
+         </div>
+         <div id="item">
+            <a id="signin" href="Project_User.php?user:in" value="SignIn"><?php echo $signin; ?></a>
+         </div>
+      </div>
+   </div>
    <div id='itemdiv'>
       <form id="formid" action="Project_1.php" method="post">
          <p>
@@ -98,7 +118,6 @@
          if(isset($_POST['amount0']))
          {
             echo 'Recipe successfully saved!';
-            print_r($_POST);
          }
          ?>
          </p></br>
