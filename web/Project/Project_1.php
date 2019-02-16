@@ -39,7 +39,7 @@
          $insertUserID->bindValue(':mealcategory_id', $reccat);
          $insertUserID->bindValue(':foodtype_id', $recfood);
          $insertUserID->bindValue(':user_id', $userResults[0].[id]);
-         $insertUserID->execute();
+         //$insertUserID->execute();
       for($i = 0; $i < $count; $i++)
       {
          
