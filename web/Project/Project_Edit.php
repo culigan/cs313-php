@@ -22,12 +22,17 @@ session_start();
       $id = $_GET['id'];
       require('DB_Connect.php');
       $db = connectToDB();
-      $rname = $db->query("SELECT recipename as name, directions as directs FROM recipe where id = " . $id . ";");
+
+      $selectString = "SELECT recipename as name, directions as directs FROM recipe where id = " . $id . ";";
+      $rname = $db->query($selectString);
+      $rname->execute();
+
       $search = "SELECT ri.id as rid, ri.ingredient as ingredient, ms.measurementsize as msize,";
       $search .= " mt.measurementname as mtype FROM recipeitems ri join measurementsize ";
       $search .= "ms on ri.measurementsize_id = ms.id join measurementtype mt on ";
       $search .= "ri.measurementtype_id = mt.id  where recipe_id = " . $id . ";";
-      $items = $db->query($search);
+      $items = $db->prepare($search);
+      $items->execute();
    }
    catch (PDOException $ex)
       {

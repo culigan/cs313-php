@@ -21,8 +21,11 @@
 
    try
    {
-      $sizes = $db->query("SELECT * FROM MeasurementSize;");
-      $types = $db->query("SELECT * FROM MeasurementType;");
+      $selectString = "SELECT * FROM MeasurementSize;";
+      $sizes = $db->prepare($selectString);
+      $selectString = "SELECT * FROM MeasurementSize;";
+      $types = $db->prepare($selectString);
+      $types->execute();
    }
    catch (PDOException $ex)
    {

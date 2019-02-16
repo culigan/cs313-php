@@ -10,19 +10,22 @@
       $signin = "SignOut";
 
    $count = count($_POST);
-   echo $_POST['recitemid0'];
    $typeID = $_POST['type0'];
    $ingredID = $_POST['ingred0'];
    $direct = $_POST['direct'];
    $recID = $_POST['recid'];
    $count = ($count - 3) / 4;
+
    $stmt = "Update recipe set recipename = '" . $_POST['recipenam'] . "', directions = '" . $direct . "' where id = " . $recID . ";";
-   $q = $db->query($stmt);
-    $recname = "recipenam";
-    $qzs = $db->query("Select id from recipe where recipename = '$_POST[$recname]';");
-    $recipeID;
-    foreach($qzs as $qz)
-      $recipeID = $qz[id];
+   $q = $db->prepare($stmt);
+   $q->execute();
+
+   $selectString = "Select id from recipe where recipename = '$_POST[$recname]';";
+   $qzs = $db->prepare("Select id from recipe where recipename = '$_POST[$recname]';");
+   $qzs->execute();
+   $recipeID;
+   foreach($qzs as $qz)
+     $recipeID = $qz[id];
    
    for($i = 0; $i < $count; $i++)
     {

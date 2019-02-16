@@ -26,9 +26,12 @@ session_start();
    require('DB_Connect.php');
    $db = connectToDB();
    
-   $types = $db->query("SELECT * FROM FoodType;");
-   $mcats = $db->query("SELECT * FROM MealCategory;");
-
+   $selectString = "SELECT * FROM FoodType;";
+   $types = $db->prepare($selectString);
+   $types->execute();
+   $selectString = "SELECT * FROM MealCategory;";
+   $mcats = $db->prepare($selectString);
+   $mcats->execute();
 ?>
 
 
