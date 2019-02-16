@@ -22,7 +22,13 @@
    <script src="Team.js"></script>
 </head>
 <body id="userbody">   
-   <header id="user">Welcome <?php echo $_SESSION['user']; ?></header>
+   <header id="user">Welcome 
+   <?php 
+      if(isset($_SESSION['user']))
+         echo $_SESSION['user']; 
+      else
+         header("Location: Team_SignIn.php"); 
+   ?></header>
    <div id='userdiv'>
       <label><a href="Team_SignIn.php" value="SignIn" >Sign In</a></label>
    </div>
