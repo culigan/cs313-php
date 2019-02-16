@@ -61,16 +61,16 @@
    {
       $qString = "SELECT * FROM measurementsize;"
       $sizes = $db->prepare($qString);
-      $sizes->execute()
+      $sizes->execute();
       $qString = "SELECT * FROM measurementtype;"
       $types = $db->prepare($qString);
-      $types->execute()
+      $types->execute();
       $qString = "SELECT * FROM foodtype;"
       $foodtypes = $db->prepare($qString);
-      $foodtypes->execute()
+      $foodtypes->execute();
       $qString = "SELECT * FROM mealcategory;"
       $meals = $db->prepare($qString);
-      $meals->execute()/**/
+      $meals->execute();/**/
    }
    catch (PDOException $ex)
    {
