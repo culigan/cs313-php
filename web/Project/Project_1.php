@@ -23,14 +23,14 @@
       $reccat = $_POST['mealcat'];
       /*$userID = $db->query("SELECT id FROM user_table where username = '" . $_SESSION['user'] . "';");
       foreach($userID as $user)
-         print_r($user[id]);*/
+         print_r($user[id]);
       $username = $_SESSION['user'];
          $queryStmt = "select id From user_table where username = :username;";
          $queryStmt = $db->prepare($queryStmt);
          $queryStmt->bindValue(':username', $username);
          $queryStmt->execute();
          $results = $queryStmt->fetchAll(PDO::FETCH_ASSOC);
-      /*$insertString = "Insert Into Recipe (recipename, Directions, FoodType_ID,";
+      $insertString = "Insert Into Recipe (recipename, Directions, FoodType_ID,";
       $insertString .= " mealcategory_id, user_id) Values (:recipename, :directions, :foodtype_id,";
       $insertString .= " :mealcategory_id, :user_id)";
       $insertUserID = $db->prepare($insertString);
@@ -41,11 +41,12 @@
          $insertUserID->bindValue(':user_id', $results[0][id]);
          $insertUserID->execute();*/
 
-         $lastID = 3;//lastInsertID()
+         $lastID = 3;//lastInsertID();
          
-      for($i = 0; $i != $count; $i++)
+      for($i = 0; $i < $count; $i++)
       {
          $msize = $_POST['amount' . $i];
+         echo $msize;
          $mtype = $_POST['meastype' . $i];
          $ingredient = $_POST['ingredient' . $i];
          $insertString = "Insert Into recipeitems (measurementsize_id, measurementtype_id, ingredient, recipe_id) Values (:amounts, :typem, :ingre, :last)";
@@ -132,7 +133,7 @@
          </div>
          <input name="add" type="button" value="Add another Ingredient" onclick="addItem()"></br></br>
          <textarea id="direct" name="direct" rows="4" cols="50" required>Enter directions here....</textarea></br></br>
-         <input id="count" name="count" type="hidden" value="1">
+         <input id="count" name="count" type="hidden" value="0">
          <input type="submit" value="Submit">
       </form>
    </div>
