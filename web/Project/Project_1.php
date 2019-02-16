@@ -16,8 +16,6 @@
       $name = $_POST['recipename'];
       $count = $_POST['count'];
       echo $count;
-      $count = ($count - 5) / 3;
-      echo $count;
       $addSize;
       $addType;
       $recipen = $_POST['recipename'];
