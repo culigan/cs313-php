@@ -32,7 +32,7 @@
       $userID->execute();
       $user = $userID->fetchAll(PDO::FETCH_ASSOC)
       //foreach($userID as $user)
-         print_r($user);
+         //print_r($user);
       $insertString = "Insert Into Recipe (recipename, Directions, FoodType_ID,";
       $insertString .= " mealcategory_id, user_id) Values (:recipename, :directions, :foodtype_id,";
       $insertString .= " :mealcategory_id, :user_id)";
