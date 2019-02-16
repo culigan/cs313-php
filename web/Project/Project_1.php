@@ -59,14 +59,14 @@
    $meals;
    try
    {
-      $sizes = $db->prepare("SELECT * FROM measurementsize;");
+      /*$sizes = $db->prepare("SELECT * FROM measurementsize;");
       $sizes->execute()
       $types = $db->prepare("SELECT * FROM measurementtype;");
       $types->execute()
       $foodtypes = $db->prepare("SELECT * FROM foodtype;");
       $foodtypes->execute()
       $meals = $db->prepare("SELECT * FROM mealcategory;");
-      $meals->execute()
+      $meals->execute()*/
    }
    catch (PDOException $ex)
    {
