@@ -3,7 +3,7 @@
 
    require('DB_Connect.php');
    $db = connectToDB();
-   
+   echo "here";
    $signin;
    if(!isset($_SESSION['user'])){
       header("Location: Team_SignIn.php");     
@@ -24,7 +24,7 @@
 <body id="userbody">   
    <header id="user">Welcome Page</header>
    <div id='userdiv'>
-      <label><a href="Team_SignIn.php" value="Sign In" >Sign In</a></label>
+      <label><a href="Team_SignIn.php" value="SignIn" >Sign In</a></label>
    </div>
 </body>
 </html>
