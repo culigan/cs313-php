@@ -59,16 +59,16 @@
    $meals;
    try
    {
-      $qString = "SELECT * FROM measurementsize;"
+      $qString = "SELECT * FROM measurementsize;";
       $sizes = $db->prepare($qString);
       $sizes->execute();
-      $qString = "SELECT * FROM measurementtype;"
+      $qString = "SELECT * FROM measurementtype;";
       $types = $db->prepare($qString);
       $types->execute();
-      $qString = "SELECT * FROM foodtype;"
+      $qString = "SELECT * FROM foodtype;";
       $foodtypes = $db->prepare($qString);
       $foodtypes->execute();
-      $qString = "SELECT * FROM mealcategory;"
+      $qString = "SELECT * FROM mealcategory;";
       $meals = $db->prepare($qString);
       $meals->execute();/**/
    }
