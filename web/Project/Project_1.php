@@ -43,7 +43,7 @@
 
          $lastID = 3;//lastInsertID();
          
-      for($i = 0; $i < $count; $i++)
+      for($i = 0; $i != ($count + 1); $i++)
       {
          $msize = $_POST['amount' . $i];
          echo $msize;
