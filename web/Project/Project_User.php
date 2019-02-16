@@ -63,7 +63,7 @@
             header("Location: ProjectHome.php");         
          }   
          else
-            header("Location: Project_create.php");
+            header("Location: Project_create.html");
       
       }
    }
