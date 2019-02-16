@@ -1,8 +1,9 @@
 ﻿<?php
-   require('DB_Connect.php');
-   $db = connectToDB();
    session_start();
 
+   require('DB_Connect.php');
+   $db = connectToDB();
+   
    $signin;
    if(!isset($_SESSION['user'])){
       header("Location: Team_SignIn.php");     

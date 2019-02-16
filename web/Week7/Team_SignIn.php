@@ -9,7 +9,7 @@
       unset($_GET['already']);
       echo "This user already exists.";
    }
-   /*try
+   try
    {
       $username;
       $password;
@@ -64,7 +64,7 @@
    {
       echo 'Error!: ' . $ex->getMessage();
       die();
-   }*/
+   }
    
 ?>
 
