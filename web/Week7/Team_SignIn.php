@@ -13,7 +13,7 @@
    {
       $username;
       $password;
-         
+      echo "here";
       if(isset($_POST['uname']))
       {
          $username = htmlspecialchars($_POST['uname']);
