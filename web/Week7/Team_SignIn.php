@@ -56,8 +56,8 @@
          else if(!password_verify(results[0][password], $password))
             echo "The password was incorrect!";
          else
-            header("Location: Team_SignUp.html");
-      
+            header("Location: Team_SignUp.php");
+         unset($_POST['user']);
       }
    }
    catch (PDOException $ex)

@@ -1,14 +1,14 @@
 ﻿<?php
    require('DB_Connect.php');
    $db = connectToDB();
+   session_start();
 
-   
+   $signin;
+   if(!isset($_SESSION['user'])){
+      header("Location: Team_SignIn.php");     
    }
-   catch (PDOException $ex)
-   {
-      echo 'Error!: ' . $ex->getMessage();
-      die();
-   }
+   else
+      $signin = "SignOut";
 ?>
 
 
