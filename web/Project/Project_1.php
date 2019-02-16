@@ -116,7 +116,7 @@
             <input id="ingredient0" name="ingredient0" type="text" required>Ingredient</br></br>
          </div>
          <input name="add" type="button" value="Add another Ingredient" onclick="addItem()"></br></br>
-         <textarea name="direct" rows="4" cols="50" required>Enter directions here....</textarea></br></br>
+         <textarea id="direct" name="direct" rows="4" cols="50" required>Enter directions here....</textarea></br></br>
          <input id="count" name="count" type="hidden" value="1">
          <input type="submit" value="Submit">
       </form>
