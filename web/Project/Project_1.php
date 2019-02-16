@@ -95,6 +95,7 @@
          if(isset($_POST['amount0']))
          {
             echo 'Recipe successfully saved!';
+            print_r($_POST);
          }
          ?>
          </p></br>
