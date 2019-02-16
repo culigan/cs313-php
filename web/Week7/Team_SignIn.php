@@ -42,7 +42,7 @@
       {
          $username = $_POST['user'];
          $password = $_POST['pass'];
-         $queryStmt = "select username, password From user_table where username = :username";
+         $queryStmt = "select username, password From usersignin_table where username = :username";
          $queryStmt = $db->prepare($queryStmt);
          $queryStmt->bindValue(':username', $username);
          $queryStmt->execute();
