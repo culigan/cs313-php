@@ -27,7 +27,7 @@
       $reccat = $_POST['mealcat'];
       echo $reccat;
       $username = $_POST['user'];
-      $userID = $db->prepare("SELECT id FROM user_table where username = '$username'");.
+      $userID = $db->prepare("SELECT id FROM user_table where username = '$username'");
       $userID->execute();
       $user = $userID->fetchAll(PDO::FETCH_ASSOC)
       //foreach($userID as $user)
