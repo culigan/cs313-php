@@ -20,8 +20,8 @@
    $q = $db->prepare($stmt);
    $q->execute();
 
-   $selectString = "Select id from recipe where recipename = '$_POST[$recname]';";
-   $qzs = $db->prepare("Select id from recipe where recipename = '$_POST[$recname]';");
+   $selectString = "Select id from recipe where recipename = '$_POST[recipenam]';";
+   $qzs = $db->prepare($selectString);
    $qzs->execute();
    $recipeID;
    foreach($qzs as $qz)
@@ -36,7 +36,8 @@
       $ingredStmt = "Update recipeitems Set measurementsize_id = $_POST[$tempsize], ";
 	   $ingredStmt .= "measurementtype_id = $_POST[$temptype], ingredient = '$_POST[$tempingred]' ";
       $ingredStmt .= "Where recipe_id = $recipeID and id = $_POST[$temprecid]; ";
-      $updateStmt = $db->query($ingredStmt);
+      $updateStmt = $db->prepare($ingredStmt);
+      $updateStmt->execute();
     }
 
     echo "<span>Recipe Saved </span>";
