@@ -20,6 +20,15 @@ CREATE TABLE MealCategory (
 ID serial PRIMARY KEY,
 CategoryName VARCHAR(80) UNIQUE NOT NULL);
 
+CREATE TABLE IngredientType (
+ID serial PRIMARY KEY,
+TypeName VARCHAR(80) UNIQUE NOT NULL);
+
+CREATE TABLE Ingredients (
+ID serial PRIMARY KEY,
+IngredientName VARCHAR(80) NOT NULL,
+IngredientType_ID INT NOT NULL REFERENCES IngredientType(ID));
+
 CREATE TABLE Recipe (
 ID serial PRIMARY KEY,
 RecipeName VARCHAR(80) NOT NULL,
@@ -30,7 +39,7 @@ User_ID INT NOT NULL REFERENCES User_Table(ID));
 
 CREATE TABLE RecipeItems (
 ID serial PRIMARY KEY,
-Ingredient VARCHAR(255) NOT NULL ,
+Ingredient_ID INT NOT NULL REFERENCES Ingredients(ID),
 MeasurementSize_ID INT NOT NULL REFERENCES MeasurementSize(ID),
 MeasurementType_ID INT NOT NULL REFERENCES MeasurementType(ID),
 Recipe_ID INT NOT NULL REFERENCES Recipe(ID));
