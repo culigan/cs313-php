@@ -21,7 +21,7 @@
       if(isset($_POST['fname']))
       {
          $username = htmlspecialchars($_POST['uname']);
-         $password = htmlspecialchars($_POST['pname']);
+         $password = password_hash(htmlspecialchars($_POST['pname']));
          $firstname = htmlspecialchars($_POST['fname']);
          $lastname = htmlspecialchars($_POST['lname']);
          $queryStmt = "select username From user_table where username = :username";
