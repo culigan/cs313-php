@@ -6,6 +6,8 @@
 
    if(isset($_GET['already']))
       echo "<strong style='font-size:20px;'>User Already Exists!<strong>";
+   if(isset($_GET['correct']))
+      echo "<strong style='font-size:20px;'>Incorrect Password<strong>";
    try
    {
       $username;
@@ -63,6 +65,9 @@
                $_SESSION['user'] = $username;
                header("Location: ProjectHome.php");         
             }
+            else
+               header("Location: Project_User.php?correct=no");         
+               
          }   
          else
             header("Location: Project_create.html");
