@@ -21,7 +21,7 @@
       if(isset($_POST['fname']))
       {
          $username = htmlspecialchars($_POST['uname']);
-         $password = password_hash(htmlspecialchars($_POST['pname']));
+         $password = password_hash(htmlspecialchars($_POST['pname']), PASSWORD_DEFAULT);
          $firstname = htmlspecialchars($_POST['fname']);
          $lastname = htmlspecialchars($_POST['lname']);
          $queryStmt = "select username From user_table where username = :username";
@@ -49,7 +49,7 @@
       if(isset($_POST['user']))
       {
          $username = $_POST['user'];
-         $password = $_POST['pass'];
+         $password = password_hash($_POST['pass'], PASSWORD_DEFAULT);
          $queryStmt = "select username, password From user_table where username = :username and password = :password;";
          $queryStmt = $db->prepare($queryStmt);
          $queryStmt->bindValue(':username', $username);
