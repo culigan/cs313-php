@@ -49,18 +49,20 @@
       if(isset($_POST['user']))
       {
          $username = $_POST['user'];
-         $password = password_hash($_POST['pass'], PASSWORD_DEFAULT);
-         $queryStmt = "select username, password From user_table where username = :username and password = :password;";
+         $password = $_POST['pass'];
+         $queryStmt = "select username, password From user_table where username = :username;";
          $queryStmt = $db->prepare($queryStmt);
          $queryStmt->bindValue(':username', $username);
-         $queryStmt->bindValue(':password', $password);
          $queryStmt->execute();
          $results = $queryStmt->fetchAll(PDO::FETCH_ASSOC);
       
          if(count($results) > 0)
          {
-            $_SESSION['user'] = $username;
-            header("Location: ProjectHome.php");         
+            if(password_verify($password, $results[0][password]))
+            {
+               $_SESSION['user'] = $username;
+               header("Location: ProjectHome.php");         
+            }
          }   
          else
             header("Location: Project_create.html");
