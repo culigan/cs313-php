@@ -43,8 +43,7 @@
       </div>
    </div>
    <footer id="foot">
-      <p>Created by: Collin Steel</p>
-      <p>email:<a href="mailto:culigan@byui.edu.com">culigan@byui.edu"></a>.</p>
+      
    </footer>
 </body>
 </html>
